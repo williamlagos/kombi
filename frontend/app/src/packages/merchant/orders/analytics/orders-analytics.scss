@@ -1,0 +1,21 @@
+page-orders-analytics {
+    ion-content.content {
+        [orders-count] {
+            font-size: 13px;
+            text-transform: uppercase;
+            padding-right: 20px;
+            color: $secondary;
+            font-weight: bold;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    page-orders-analytics {
+        ion-content.content {
+            ion-item.item:first-child {
+                border-right: 1px solid #efefef;
+            }
+        }
+    }
+}

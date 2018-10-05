@@ -1,0 +1,11 @@
+page-job-creation {
+    ion-content.content {
+        padding: 0px;
+        [stops-list] {
+            padding-bottom: 100px;
+        }
+    }
+    ion-fab[margin-right] {
+        margin-right: 40px !important;
+    }
+}

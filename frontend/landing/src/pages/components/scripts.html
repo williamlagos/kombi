@@ -1,0 +1,53 @@
+<script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script>
+    /**
+ * Listen to scroll to change header opacity class
+ */
+    function checkScroll() {
+        var startY = $(".navbar").height() * 2; //The point where the navbar changes in px
+
+        if ($(window).scrollTop() > startY) {
+            $(".navbar").addClass("scrolled");
+        } else {
+            $(".navbar").removeClass("scrolled");
+        }
+    }
+
+    if ($(".navbar").length > 0) {
+        $(window).on("scroll load resize", function () {
+            checkScroll();
+        });
+    }
+</script>
+
+<script>
+    let subscribeButton = $("#subscribe-btn");
+    let onError = () => {
+        subscribeButton.removeClass("loading");
+        subscribeButton.addClass("done");
+        subscribeButton.text("Pronto! Aguarde notícias nossas em breve ;)");
+    };
+    let onSuccess = () => {
+        subscribeButton.removeClass("loading");
+        subscribeButton.addClass("done");
+        subscribeButton.text("Pronto! Aguarde notícias nossas em breve ;)");
+    };
+    let subscribe = () => {
+        subscribeButton.addClass("loading");
+        let emailInput = document.getElementById("subscribe-input");
+        axios.post("SERVER_ADDRESS_PLACEHOLDER/api/lead", {
+            email: emailInput.value,
+        }).then(function (response) {
+            console.log(response);
+            onSuccess();
+        }).catch(function (error) {
+            console.log(error);
+            onError();
+        });
+    };
+    subscribeButton.click(() => { subscribe(); });
+</script>

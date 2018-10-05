@@ -1,0 +1,31 @@
+<!-- View content -->
+<ion-content notifications>
+    <!-- View title -->
+    <section header text-color="secondary">
+        <ion-icon name="mail"></ion-icon>
+        <mars-translatable content="notifications"></mars-translatable>
+    </section>
+    <!-- No notifications found -->
+    <section notification *ngIf="globals.notifications && !(globals.notifications.length > 0)">
+        <p contents>
+            <mars-translatable content="warning_you_dont_have_notifications_yet"></mars-translatable>
+        </p>
+    </section>
+    <!-- Notifications list -->
+    <article *ngIf="globals.notifications && (globals.notifications.length > 0)">
+        <section notification *ngFor="let notification of globals.notifications" [ngClass]="getCssClassesFor(notification)" (click)="view(notification)">
+            <!-- Notification info -->
+            <p title>{{notification.title}}</p>
+            <p contents>{{notification.contents}}</p>
+            <!-- View more -->
+            <p contents view-order *ngIf="notification.data && (notification.data.type == ORDER_NOTIFICATION)">
+                <mars-translatable content="click_to_see_more"></mars-translatable>
+                <ion-icon name="add-circle"></ion-icon>
+            </p>
+            <!-- Notification created time -->
+            <p contents time text-right>
+                <ion-icon name="time"></ion-icon> {{notification.createdAt | fromNow }}
+            </p>
+        </section>
+    </article>
+</ion-content>

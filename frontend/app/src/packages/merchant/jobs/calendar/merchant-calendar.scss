@@ -1,0 +1,44 @@
+page-merchant-calendar {
+    ion-content.content {
+        [tutor] {
+            height: 200px;
+        }
+        [message] {
+            max-width: 250px;
+        }
+        ion-list {
+            padding-bottom: 50px;
+        }
+        ion-item[event-item].item {
+            max-width: 90%;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            background-color: white;
+            border-radius: 0px 10px 10px 0px;
+            border: 1px solid #efefef;
+            cursor: pointer;
+            &:last-of-type {
+                &::before {
+                    top: 0px;
+                }
+            }
+            &::before {
+                content: " ";
+                display: 100%;
+                border-left: 4px solid $secondary;
+                height: 100%;
+                width: 4px;
+                position: absolute;
+                left: 0px;
+                top: -2px;
+            }
+            [event-time] {
+                color: $secondary;
+            }
+            [navitation-icon] {
+                color: #efefef;
+            }
+        }
+    }
+}

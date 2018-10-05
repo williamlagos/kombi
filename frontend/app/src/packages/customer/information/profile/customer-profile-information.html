@@ -1,0 +1,55 @@
+<!-- View header -->
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            <mars-translatable content="profile"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<!-- View content -->
+<ion-content #content text-center>
+    <!-- Signup progress bar -->
+    <mars-signup-progress></mars-signup-progress>
+    <!-- Profile Info Form -->
+    <form user-info max-width-container #form="ngForm">
+        <!-- User name -->
+        <ion-item>
+            <ion-label floating>
+                <mars-translatable content="your_name"></mars-translatable>
+            </ion-label>
+            <ion-input autocomplete="off" autocorrect="on" id="user-name" name="name" [(ngModel)]="user.name" required></ion-input>
+        </ion-item>
+        <!-- User birthdate -->
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_birth_date"></mars-translatable>
+            </label>
+            <input name="birthDate" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_full_date" [mask]="translations.mask_full_date"
+                [(ngModel)]="birthDate" type="tel" required>
+        </ion-item>
+        <!-- User phone -->
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_phone_number"></mars-translatable>
+            </label>
+            <input name="phone" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_phone" [mask]="translations.mask_phone"
+                [(ngModel)]="user.phone" type="tel" required>
+        </ion-item>
+        <!-- User CPF -->
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_tax_document_CPF"></mars-translatable>
+            </label>
+            <input name="document" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_cpf" [mask]="translations.mask_cpf"
+                [(ngModel)]="user.documents[0].number" type="tel" required [cpf]="user.documents[0].number">
+        </ion-item>
+        <!-- Signup cancel button -->
+        <button ion-button *ngIf="!authService.finishedSignup()" icon round large margin-top color="danger" (click)="goBack()">
+            <ion-icon name="close"> </ion-icon>
+        </button>
+        <!-- Continue with signup process button -->
+        <button ion-button icon round large color="balanced" margin-top (click)="save()" [disabled]="disableNextFor(form)">
+            <ion-icon name="checkmark"> </ion-icon>
+        </button>
+    </form>
+</ion-content>

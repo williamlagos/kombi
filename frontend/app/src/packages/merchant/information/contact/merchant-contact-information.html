@@ -1,0 +1,72 @@
+<!-- View header -->
+<ion-header>
+    <ion-navbar color="secondary">
+        <!-- View title -->
+        <ion-title>
+            <mars-translatable content="contact"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<!-- View content -->
+<ion-content #content text-center>
+    <!-- Signup progress bar -->
+    <mars-signup-progress></mars-signup-progress>
+    <!-- Contact Info Form -->
+    <form user-info max-width-container padding-top #form="ngForm">
+        <!-- User picture -->
+        <article padding-top user-picture>
+            <input type="file" name="file" id="file" class="inputfile" (change)="addPicture($event)" accept="image/jpg" />
+            <label for="file" [attr.disabled]="changingPicture">+</label>
+            <section picture-placeholder [attr.style]="getUserPicture() | safe : 'style'">
+                <ion-icon name="camera" *ngIf="!changingPicture"></ion-icon>
+                <ion-spinner *ngIf="changingPicture"></ion-spinner>
+            </section>
+            <section selected-picture></section>
+        </article>
+        <!-- User description -->
+        <ion-item>
+            <ion-label floating>
+                <mars-translatable content="service_provider_description"></mars-translatable>&nbsp;
+                <mars-translatable content="optional_input"></mars-translatable>
+            </ion-label>
+            <ion-textarea name="description" maxlength="1000" type="text" [(ngModel)]="user.description"></ion-textarea>
+        </ion-item>
+        <!-- User website -->
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_username"></mars-translatable>
+                <ion-spinner *ngIf="isCheckingUsername"></ion-spinner>
+            </label>
+            <input name="username" autocomplete="off" autocorrect="off" [placeholder]="translations.username_explanation" [(ngModel)]="user.username"
+                type="text" required (blur)="checkUsername(user.username)" #username="ngModel">
+        </ion-item>
+        <!-- Duplicate username warn -->
+        <p validation-warn [ngClass]="{ 'show': usernameInput && usernameInput.dirty && !isUniqueUsername }">
+            <mars-translatable content="error_duplicated_username"></mars-translatable>
+        </p>
+        <!-- User phone -->
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_phone_number"></mars-translatable>
+            </label>
+            <input name="phone" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_phone" [mask]="translations.mask_phone"
+                [(ngModel)]="user.phone" type="tel" required>
+        </ion-item>
+        <!-- User CPF -->
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_tax_document_CPF"></mars-translatable>
+            </label>
+            <input name="document" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_cpf" [mask]="translations.mask_cpf"
+                [(ngModel)]="user.documents[0].number" type="tel" required [cpf]="user.documents[0].number">
+        </ion-item>
+        <!-- Cancel signup process -->
+        <button ion-button *ngIf="!authService.finishedSignup()" icon round large margin-top color="danger" (click)="goBack()">
+            <ion-icon name="close"> </ion-icon>
+        </button>
+        <!-- Continue signup process -->
+        <button ion-button icon round large color="balanced" margin-top (click)="save()" [disabled]="!form.valid">
+            <ion-icon name="checkmark"> </ion-icon>
+        </button>
+    </form>
+</ion-content>

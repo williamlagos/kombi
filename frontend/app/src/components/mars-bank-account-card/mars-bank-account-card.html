@@ -1,0 +1,52 @@
+<article bank-account-card max-width-container *ngIf="account">
+    <!-- Account Back Effect -->
+    <article card-back>
+        <section card-stripe></section>
+    </article>
+    <article card-front>
+        <form #cardForm="ngForm" *ngIf="!showBack">
+            <section>
+                <!-- Account Number -->
+                <label>
+                    <mars-translatable content="bank_account_number"></mars-translatable>
+                </label>
+                <input required type="tel" account-number name="accountNumber" mask="9999999999999999999999999" [(ngModel)]="account.accountNumber"
+                    placeholder="12349123913" length="16">
+                <label account-number-divider>-</label>
+                <input required type="tel" account-check-number name="accountCheckNumber" mask="9" [(ngModel)]="account.accountCheckNumber"
+                    placeholder="1" length="1">
+            </section>
+
+            <!-- Account Holder -->
+            <section cardholder-container>
+                <label>
+                    <mars-translatable content="card_holder"></mars-translatable>
+                </label>
+                <input required type="text" autocomplete="cc-name" card-holder name="holderName" [(ngModel)]="account.holder.fullname" placeholder="e.g. Nikola Tesla"
+                />
+            </section>
+            <!-- Account Bank -->
+            <section bank-container>
+                <label>
+                    <mars-translatable content="bank"></mars-translatable>
+                </label>
+                <select required account-bank name="bankNumber" [(ngModel)]="account.bankNumber">
+                    <option *ngFor="let bank of banks; let index = index;" [value]="bank.value" [selected]="index == 0">
+                        {{bank.label}}
+                    </option>
+                </select>
+            </section>
+            <!-- Account Agency -->
+            <section agency-container>
+                <label>
+                    <mars-translatable content="bank_account_agency"></mars-translatable>
+                </label>
+                <input required account-agency-number placeholder="1234" name="agencyNumber" [(ngModel)]="account.agencyNumber" type="tel" min-length="3"
+                    max-length="4">
+                <span agency-number-divider>-</span>
+                <input required account-agency-check placeholder="1" name="agencyCheckNumber" [(ngModel)]="account.agencyCheckNumber" type="tel"
+                    min-length="3" max-length="4">
+            </section>
+        </form>
+    </article>
+</article>

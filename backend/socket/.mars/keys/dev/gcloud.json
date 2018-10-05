@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "id": "ninety-nine-pets-dev",
+  "private_key_id": "b10152eda48bc82423e19ce0524c9ebbc82de811",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDUTLvQ948NtPkN\n5Wuy6ntocrvhE8XHjh/YJKwcbSOX5C7rmLLovhKX0J6nfYda8UmXO3bM4/Z46jon\ntrH0KbmUJOvpt4qedzSLgoLT9DWrWAXOWbiE43IWxVqfYvQwO26021ugUechJhlW\ncLEWMNbtQGdxrPGsSm2CZTzePcohk8kenufo65hRObT/l/oCQbUW7M8gM5JlYayM\nDMMkigXm0nik8PolIlkOoR/IswLQSlv6A1rZcmgSnd125hQ2suP12k2DZGr51wEt\nfU9CHWS66ESDd3UQln9bYsluATZiwcyy5OzuTQPJvh3WH6vfkHHyl3KIqKksv+nt\n2IairGAHAgMBAAECggEAMHHuLeo/96XDa3tdzy8YyCXeX6cua7Iv7Be6OqZhB+kn\nF9X5hYjSH1iYy6mmeIc0/tCv9GNUvBTe/m7/PrNCyN6AAw5CEJUtJWS7y/gfQyFL\n+eGZbKGmSDHy0wo2pMb7JUQlLXljH7pc78+5aVHtyaf3swX/BAzb3nSRpjk9Zdmz\n+dcSp1DCKBDf0a8nJvBUb7yHdHRypZcl6utd9GG9Uvho/f4WQRgGj/J/qfuuPlGs\nNgYL/bmLMPEqtxQ5spaJMU1GcUvcFjUyZZdBIHD2xKjEZoNRMTnptSpMfrB98O6W\nUSk3LdSXTzagLNpt3SJElMOvtWhO3mUZA9QpRZsj8QKBgQD0FKNXZWOoxEBwU/Nc\nNQY7eJ08CLwLfP0LM8O/265WphPalQgYG59UsFcoqgZKvuNe38jz90WQAX8lLz+X\ndymy3vl/nk7CepGaUiNiW1kEX7VQ8fSZ0tg3IprBi/8I02vZLkyQFjvlzI1ZxKLz\nEgh87QS2Fcu4jU2Cfz1GOwOMnwKBgQDeqsncyPjFCFNcw1oavprz9bLsnoM75V3g\nhr0XoAdBRkuehHcG2txCWmbvhz4mXAEKswlKP7utn3wE2DaKDVVT8cZ/jZJ1iSBQ\nVUn1iLx7POzaJLJdLL5Igu/AG3CPsLTztecvcjxWdvgdnyDjd+vuZYPenVmFKTaa\nkJmOH+2LmQKBgQDCERa+inLu4PuLVHSOv+owpvn9ncRGLh7UJVhi17yKUIpApXZG\nFNBeeccTIfzWuWf3K1+P+u9oTIhXfHXHbIvPGNKv0aM1plbWqLBRp+fjPmXf8kFV\nfPtE+1KoyTMCRXfeup1NgyAk2rsYwOv+8DuneJziWfocxtz2AU0q5gkwaQKBgQDF\ne/ovDDu/HKQ62LP4lmZ9ysNXIztHiyVYtofNBUyJ8xusStX6SXAilWVIOc3AXcc6\nwxGRPbdpxNJMxaqRhEPSgNPJWzmzbtwvA4Xl89EfCCkVTIi5JK7bRu32lx+dAV9r\n60BQj2O+WCO0ueaEeF7TAEwVy76S4LuiGG9oYx7euQKBgQDHda5PVe2wjNJM4qfx\n1ll2DI26ll533Fb7p6dlHk5z4rs98xWR9llWWb2i62J7i7l332v/9XXGppCrc4IF\nSDkbEjkk59xwSqQzZOkCdJmOHrA37uhXXN+p/uyEDOcMJ+OlkATY3Xtf36tWNTUY\nhyFsC2cKiOFhtm7cbh+bLT+15Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-p75zg@ninety-nine-pets-dev.iam.gserviceaccount.com",
+  "client_id": "116540731825775864818",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-p75zg%40ninety-nine-pets-dev.iam.gserviceaccount.com"
+}

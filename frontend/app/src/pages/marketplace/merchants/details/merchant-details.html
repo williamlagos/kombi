@@ -1,0 +1,48 @@
+<!-- View Header -->
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            {{ merchant ? merchant.name : (translations.loading + "...") }}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<!-- View Content -->
+<ion-content #content *ngIf="!globals.isPlacingOrder">
+    <mars-view-spinner *ngIf="!merchant || !merchant._id"></mars-view-spinner>
+    <!-- Banner -->
+    <article merchant-banner *ngIf="merchant">
+        <section banner></section>
+        <section merchant-meta padding-right *ngIf="merchant">
+            <!-- Merchant Name -->
+            <section merchant-name>
+                {{merchant.name}}
+            </section>
+            <!-- Merchant description -->
+            <section merchant-description>
+                "{{merchant.description}}"
+            </section>
+
+        </section>
+    </article>
+    <!-- Merchant Information -->
+    <article *ngIf="merchant">
+        <!-- Merchant Profile Picture -->
+        <img merchant-picture [src]="merchant.picture">
+        <!-- Merchant Rating -->
+        <section rate text-center>
+            <section new-merchant *ngIf="!merchant.rating"></section>
+            <rating [(ngModel)]="merchant.rating" *ngIf="merchant.rating" readOnly="true" max="5" emptyStarIconName="star-outline"
+                halfStarIconName="star-half" starIconName="star" nullable="false"></rating>
+        </section>
+        <!-- General information -->
+        <article merchant-segment infos general-info max-width-container>
+            <!-- Merchant general information -->
+            <ion-row padding-top>
+                <section col-6 text-center *ngFor="let information of merchant.information">
+                    <h6 information-name text-color="secondary"> {{ information.name }} </h6>
+                    <label [innerHTML]="information.value"></label>
+                </section>
+            </ion-row>
+        </article>
+    </article>
+</ion-content>

@@ -1,0 +1,101 @@
+<!-- Application introduction Page -->
+<ion-header>
+    <ion-navbar color="transparent">
+        <ion-title>
+            <mars-translatable content="project_name" text-color="white"></mars-translatable> © 2018
+        </ion-title>
+        <ion-buttons end>
+            <!-- Terms Button -->
+            <button ion-button clear (click)="navigationService.goTo('TermsOfUsePage')">
+                <mars-translatable content="terms_of_use"></mars-translatable>
+            </button>
+            <!-- Login Button -->
+            <button ion-button clear (click)="navigationService.setRoot('HomePage')">
+                <mars-translatable content="go_to_the_app"></mars-translatable>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+<ion-content #content>
+    <!-- Slides -->
+    <ion-slides #slides pager="true" parallax="true" centeredSlides="true" direction="horizontal" *ngIf="contents">
+        <!-- Intro slide -->
+        <ion-slide>
+            <!-- Intro Slide Image -->
+            <img slide-image [src]="contents[0].picture">
+            <br>
+            <!-- Intro Slide Text -->
+            <section typewrited [innerHTML]="translations.you_love_pets_but_life_is_a_rush"></section>
+            <br>
+            <!-- Intro Slide Button -->
+           <button margin-top ion-button outline color="light" fade-in-button [attr.show]="showStart" (click)="slides.slideNext()">
+                <mars-translatable content="so_come_with_us"></mars-translatable>
+            </button>
+            <br> 
+            <!-- Terms Button -->
+          <!--   <button margin-top ion-button outline color="light" fade-in-button [attr.show]="showStart" (click)="navigationService.goTo('HomePage')">
+                <mars-translatable content="go_to_the_app"></mars-translatable>
+            </button> -->
+        </ion-slide>
+        <!-- Intro slide -->
+        <ion-slide>
+            <!-- Intro Slide Image -->
+            <img slide-image [src]="contents[1].picture">
+            <br>
+            <!-- Intro Slide Text -->
+            <section typewrited [innerHTML]="translations.meet_the_project"> </section>
+            <br>
+            <br>
+            <!-- Intro Slide Button -->
+            <button margin-top ion-button role-button block outline color="light" (click)="slides.slideNext()">
+                <mars-translatable content="for_the_consumer"></mars-translatable>
+            </button>
+            <button margin-top ion-button role-button block outline color="light" (click)="slides.slideTo(slides.getActiveIndex() + 2)">
+                <mars-translatable content="for_the_establishment"></mars-translatable>
+            </button>
+        </ion-slide>
+        <!-- Consumer Slide -->
+        <ion-slide user-intro-slide>
+            <!-- Consumer Slide Title -->
+            <h1>
+                <mars-translatable content="for_the_consumer"></mars-translatable>:
+            </h1>
+            <!-- Consumer Slide Steps -->
+            <ion-row padding steps>
+                <ion-col col-12 step-text *ngFor="let step of customerSteps; let index = index;">
+                    <ion-icon [name]="step.icon"></ion-icon> {{ index + 1 }}.
+                    <span [innerHTML]="translations[step.text]"></span>
+                </ion-col>
+            </ion-row>
+            <!-- Consumer Slide Advantages -->
+            <section typewrited [innerHTML]="translations.customer_app_advantages"></section>
+            <br>
+            <!-- Consumer Slide Signup Button -->
+            <button margin-top ion-button outline color="light" (click)="navigationService.goTo('CustomerBasicInformationPage')">
+                <mars-translatable content="sign_up_now"></mars-translatable>
+            </button>
+        </ion-slide>
+        <!-- Merchant Slide -->
+        <ion-slide user-intro-slide>
+            <!-- Merchant Slide Title -->
+            <h1>
+                <mars-translatable content="for_the_establishment"></mars-translatable>:
+            </h1>
+            <!-- Merchant Slide Steps -->
+            <ion-row padding steps>
+                <ion-col col-12 step-text *ngFor="let step of merchantSteps; let index = index;">
+                    <ion-icon [name]="step.icon"></ion-icon> {{ index + 1 }}.
+                    <span [innerHTML]="translations[step.text]"></span>
+                </ion-col>
+            </ion-row>
+            <!-- Merchant Slide Advantages -->
+            <section typewrited [innerHTML]="translations.merchant_app_advantages"></section>
+            <br>
+            <!-- Merchant Slide Signup Button -->
+            <button margin-top ion-button outline color="light" (click)="navigationService.goTo('MerchantBasicInformationPage')">
+                <mars-translatable content="sign_up_now"></mars-translatable>
+            </button>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

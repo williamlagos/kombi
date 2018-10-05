@@ -1,0 +1,24 @@
+<!-- View Header -->
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            <mars-translatable content="ride"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<!-- View Content -->
+<ion-content>
+    <!-- Loading... -->
+    <mars-view-spinner *ngIf="!order"> </mars-view-spinner>
+    <!-- Map -->
+    <section id="job-directions-map" map-canvas data-tap-disabled="true" [ngClass]="{ 'loading': isLoadingMap }">
+    </section>
+    <section overlay-buttons *ngIf="order && authService.hasRole('MERCHANT')">
+        <button ion-button outline block color="secondary" (click)="setDestinyRoute()" *ngIf="!showDestination">
+            <mars-translatable content="show_destination"></mars-translatable>
+        </button>
+        <button ion-button outline block color="balanced" (click)="setDestinyRoute()" *ngIf="showDestination">
+            <mars-translatable content="finish_order"></mars-translatable>
+        </button>
+    </section>
+</ion-content>

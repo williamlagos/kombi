@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    @require('pages/components/head.html')
+</head>
+
+<body class="landing-page landing-page1">
+    @require('pages/components/navbar.html')
+    <div class="wrapper">
+        <div class="parallax filter-gradient blue section-colorful hero-image" data-color="blue">
+            <div class="parallax-background banner-parallax"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 header-logo">
+                        <img src="assets/img/logo.png" width="250" height="250">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="description">
+                            <h1>Você ama pets, mas a vida anda corrida?</h1>
+                            <h3>Então esse é o seu lugar!</h3>
+                            <h5>
+                                Conheça a %project_name_placeholder%: A plataforma que chegou para revolucionar a
+                                forma como você interage com o mundo pet!
+                            </h5>
+                            <a class="btn-section" onclick="scrollToDiv('presentation');">Saiba
+                                mais
+                            </a>
+                            <a class="btn-section" href="%pwa_address_placeholder%">Acesse o
+                                app
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a class="scroll-anchor" onclick="scrollToDiv('presentation');">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="section section-features section-motivation section-light" id="presentation">
+            <div class="container" data-aos="zoom-in">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="description">
+                            <section class="header-text">Por que criamos a %project_name_placeholder%?</section>
+                            <p>Somos amantes de pets e apaixonados por inovação. Como tal, decidimos
+                                juntar essas paixões e
+                                criar algo que reunisse tudo o que mundo pet procura em um único app.
+                                <br />
+                                <br />Com a 99pets, você pode encontrar pets para adoção, ajudar a
+                                encontrar pets perdidos, os
+                                melhores produtos do mundo pet, as clínicas e profissionais mais
+                                qualificados, os melhores
+                                eventos e estar sempre conectado com novidades da comunidade pet.
+                                <br /> Tudo isso da tela do seu celular!
+                                <br />
+                                <br /> Gostou? Então vem com a gente!
+                                <p>
+                                    <button class="btn-section btn-primary" onclick="scrollToDiv('user')">Para
+                                        você
+                                    </button>
+                                    <button class="btn-section btn-primary" onclick="scrollToDiv('ongs')">Para
+                                        ONGs
+                                    </button>
+                                    <button class="btn-section btn-primary" onclick="scrollToDiv('vets-and-pros')">Para
+                                        vets e profissionais
+                                    </button>
+                                    <button class="btn-section btn-primary" onclick="scrollToDiv('petshops')">Para
+                                        petshops
+                                    </button>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-md-offset-1 hidden-xs hidden-sm">
+                        <img class="right-image" src="assets/img/landing-02.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- For you -->
+        <div class="section section-features section-colorful section-user" id="user">
+            <div class="container" data-aos="zoom-in">
+                <h4 class="header-text text-center">Para você</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="heart"></ion-icon>
+                            </div>
+                            <div class="text">
+                                <h4>Os Pets em Busca de Tutores</h4>
+                                <p>Através de nossas ONGs parceiras, encontre pets para adoção ♡</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="ios-wifi"></ion-icon>
+                            </div>
+                            <h4>Os Tutores em Busca de Seus Pets</h4>
+                            <p>Procure seu pet desaparecido ou ajude pets perdidos
+                                a encontrarem seu lar.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="ios-calendar"></ion-icon>
+                            </div>
+                            <h4>Os Principais Eventos <br/> (Em breve)</h4>
+                            <p>Esteja sempre por dentro dos melhores eventos do mundo pet!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="ios-medkit"></ion-icon>
+                            </div>
+                            <h4>As clínicas mais recomendadas</h4>
+                            <p>A saúde dos nossos pets é coisa séria: Encontre as clínicas veterinárias
+                                mais qualificadas e
+                                não perca tempo em agendar uma consulta ou realizar um atendimento
+                                emergencial!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="medal"></ion-icon>
+                            </div>
+                            <h4>Os profissionais mais qualificados</h4>
+                            <p>Através da nossa rede de profissionais qualificados, você pode receber
+                                serviços de banho, tosa,
+                                adestramento e muitos outros no conforto da sua casa!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="basket"></ion-icon>
+                            </div>
+                            <div class="text">
+                                <h4>Os melhores produtos</h4>
+                                <p>Encontre os melhores produtos em nossas petshops parceiras e receba
+                                    eles na porta de casa!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <br />
+                    <br />
+                    <a href="%pwa_address_placeholder%/auth/customer" class="btn-primary btn-section">Quero me cadastrar!</a>
+                    <br />
+                </div>
+            </div>
+        </div>
+
+        <!-- For you -->
+        <div class="section section-features section-light" id="ongs">
+            <div class="container" data-aos="zoom-in">
+                <h4 class="header-text text-center">Para ONGs</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="share"></ion-icon>
+                            </div>
+                            <div class="text">
+                                <h4>Compartilhe</h4>
+                                <p>Compartilhe informações de pets para adoção e espalhe o amor ♡</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="ios-calendar"></ion-icon>
+                            </div>
+                            <h4>Divulgue</h4>
+                            <p>Cadastre eventos na plataforma e conecte-se com pessoas para impulsionar
+                                suas iniciativas!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="ios-rocket"></ion-icon>
+                            </div>
+                            <h4>Totalmente gratuito</h4>
+                            <p>A 99pets possui um cadastro totalmente gratuito para ONGs!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <br />
+                    <br />
+                    <a href="%pwa_address_placeholder%/auth/ong" class="btn-primary btn-section">Quero me cadastrar!</a>
+                    <br />
+                </div>
+            </div>
+        </div>
+
+        <!-- For the petshops -->
+        <div class="section section-features section-petshops section-colorful" id="petshops">
+            <div class="container" data-aos="zoom-in">
+                <h4 class="header-text text-center">Para petshops</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="ios-wifi"></ion-icon>
+                            </div>
+                            <div class="text">
+                                <h4>Cresça</h4>
+                                <p>Com um canal de comunicação digital, seus clientes ganham muito mais
+                                    conforto e você muito
+                                    mais pedidos!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="cog"></ion-icon>
+                            </div>
+                            <h4>Gerencie</h4>
+                            <p>Com uma interface simples de usar, gerencie seu estoque, promoções,
+                                pedidos e vendas!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="ios-analytics"></ion-icon>
+                            </div>
+                            <h4>Descubra</h4>
+                            <p>Com gráficos de fácil entendimento, monitore suas vendas e descubra os
+                                melhores momentos para
+                                fazer promoções!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <br />
+                    <br />
+                    <a href="%pwa_address_placeholder%/auth/merchant" class="btn-primary btn-section">Quero me cadastrar!</a>
+                </div>
+            </div>
+        </div>
+        <!-- For the vets -->
+        <div class="section section-features section-vets-and-pros" id="vets-and-pros">
+            <div class="container" data-aos="zoom-in">
+                <h4 class="header-text text-center">Para veterinárias e profissionais</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="ios-calendar"></ion-icon>
+                            </div>
+                            <div class="text">
+                                <h4>Agende</h4>
+                                <p>Com uma interface descomplicada e disponível para qualquer
+                                    dispositivo, efetue agendamentos
+                                    de onde você estiver!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="globe"></ion-icon>
+                            </div>
+                            <h4>Digitalize</h4>
+                            <p>Com um canal digital, receba solicitações de serviço em tempo real na
+                                tela do seu celular!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-blue">
+                            <div class="icon">
+                                <ion-icon name="trending-up"></ion-icon>
+                            </div>
+                            <h4>Cresça</h4>
+                            <p>Com um mecanismo de recebimento de serviços, indicações não são mais
+                                necessárias: Você é notificado
+                                toda a vez que um pedido é feito na sua região!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <br />
+                    <br />
+                    <a class="btn-primary btn-section btn-comming-soon">Quero me cadastrar!</a>
+                    <br />
+                    <span class="lbl-comming-soon">Em breve</span>
+                </div>
+            </div>
+        </div>
+        <div class="section section-features section-subscribe section-no-padding">
+            <div class="parallax filter-gradient blue" data-color="blue">
+                <div class="parallax-background">
+                    <!-- <img class="parallax-background-image" src="assets/img/backgrounds/bg-01.jpg" /> -->
+                </div>
+                <div class="info">
+
+                    <h1>
+                        <br>Vamos mudar o mundo pet!
+                    </h1>
+                    <p>Ficou interessada? Então vem com a gente nessa missão: Insere teu e-mail abaixo
+                        pra ficar por dentro
+                        das novidades do lançamento ;)</p>
+                    <br>
+                    <section class="subscribe">
+                        <input type="text" class="subscribe-input" id="subscribe-input">
+                    </section>
+                    <button class="btn-subscribe" id="subscribe-btn">
+                        Vamos juntos!
+                    </button>
+                    <!-- <a href="https://www.99pets.org/app" class="btn-neutral btn-lg btn-fill disabled">Participe!</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    @require('pages/components/footer.html')
+    @require('pages/components/scripts.html')
+</body>
+</html>

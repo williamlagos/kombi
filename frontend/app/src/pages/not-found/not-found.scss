@@ -1,0 +1,30 @@
+page-not-found {
+    ion-content.content {
+        [app-icon] {
+            margin-top: 10px;
+        }
+        [loading-the-app] {
+            text-align: justify;
+            color: $light;
+        }
+        [rate-the-app] {
+            color: $light;
+        }
+        [credits] {
+            color: #666;
+            font-size: 1.3rem;
+            [credits-title] {
+                text-align: center;
+                font-weight: bold;
+                margin-bottom: 0px;
+            }
+            [credits-list] {
+                [thanks-to] {
+                    &:first-child {
+                        margin-top: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

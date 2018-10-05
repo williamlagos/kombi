@@ -1,0 +1,63 @@
+<!-- View header -->
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            <mars-translatable content="location"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<!-- View content -->
+<ion-content #content text-center>
+    <mars-signup-progress></mars-signup-progress>
+    <!-- Location Info Form -->
+    <form user-info max-width-container #form="ngForm">
+        <!-- User address autocomplete -->
+        <ion-item mars-address-autocomplete="user-address" (onSelect)="onAddressSelected($event)" *ngIf="isReady">
+            <ion-label floating>
+                <mars-translatable content="your_address"></mars-translatable>
+            </ion-label>
+            <ion-input autocomplete="off" autocorrect="on" name="address" [(ngModel)]="user.address.street" (keyup)="showAddressSpinner = true;"
+                required></ion-input>
+        </ion-item>
+        <p validation-warn [ngClass]="{ 'show': user.address && user.address.vicinity && !user.address.number }">
+            <mars-translatable content="you_must_inform_your_street_number"></mars-translatable>
+        </p>
+        <!-- User address complement -->
+        <ion-item>
+            <ion-label floating>
+                <mars-translatable content="complement"></mars-translatable>
+            </ion-label>
+            <ion-input autocomplete="on" autocorrect="on" name="complement" [(ngModel)]="user.address.complement"></ion-input>
+        </ion-item>
+        <!-- User address city -->
+        <ion-item>
+            <ion-label floating>
+                <mars-translatable content="your_city"></mars-translatable>
+            </ion-label>
+            <ion-input autocomplete="on" autocorrect="on" name="city" [(ngModel)]="user.address.city" required></ion-input>
+        </ion-item>
+        <!-- User address neighbourhood -->
+        <ion-item>
+            <ion-label floating>
+                <mars-translatable content="your_neighbourhood"></mars-translatable>
+            </ion-label>
+            <ion-input autocomplete="on" autocorrect="on" name="neighbourhood" [(ngModel)]="user.address.neighbourhood" required></ion-input>
+        </ion-item>
+        <!-- User address postal code -->
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_zip_code"></mars-translatable>
+            </label>
+            <input name="phone" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_postal_code" [mask]="translations.mask_postal_code"
+                [(ngModel)]="user.address.postalCode" type="tel" required [minlength]="(translations.mask_postal_code?.length -1) || 1">
+        </ion-item>
+        <!-- Signup cancel button -->
+        <button ion-button *ngIf="!authService.finishedSignup()" icon round large margin-top color="danger" (click)="goBack()">
+            <ion-icon name="close"> </ion-icon>
+        </button>
+        <!-- Continue with signup process button -->
+        <button ion-button icon round large color="balanced" margin-top (click)="save()" [disabled]="disableNextFor(form)">
+            <ion-icon name="checkmark"> </ion-icon>
+        </button>
+    </form>
+</ion-content>

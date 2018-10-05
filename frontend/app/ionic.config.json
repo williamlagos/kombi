@@ -1,0 +1,11 @@
+{
+  "name": "Mars",
+  "app_id": "4064ed6d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "daemon": {
+    "updates": false
+  }
+}

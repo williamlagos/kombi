@@ -1,0 +1,19 @@
+ion-spinner {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.ios {
+      ion-spinner {
+        circle {
+            fill: $balanced !important;
+        }
+    }
+}
+
+.md {
+    ion-spinner {
+        circle {
+            stroke: $secondary !important;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+mars-recipe {
+    ion-card.card {
+        padding: 0px;
+        border-radius: 4px;
+        [recipe-image] {
+            height: 200px;
+            object-fit: cover;
+        }
+        ion-card-content.card-content {
+            padding-top: 10px;
+        }
+    }
+}

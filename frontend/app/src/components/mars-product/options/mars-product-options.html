@@ -1,0 +1,9 @@
+<button ion-item popover-item *ngIf="hasListeners(events.edit)" (click)="emit('edit'); close();" [disabled]="product.showSpinner">
+    <mars-translatable content="edit"></mars-translatable>
+</button>
+<button ion-item popover-item *ngIf="!isDeleted() && hasListeners(events.deactivate)" (click)="emit('deactivate'); close();" [disabled]="product.showSpinner">
+    <mars-translatable content="deactivate"></mars-translatable>
+</button>
+<button ion-item popover-item *ngIf="isDeleted() && hasListeners(events.activate)" (click)="emit('activate'); close();" [disabled]="product.showSpinner">
+    <mars-translatable content="activate"></mars-translatable>
+</button>
