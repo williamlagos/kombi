@@ -1,0 +1,55 @@
+
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            <mars-translatable content="profile"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content #content text-center>
+    
+    <mars-signup-progress></mars-signup-progress>
+    
+    <form user-info max-width-container #form="ngForm">
+        
+        <ion-item>
+            <ion-label floating>
+                <mars-translatable content="your_name"></mars-translatable>
+            </ion-label>
+            <ion-input autocomplete="off" autocorrect="on" id="user-name" name="name" [(ngModel)]="user.name" required></ion-input>
+        </ion-item>
+        
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_birth_date"></mars-translatable>
+            </label>
+            <input name="birthDate" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_full_date" [mask]="translations.mask_full_date"
+                [(ngModel)]="birthDate" type="tel" required>
+        </ion-item>
+        
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_phone_number"></mars-translatable>
+            </label>
+            <input name="phone" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_phone" [mask]="translations.mask_phone"
+                [(ngModel)]="user.phone" type="tel" required>
+        </ion-item>
+        
+        <ion-item with-mask>
+            <label>
+                <mars-translatable content="your_tax_document_CPF"></mars-translatable>
+            </label>
+            <input name="document" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_cpf" [mask]="translations.mask_cpf"
+                [(ngModel)]="user.documents[0].number" type="tel" required [cpf]="user.documents[0].number">
+        </ion-item>
+        
+        <button ion-button *ngIf="!authService.finishedSignup()" icon round large margin-top color="danger" (click)="goBack()">
+            <ion-icon name="close"> </ion-icon>
+        </button>
+        
+        <button ion-button icon round large color="balanced" margin-top (click)="save()" [disabled]="disableNextFor(form)">
+            <ion-icon name="checkmark"> </ion-icon>
+        </button>
+    </form>
+</ion-content>

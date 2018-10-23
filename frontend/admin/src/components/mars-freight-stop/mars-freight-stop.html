@@ -1,0 +1,56 @@
+<ion-card>
+    <ion-card-header text-center color="secondary">
+        <span float-left>
+            <ion-icon name="pin"></ion-icon> {{title}}
+        </span>
+        
+        <span float-right *ngIf="!isDestination && !isOrigin">
+            <ion-icon name="trash"></ion-icon>
+        </span>
+    </ion-card-header>
+    <ion-card-content>
+        
+        <ion-item mars-address-autocomplete="{{'stop-address-' + uuid}}" [attr.mars-address-autocomplete]="'stop-address-' + uuid"
+            (onSelect)="onStopAddressSelected($event)">
+            <ion-label floating>
+                <mars-translatable content="stop_address"></mars-translatable>
+            </ion-label>
+            <ion-input autocomplete="off" autocorrect="on" name="address" [(ngModel)]="stop.address.street" (keyup)="showAddressSpinner = true;"
+                required></ion-input>
+        </ion-item>
+        <section stop-items *ngIf="stop.address.number && !isDestination">
+            
+            <h6 text-left text-color="positive">
+                <mars-translatable content="stop_items"></mars-translatable>:
+            </h6>
+            
+            <ion-row padding-right *ngFor="let item of stop.items; let itemIndex = index;">
+                
+                <ion-col no-padding col-2 text-left>
+                    <button ion-button round icon color="danger" (click)="removeItem(itemIndex)" *ngIf="itemIndex > 0">
+                        <ion-icon name="trash"></ion-icon>
+                    </button>
+                </ion-col>
+                
+                <ion-item no-padding col stop-item-input [attr.col-9]="itemIndex > 0 ? '' : null" [attr.col-11]="itemIndex == 0 ? '' : null">
+                    <input text-left [placeholder]="translations.stop_item_example" name="{{ 'item-' + itemIndex + '-description' }}" [(ngModel)]="item.description">
+                </ion-item>
+                
+                <ion-col no-padding col-1 text-center>
+                    <button ion-button round icon color="balanced" (click)="addItem()">
+                        <ion-icon name="add"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+        </section>
+        <section actions text-center *ngIf="stop.address.number && !isDestination && stop.items.length > 1">
+            <!--  <button ion-button block margin-top rounded color="secondary" (click)="onNewStopClick.emit()">
+                <ion-icon name="add-circle"></ion-icon> &nbsp;
+                <mars-translatable content="add_new_ride_stop"></mars-translatable>
+            </button> -->
+            <button ion-button block margin-top outline color="balanced" (click)="onDestinationClick.emit()">
+                <mars-translatable content="add_ride_destination"></mars-translatable>
+            </button>
+        </section>
+    </ion-card-content>
+</ion-card>

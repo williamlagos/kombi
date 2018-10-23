@@ -10,10 +10,9 @@ const shell = require("shelljs");
 const exec = shell.exec;
 
 let install = () => {
-    exec("cd backend/server && yarn install --color always");
-    exec("cd backend/socket && yarn install --color always");
-    exec("cd frontend/app && yarn install --color always");
-    exec("cd frontend/landing && yarn install --color always");
+    exec("cd backend/server && npm install --color always");
+    exec("cd backend/socket && npm install --color always");
+    exec("cd frontend/landing && npm install --color always");
     console.log((`♂ Mars Dependecies Manager: Project dependencies installed successfully!`.green));
 };
 

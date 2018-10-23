@@ -1,0 +1,95 @@
+{
+    "name": "mars-client",
+    "version": "0.6.0",
+    "author": "Quito Labs",
+    "homepage": "http://quitolabs.org/",
+    "repository": "http://efforia.io",
+    "description": "Awesome Mars Framework Application!",
+    "license": "MIT",
+    "keywords": [
+        "mean",
+        "ionic",
+        "awesome"
+    ],
+    "main": "pwa/app.js",
+    "config": {
+        "ionic_tslint": "./src/**/*.ts",
+        "ionic_bundler": "webpack",
+        "ionic_webpack": "webpack.config.js"
+    },
+    "scripts": {
+        "start": "npm run serve",
+        "clean": "ionic-app-scripts clean",
+        "serve": "ionic-app-scripts serve",
+        "webpack": "ionic-app-scripts webpack",
+        "stats": "npm run build:prod --stats-json && webpack-bundle-analyzer ./www/build/stats.json"
+    },
+    "dependencies": {
+        "@angular/common": "6.0.7",
+        "@angular/compiler": "6.0.7",
+        "@angular/compiler-cli": "6.0.7",
+        "@angular/core": "6.0.7",
+        "@angular/forms": "6.0.7",
+        "@angular/http": "6.0.7",
+        "@angular/platform-browser": "6.0.7",
+        "@angular/platform-browser-dynamic": "6.0.7",
+        "@fnando/cnpj": "^0.1.0",
+        "@fnando/cpf": "^0.1.0",
+        "@ionic/app-scripts": "3.2.0",
+        "angular2-http-file-upload": "1.0.6",
+        "autocompleter": "1.0.30",
+        "axios": "^0.12.0",
+        "chart.js": "2.7.2",
+        "collect.js": "4.0.17",
+        "cordova": "^8.1.1",
+        "cordova-android": "^7.1.1",
+        "cordova-browser": "^5.0.3",
+        "cordova-ios": "^4.5.2",
+        "cordova-plugin-compat": "^1.2.0",
+        "cordova-plugin-geolocation": "^3.0.0",
+        "cordova-plugin-inappbrowser": "^1.7.2",
+        "cordova-plugin-splashscreen": "^4.1.0",
+        "cordova-plugin-statusbar": "^1.0.1",
+        "cordova-plugin-whitelist": "^1.3.3",
+        "geolocator": "2.1.1",
+        "ionic-angular": "3.9.2",
+        "ionic2-rating": "1.2.2",
+        "moment-mini": "2.22.1",
+        "ng2-currency-mask": "4.4.1",
+        "ngx-mask": "2.7.4",
+        "ngx-pagination": "3.0.3",
+        "rxjs": "6.2.1",
+        "rxjs-compat": "6.2.1",
+        "socket.io-client": "^2.1.1",
+        "sw-toolbox": "3.6.0",
+        "zone.js": "0.8.26"
+    },
+    "cordova": {
+        "platforms": [
+            "ios",
+            "browser",
+            "android"
+        ],
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-compat": {},
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-geolocation": {},
+            "ionic-plugin-keyboard": {}
+        }
+    },
+    "devDependencies": {
+        "chalk": "^2.3.0",
+        "color": "^3.0.0",
+        "colors": "^1.3.2",
+        "extract-text-webpack-plugin": "3.0.2",
+        "ionic": "^4.2.0",
+        "optimize-css-assets-webpack-plugin": "3.2.0",
+        "typescript": "2.7.2",
+        "webpack": "^3.6.0",
+        "webpack-bundle-analyzer": "2.9.1",
+        "yargs": "8.0.2"
+    }
+}

@@ -1,0 +1,50 @@
+
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            <mars-translatable content="results"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+    
+    <ion-searchbar backgroundColor="light" [(ngModel)]="keyword" animated="true" showCancelButton="true" placeholder="Pesquise pelo nome do usuário ;)" (ionInput)="onSearchInputChange()">
+    </ion-searchbar>
+    
+    <ion-segment [(ngModel)]="role" color="secondary" (ionChange)="refreshUsers(1)">
+        <ion-segment-button *ngFor="let role of roles" [value]="role">
+            <mars-translatable [content]="role.toLowerCase()"></mars-translatable>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+<ion-content>
+    
+    <mars-view-spinner *ngIf="!users"> </mars-view-spinner>
+    
+    <mars-assistant [message]="translations.no_users_found_message" *ngIf="users && !(users.length > 0)"></mars-assistant>
+    
+    <ion-list padding users-list *ngIf="users">
+        
+        <ion-item *ngFor="let user of users | paginate : config" [ngClass]="{ 'deleted': user.deleted }" no-padding>
+            
+            <ion-label>
+                <p class="item-title"> {{user.name}} </p>
+                <p class="item-info" text-color="positive" text-bold>
+                    <mars-translatable [content]="user.role.toLowerCase()"></mars-translatable>
+                </p>
+                <p class="item-info"> {{user.email}} </p>
+                <p class="item-info">
+                    <mars-translatable [content]="user && user.deleted? 'deactivated': 'active'"></mars-translatable>
+                </p>
+            </ion-label>
+            
+            <section item-right>
+                <a (click)="showOptionsFor($event, user)" text-color="light" more-options>
+                    <ion-icon name="more"></ion-icon>
+                </a>
+            </section>
+        </ion-item>
+    </ion-list>
+    
+    <div class="has-text-centered" *ngIf="users && (users.length > 0) && !globals.keyboardIsUp">
+        <pagination-controls previousLabel="" nextLabel="" (pageChange)="refreshUsers($event)"></pagination-controls>
+    </div>
+</ion-content>

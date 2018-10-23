@@ -40,14 +40,12 @@ Your new ally on the development journey!
  * [MongoDB](https://www.mongodb.com/download-center#community)
  * [Nodemon](https://www.npmjs.com/package/nodemon)
  * [Ionic Framework](https://ionicframework.com/getting-started)
- * [Yarn`*`](https://yarnpkg.com/) 
- * An IDE of your choice`**`
+ * An IDE of your choice`*`
  
  ###### Optional tools: 
 * [Apache Cordova (For mobile native wrapping)](https://ionicframework.com/getting-started)
 
->> `*` (Yarn is required on some systems in order to build the client application. If you face any issues on any of the `npm install` executions, please, try removing the `node_modules` folder and executing `yarn` over it).
- `**` (VSCode or Atom are highly recommended, though)
+ `*` (VSCode or Atom are highly recommended, though)
 
 ##### 🌳 Understanding the ecosystem:
 ##### So: Many applications, many environments, many locales, many colors, many, many.... How do you keep it all up to date once there is a change? 
@@ -70,15 +68,12 @@ Your new ally on the development journey!
 (Propably Linus Torvalds or something)
 
 * ##### Learn more about our:
-* ##### [Application Client](frontend/application/README.md)
-* ##### [Landing Page](frontend/landing/README.md)
-* ##### [Socket Socket](backend/socket/README.md)
-* ##### [Application Server](backend/server/README.md)
-* ##### [Mailing Server](backend/mailing/README.md)
+* ##### [Landing Page](docs/LANDING.md)
+* ##### [Universal Apps](docs/UNIVERSAL.md)
+* ##### [Backend](docs/BACKEND.md)
 ###
 
 # Roadmap:
-- Add standalone features to the mailing server.
 - Finish documentation.
 
 License

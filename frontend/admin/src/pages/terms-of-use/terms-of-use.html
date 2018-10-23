@@ -1,0 +1,16 @@
+
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            <mars-translatable content="terms_of_use"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <article max-width-container terms>
+        
+        <section text-color="light" description [innerHTML]="translations.terms_of_use_for_marketplace">
+        </section>
+    </article>
+</ion-content>

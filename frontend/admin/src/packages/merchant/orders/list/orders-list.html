@@ -1,0 +1,74 @@
+
+<ion-header>
+    <ion-navbar color="secondary">
+        
+        <ion-title>
+            <mars-translatable content="orders"></mars-translatable>
+        </ion-title>
+        
+        <ion-buttons end>
+            <button ion-button clear (click)="showNotificationsDrawer($event)">
+                <ion-badge color="accent" *ngIf="globals.hasPendingOrders">
+                </ion-badge>
+                <ion-icon add-icon name="notifications"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    
+    <mars-view-spinner *ngIf="!orders"> </mars-view-spinner>
+    
+    <mars-assistant [message]="translations.no_orders_yet" *ngIf="orders && !(orders.length > 0)">
+    </mars-assistant>
+    
+    <article *ngIf="orders && (orders.length > 0)">
+        <ion-grid>
+            <ion-row>
+                
+                <ion-col col-12 col-sm-12 col-lg-4 col-xl-4 *ngFor="let order of orders">
+                    <ion-card order>
+                        
+                        <ion-card-header *ngIf="order.customer && order.customer.name" [ngClass]="{ 'balanced': order.status == 'accepted' }">
+                            
+                            <span float-left>
+                                <b>{{order.total | currency : 'BRL'}}</b>
+                            </span>
+                            
+                            <span float-right>
+                                <ion-icon name="time"></ion-icon> {{ order.createdAt | fromNow }}
+                            </span>
+                        </ion-card-header>
+                        <ion-card-content padding>
+                            <ion-item>
+                                <section item-left>
+                                    <ion-icon huge name="contact"></ion-icon>
+                                </section>
+                                
+                                <section order-infos text-center>
+                                    <p customer-name>
+                                        {{ order.customer.name.split(' ')[0] }}
+                                    </p>
+                                    
+                                    <p address *ngIf="order.receivingMode == 'DELIVERY' && order.payload && order.payload.receiptAddress">
+                                        <ion-icon name="pin"></ion-icon> {{ order.payload.receiptAddress.street }}
+                                    </p>
+                                    
+                                    <p address *ngIf="order.receivingMode == 'CHECKOUT'">
+                                        <ion-icon name="pin"></ion-icon>&nbsp;
+                                        <mars-translatable content="CHECKOUT"></mars-translatable>
+                                    </p>
+                                    
+                                    <a view-more (click)="showOrderDetailsFor(order)">
+                                        <ion-icon name="add-circle"></ion-icon>
+                                        <mars-translatable content="view_more"></mars-translatable>
+                                    </a>
+                                </section>
+                            </ion-item>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </article>
+</ion-content>

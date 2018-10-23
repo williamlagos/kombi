@@ -1,0 +1,22 @@
+<nav [ngClass]="{ 'drawer': screenIsDesktopSized(), 'scroll-left': scrollLeft, 'disable-navigation': globals.disableNavigation }">
+    <section (click)="toggleDrawer()" header text-center *ngIf="screenIsDesktopSized()">
+        <span title>
+            <mars-translatable content="project_name"></mars-translatable>
+        </span>
+        
+    </section>
+
+    <ion-tabs [attr.hide]="globals.keyboardIsUp" id="mars-tabs" tabsLayout="icon-top" tabsPlacement="bottom" #tabs>
+        <ion-tab *ngFor="let tab of globals.mainPages" [root]="tab.getRoot()" [rootParams]="tab.getRootParams()" [tabTitle]="tab.getTitle()"
+            [tabUrlPath]="tab.getUrlPath()" [tabIcon]="tab.getIcon()" [tabBadge]="tab.getBadge()" [show]="tab.canShow()"></ion-tab>
+    </ion-tabs>
+    <article ads-bar-wrapper>
+        <section ads-bar>
+        </section>
+    </article>
+
+    <!-- <section footer *ngIf="screenIsDesktopSized()">
+        <section footer-text [innerHTML]="getFooterText()">
+        </section>
+    </section> -->
+</nav>
