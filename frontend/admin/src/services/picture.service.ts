@@ -19,12 +19,12 @@ export class MarsPictureService {
     API_PATH: string;
     STANDARD_ORIENTATION = 1;
 
-    constructor(public fileUploaderService: MarsFileUploaderService) {
+    constructor(private fileUploaderService: MarsFileUploaderService) {
         this.setApiPath("picture");
     }
 
     setApiPath(apiPath: string) {
-        this.API_PATH = AppConstants.SERVER_ADDRESS.concat("/api/", apiPath);
+        this.API_PATH = AppConstants.SERVER_ADDRESS.concat("/", apiPath);
     }
 
     async save(picture: File, params: any = {}, callback?: Function) {
@@ -39,8 +39,8 @@ export class MarsPictureService {
         return new Promise((resolve, reject) => {
             image.onload = () => {
                 ImageTools.resize(picture, {
-                    width: (image.width * scaleFactor), // maximum width 
-                    height: (image.height * scaleFactor) // maximum height 
+                    width: (image.width * scaleFactor), 
+                    height: (image.height * scaleFactor) 
                 }, function (resized, resizeWasSuccessfull) {
                     if (!resizeWasSuccessfull)
                         console.warn(MarsPictureService.name + ": ImageTools was unable to scale the image :(");
@@ -96,12 +96,12 @@ export class MarsPictureService {
         return new Promise(async (resolve, reject) => {
             let rotation = await this.getOrientation(file);
             let mustRotate = rotation > this.STANDARD_ORIENTATION;
-            if (mustRotate) { // In case the image must be rotated
+            if (mustRotate) { 
                 let options = { orientation: rotation };
                 loadImage(file, (img) => {
                     img.toBlob((blob) => resolve(blob));
                 }, options);
-            } else { // Otherwise, we're good to go!
+            } else { 
                 resolve(file);
             }
         });

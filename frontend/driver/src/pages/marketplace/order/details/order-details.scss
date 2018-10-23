@@ -1,0 +1,106 @@
+page-order-details {
+    [map-canvas] {
+        max-height: 150px;
+        &.loading {
+            opacity: 0.2;
+        }
+    }
+    [max-width-container] {
+        max-width: 500px;
+    }
+    [user-info] {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 20px;
+        p {
+            margin-top: 0px;
+            margin-bottom: -10px;
+        }
+    }
+    [user-name] {
+        font-family: $secondary-font-family;
+        color: $secondary;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    section[rate] {
+        font-size: 16px;
+        color: $light;
+        ul.rating {
+            display: inline-block;
+            vertical-align: middle;
+            li[tappable] {
+                padding: 6px;
+            }
+            ion-icon {
+                font-size: 20px;
+            }
+        }
+    }
+    [order] {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    [order-details] {
+        [toggle-infos] {
+            width: 100%;
+            min-height: 50px;
+            margin-top: 1px;
+            border-radius: 0px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            ion-icon {
+                padding-left: 10px;
+            }
+        }
+        [infos-header] {
+            @include secondary-gradient();
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 4px 4px 0px 0px;
+            text-align: center;
+        }
+        [infos] {
+            ion-card {
+                margin: 0px;
+            }
+        }
+        [infos-content] {
+            padding-top: 0px;
+            border-radius: 15px;
+            padding-bottom: 16px;
+            [info] {
+                margin: auto;
+                font-weight: bold;
+                margin-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: left;
+                color: #999;
+                [info-title] {
+                    color: #777;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                p {
+                    font-size: 14px;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        [view-profile] {
+            font-size: 12px;
+        }
+        [itens-title] {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: $balanced;
+            ion-icon {
+                vertical-align: text-bottom;
+                padding-right: 5px;
+            }
+        }
+    }
+}

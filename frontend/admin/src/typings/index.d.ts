@@ -1,6 +1,6 @@
-/// <reference path="global/google.maps/index.d.ts" />
-/// <reference path="global/translations/index.d.ts" />
-/// <reference path="global/payment/index.d.ts" />
+
+
+
 
 interface String {
     contaisNumbers(): boolean;

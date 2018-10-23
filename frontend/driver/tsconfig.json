@@ -1,0 +1,65 @@
+{
+    "compilerOptions": {
+        "baseUrl": "src",
+        "paths": {
+            "@app/*": [
+                "app/*"
+            ],
+            "@packages/*": [
+                "packages/*"
+            ],
+            "@services/*": [
+                "services/*"
+            ],
+            "@backend/*": [
+                "backend/*"
+            ],
+            "@pipes/*": [
+                "pipes/*"
+            ],
+            "@pages/*": [
+                "pages/*"
+            ],
+            "@directives/*": [
+                "directives/*"
+            ],
+            "@components/*": [
+                "components/*"
+            ],
+            "@assets/*": [
+                "assets/*"
+            ],
+            "@subpackage/*": [
+                "packages/customer/*"
+            ]
+        },
+        "moduleResolution": "node",
+        "target": "es5",
+        "module": "es2015",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "suppressImplicitAnyIndexErrors": true,
+        "allowUnreachableCode": false,
+        "declaration": true,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noStrictGenericChecks": false
+    },
+    "include": [
+        "src/**/*.ts",
+        "typings/**/*.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}

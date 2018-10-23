@@ -5,7 +5,7 @@
  * @description Product component.
  */
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { Input, Output } from "@angular/core";
 import { EventEmitter } from "@angular/core";
 import { NgZone } from "@angular/core";
@@ -39,22 +39,22 @@ export class MarsProductComponent {
     @Input("product") product: any;
     @Input("options") options: any;
 
-    // ---------------- Add product
+    
     @Output() add: EventEmitter<any> = new EventEmitter();
 
-    // ---------------- Save product
+    
     @Output() save: EventEmitter<any> = new EventEmitter();
 
-    // ---------------- Read product
+    
     @Output() view: EventEmitter<any> = new EventEmitter();
 
-    // ---------------- Edit product
+    
     @Output() edit: EventEmitter<any> = new EventEmitter();
 
-    // ---------------- Remove product
+    
     @Output() remove: EventEmitter<any> = new EventEmitter();
 
-    // ---------------- Toggle product
+    
     @Output() deactivate: EventEmitter<any> = new EventEmitter();
     @Output() activate: EventEmitter<any> = new EventEmitter();
 
@@ -63,15 +63,15 @@ export class MarsProductComponent {
 
     @Output() blur: EventEmitter<any> = new EventEmitter();
 
-    CURRENCY_OPTIONS = AppConstants.CURRENCY_OPTIONS;
+    private CURRENCY_OPTIONS = AppConstants.CURRENCY_OPTIONS;
 
-    constructor(public zone: NgZone,
-        public changeDetector: ChangeDetectorRef,
-        public popoverCtrl: PopoverController,
-        public navCtrl: NavController,
-        public globals: AppGlobals,
-        public locales: AppLocales,
-        public pictureService: MarsPictureService) {
+    constructor(private zone: NgZone,
+        private changeDetector: ChangeDetectorRef,
+        private popoverCtrl: PopoverController,
+        private navCtrl: NavController,
+        private globals: AppGlobals,
+        private locales: AppLocales,
+        private pictureService: MarsPictureService) {
         this.translations = this.locales.load();
     }
 

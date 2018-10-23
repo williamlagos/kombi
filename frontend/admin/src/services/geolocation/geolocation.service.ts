@@ -23,11 +23,11 @@ export class MarsGeolocationService {
     static libsLoaded: EventEmitter<any> = new EventEmitter();
     static timeout: EventEmitter<any> = new EventEmitter();
 
-    constructor(public globals: AppGlobals) {
+    constructor(private globals: AppGlobals) {
         MarsGeolocationService.initLibs();
     };
 
-    // ------------------------------------------------ USER LOCATION RELATED FUNCTIONS
+    
     getUserLocation(options: any = {}, callback?) {
         return new Promise((resolve, reject) => {
             MarsGeolocationService.onLoad(() => {
@@ -47,7 +47,7 @@ export class MarsGeolocationService {
     }
 
     getLatLngFrom(location) {
-        // In case we retrieve the location successfully, we must wrap it on a google maps friendly way.
+        
         let coordinates = MarsGeolocationService.isReady() ? new google.maps.LatLng(location.coords.latitude, location.coords.longitude) : this.createFallbackCoordinates(location);
         return coordinates;
     }
@@ -62,7 +62,7 @@ export class MarsGeolocationService {
         return nativeCoordinates;
     }
 
-    // ------------------------------------------------ GOOGLE MAP RELATED FUNCTIONS
+    
     static initLibs(callback?) {
         MarsViewService.loadLib(AppConstants.GOOGLE_MAPS_LIB_URL, () => {
             MarsViewService.loadLib(AppConstants.GOOGLE_MAPS_MARKER_WITH_LABEL_URL, () => {

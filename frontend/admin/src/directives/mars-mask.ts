@@ -15,8 +15,8 @@ import { EventEmitter } from "@angular/core";
 
 export class MarsMaskDirective {
 
-    MASK_PLACEHOLDER_CHARACTER = "_";
-    OPTIONAL_CHARACTER_MARK = "[";
+    private MASK_PLACEHOLDER_CHARACTER = "_";
+    private OPTIONAL_CHARACTER_MARK = "[";
 
     @Input("mars-mask") marsMask: string;
     @Input() ngModel;

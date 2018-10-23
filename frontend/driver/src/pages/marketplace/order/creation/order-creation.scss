@@ -1,0 +1,50 @@
+  page-order-creation {
+      ion-content.content {
+          [order] {
+              max-width: 500px;
+              margin: auto;
+          }
+          ion-card-header {
+              ion-icon {
+                  vertical-align: text-bottom;
+              }
+          }
+          [auto-fade] {
+              max-height: 0px;
+              opacity: 0;
+              z-index: 0;
+              &.show {
+                  max-height: 100%;
+                  opacity: 1;
+                  z-index: 999;
+              }
+          }
+          ion-label {
+              color: #999;
+              ion-icon {
+                  vertical-align: middle;
+              }
+          }
+          [datetime-input] {
+              border-bottom: 1px solid #efefef;
+              color: $secondary;
+              padding-bottom: 6px;
+              &:focus {
+                  font-weight: bold;
+              }
+          }
+          [waiting] {
+              height: 100vh;
+              &.show {
+                  padding-top: 20vh;
+              }
+              ion-spinner {
+                  width: 80px;
+                  height: 80px;
+                  stroke: rgb(224, 154, 154);
+                  padding-bottom: 5px;
+                  margin-bottom: 40px;
+              }
+          }
+      }
+  }

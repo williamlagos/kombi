@@ -5,13 +5,14 @@
  * @description Credit card component.
  */
 
-import { ChangeDetectorRef, Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, Output, EventEmitter, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import * as moment from "moment-mini";
 import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'mars-credit-card',
-    templateUrl: 'mars-credit-card.html'
+    templateUrl: 'mars-credit-card.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MarsCreditCardComponent {
     expirationMonths: Array<any>;
@@ -21,11 +22,11 @@ export class MarsCreditCardComponent {
     @Input("card") card: Array<any>;
     @Input("exclude-fields") excludedFields: Array<any> = [];
 
-    @ViewChild("cardForm") public form: NgForm;
+    @ViewChild("cardForm") form: NgForm;
 
-    constructor(public changeDetector: ChangeDetectorRef) { }
+    constructor(private changeDetector: ChangeDetectorRef) { }
 
-    ngOnInit() { 
+    ngOnInit() {
         this.initExpirationOptions();
     }
 

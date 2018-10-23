@@ -5,13 +5,12 @@
  * @description Application component.
  */
 
+declare var window;
+
 import { Component } from "@angular/core";
 import { Platform } from "ionic-angular";
 import { App } from "ionic-angular";
-
 import { AppConstants } from "@app/app.constants";
-import { MarsAuthService } from "@services/auth.service";
-import { MarsGeolocationService } from "@services/geolocation/geolocation.service";
 
 @Component({
     templateUrl: "app.html",
@@ -19,22 +18,20 @@ import { MarsGeolocationService } from "@services/geolocation/geolocation.servic
 })
 
 export class MyApp {
-    /* rootPage = MarsAuthService.isLoggedIn() ? "HomePage" : "IntroductionPage"; */
-    rootPage = "HomePage";
+    /* private rootPage = MarsAuthService.isLoggedIn() ? "HomePage" : "IntroductionPage"; */
+    private rootPage = "HomePage";
 
-    constructor(public platform: Platform,
-        public app: App,
-        public geolocationService: MarsGeolocationService) {
+    constructor(private platform: Platform,
+        private app: App) {
         platform.ready().then(async () => {
             this.app.viewWillEnter.subscribe((view) => { this.updatePageTitleFor(view); });
             setTimeout(() => {
-                document.querySelector('[splashscreen]').remove(); // Removes the HTML splashscreen
+                document.querySelector('[splashscreen]').remove(); 
             }, 2000);
-            if (platform.is("cordova")) { // Okay, so the platform is ready and our plugins are available.
-                /* statusbar.styleDefault(); // Here you can do any higher level native things you might need.
-               splahscreen.hide();
-               statusbar.show();
-              statusbar.backgroundColorByHexString(AppConstants.DARKER_primary_color); */
+            if (window.cordova) { 
+                window.StatusBar.styleDefault();
+                window.StatusBar.show();
+                window.StatusBar.backgroundColorByHexString(AppConstants.DARKER_SECONDARY_COLOR);
             };
         });
     }

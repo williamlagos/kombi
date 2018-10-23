@@ -5,16 +5,12 @@
  * @description Market item category.
  */
 
-import { Component, Input } from "@angular/core";
-
-import { AppUserPages } from '@pages/signup-pages';
-
-import { MarsAuthService } from "@services/auth.service";
-import { AppGlobals } from "@app/app.globals";
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 
 @Component({
     selector: "market-item-category",
-    templateUrl: "market-item-category.html"
+    templateUrl: "market-item-category.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class MarketItemCategoryComponent {
@@ -24,7 +20,7 @@ export class MarketItemCategoryComponent {
     @Input("show-folder-icon") folderIcon: boolean;
     @Input("isOnPromotion") isOnPromotion: boolean;
 
-    constructor() { }
+    constructor(private changeDetector: ChangeDetectorRef) { }
 
     ngOnInit() { }
 }

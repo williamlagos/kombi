@@ -1,0 +1,44 @@
+pagination-template {
+    .ngx-pagination {
+        transition-property: none;
+        padding-left: 0px;
+        text-align: center;
+        position: fixed;
+        bottom: 40px;
+        width: 100%;
+        vertical-align: middle;
+        font-size: 16px;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #efefef;
+        background-color: rgba(255, 255, 255, 1.0);
+        background-color: $secondary;
+        li {
+            padding: 4px;
+            vertical-align: middle;
+        }
+        a {
+            color: white;
+            vertical-align: middle;
+            border-radius: 50%;
+        }
+        .current {
+            border-radius: 50%;
+            /* @include secondary-gradient(); */
+            background-color: white;
+            color: $secondary;
+            vertical-align: middle;
+            height: 27px;
+            width: 27px;
+            padding-top: 5.5px;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    pagination-template .ngx-pagination {
+        bottom: -20px;
+        max-width: calc(100vw + 50px - #{$navbar-width});
+    }
+}

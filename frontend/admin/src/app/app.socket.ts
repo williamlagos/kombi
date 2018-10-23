@@ -7,7 +7,6 @@
 
 import { Injectable } from "@angular/core";
 import * as io from "socket.io-client";
-import { AppConstants } from "./app.constants";
 
 @Injectable()
 export class MarsSocket {

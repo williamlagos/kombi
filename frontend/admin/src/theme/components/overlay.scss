@@ -17,15 +17,15 @@
 }
 
 [tutor] {
-    max-height: 250px;
-    max-width: 250px;
+    max-height: 150px;
+    max-width: 150px;
     margin: auto;
     display: block;
 }
 
 [message] {
     position: relative;
-    @include secondary-gradient();
+    @include primary-gradient();
     margin-bottom: 10px;
     padding: 16px;
     border-radius: 30px;
@@ -33,6 +33,7 @@
     margin: auto;
     color: white;
     text-align: left;
+    font-size: 12px;
     &:after {
         content: '';
         position: absolute;
@@ -41,7 +42,7 @@
         width: 0;
         height: 0;
         border: 7px solid transparent;
-        border-top-color: adjust-hue($secondary, 5);
+        border-top-color: adjust-hue($primary, 10);
         border-bottom: 0;
         margin-left: -7px;
         margin-bottom: -7px;
@@ -49,19 +50,20 @@
 }
 
 [buttons-overlay] {
-    padding: 16px;
+    padding: 10px;
     bottom: 56px;
     position: absolute;
     width: 100%;
-    background-color: transparentize($primary, 0.01);
+    background-color: transparentize(white, 0.15);
     z-index: 999;
-    border-top: 1px solid $primary;
+    border-top: 1px solid #efefef;
     &[hide=true] {
         bottom: -100%;
     }
     button[ion-button][round] {
         width: 50px;
         height: 50px;
+        padding-bottom: 22px;
         ion-icon {
             font-size: 26px;
         }

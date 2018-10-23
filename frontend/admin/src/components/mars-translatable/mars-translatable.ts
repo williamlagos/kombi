@@ -5,7 +5,7 @@
  * @description I18n label component.
  */
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { Input } from "@angular/core";
 import { ViewChild } from "@angular/core";
 import { ViewContainerRef } from "@angular/core";
@@ -14,17 +14,19 @@ import { AppLocales } from "@app/app.locales";
 
 @Component({
     selector: "mars-translatable",
-    template: "<span #translation></span>"
+    template: "<span #translation></span>",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class MarsTranslatableComponent {
 
-    translations: AppTranslations;
-    translation: string;
+    private translations: AppTranslations;
+    private translation: string;
     @ViewChild("translation", { read: ViewContainerRef }) translationDiv: ViewContainerRef;
     @Input("content") localeKey: string;
 
-    constructor(public locales: AppLocales) {
+    constructor(private locales: AppLocales,
+        private changeDetector: ChangeDetectorRef) {
         this.translations = locales.load();
     }
 

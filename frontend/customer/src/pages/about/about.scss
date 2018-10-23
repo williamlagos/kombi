@@ -1,0 +1,21 @@
+page-about {
+    ion-content.content {
+        [project-name] {
+            @include linearGradient(lighten(adjust-hue($primary, 5), 2%), $primary);
+            text-align: center;
+            color: $primary;
+            margin-top: 10px;
+            font-weight: bold; // text-shadow: 1px 1px 0 $primary;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        [project-intro] {
+            text-align: justify;
+            color: #666;
+        }
+        [rate-the-app] {
+            color: #666;
+        }
+    }
+}

@@ -13,27 +13,31 @@ import { AppLocales } from "@app/app.locales";
 import { MarsInteractionService } from "@services/interaction.service";
 import { MarsNavigationService } from "@services/navigation.service";
 
-import { Backend } from "@backend";
+import { Backend } from "@backend/index";
 import { MarsAuthService } from "@services/auth.service";
 import { AppConstants } from "@app/app.constants";
 import { ViewController } from "ionic-angular";
 import { NavParams } from "ionic-angular";
 
-@Component({ templateUrl: "mars-product-options.html" })
+@Component({ 
+    templateUrl: "mars-product-options.html",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+ })
 
 export class MarsProductOptionsMenu {
-    product: any;
-    options: any;
-    events: Array<EventEmitter<any>>;
-    spinner: any;
-    token: string;
-    translations: AppTranslations;
+    private product: any;
+    private options: any;
+    private events: Array<EventEmitter<any>>;
+    private spinner: any;
+    private token: string;
+    private translations: AppTranslations;
 
-    constructor(public viewCtrl: ViewController,
-        public navParams: NavParams,
-        public locales: AppLocales,
-        public globals: AppGlobals,
-        public interactionService: MarsInteractionService) {
+    constructor(private viewCtrl: ViewController,
+        private navParams: NavParams,
+        private changeDetector: ChangeDetectorRef,
+        private locales: AppLocales,
+        private globals: AppGlobals,
+        private interactionService: MarsInteractionService) {
         this.translations = locales.load();
         this.product = navParams.data.product;
         this.options = navParams.data.options;
@@ -41,19 +45,19 @@ export class MarsProductOptionsMenu {
         this.token = MarsAuthService.getMarsToken();
     }
 
-    isDeleted() {
+    private isDeleted() {
         return this.product && this.product.information && this.product.information.deleted;
     }
 
-    emit(event: string) {
+    private emit(event: string) {
         return this.events[event].emit(this.product);
     }
 
-    hasListeners(event: EventEmitter<any>) {
+    private hasListeners(event: EventEmitter<any>) {
         return this.events && event && event.observers.length > 0;
     }
 
-    close(data?: any) {
+    private close(data?: any) {
         this.viewCtrl.dismiss(data);
     }
 }

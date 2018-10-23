@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>name_placeholder</title>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="fragment" content="!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="theme-color" content="primary_color_placeholder">
+    <meta name="msapplication-navbutton-color" content="primary_color_placeholder">
+    <meta name="apple-mobile-web-app-status-bar-style" content="primary_color_placeholder">
+    <link rel="icon" href="assets/icon/favicon.ico?v=2">
+    <script>
+        document.onreadystatechange = () => {
+            if (document.readyState === 'interactive') {
+                document.addEventListener("deviceready", function () { // Hides splashscreen as soons as the app is available
+                    navigator.splashscreen.hide();
+                }, false);
+            }
+        };
+    </script>
+    <!--     <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then((registration) => {
+                registration.update();
+                console.log('Service worker enabled');
+            })
+            .catch(err => console.log('Error', err));
+    }
+    </script> -->
+    <style>
+        body {
+            margin: 0px;
+            background-color: white;
+        }
+
+        [splashscreen] {
+            text-align: center;
+            padding-top: 40px;
+        }
+
+
+        [splashscreen] img {
+            opacity: 0.4;
+        }
+
+        [splashscreen] h1,
+        [splashscreen] section,
+        [splashscreen] h5 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin-bottom: 0px;
+            color: #efefef;
+        }
+
+        [splashscreen] h1 {
+            font-size: 40px;
+            margin-top: 0px;
+        }
+
+        spinner {
+            /* Spinner size and color */
+            width: 3rem;
+            height: 3rem;
+            border-top-color: #efefef;
+            border-left-color: #efefef;
+            border-top-color: primary_color_placeholder;
+            border-left-color: primary_color_placeholder;
+
+            /* Additional spinner styles */
+            animation: spinner 500ms linear infinite;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-style: solid;
+            border-width: 4px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 20px;
+        }
+
+        /* Animation styles */
+
+        @keyframes spinner {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            bottom: 0px;
+            height: 80px;
+            background-color: primary_color_placeholder;
+            width: 100%;
+        }
+
+        footer section {
+            font-size: 16px;
+            font-family: Roboto, Oxygen, Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #fff;
+        }
+    </style>
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="build/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <noscript>
+        <link rel="stylesheet" href="build/main.css">
+    </noscript>
+</head>
+
+<article splashscreen class="vignette">
+    <img src="assets/images/logo.png" width="200" height="200">
+    <h1>name_placeholder</h1>
+    <section style="margin-top: 12px;">loading_placeholder...</section>
+    <spinner></spinner>
+</article>
+
+<body>
+    <noscript>
+        <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
+            Sorry, but app is not available without javascript
+        </h3>
+        <p>Please enable it to get the full experience.</p>
+    </noscript>
+    
+    <ion-app></ion-app>
+    
+    <script src="build/polyfills.js"></script>
+    
+    <script src="build/vendor.js"></script>
+    
+    <script src="build/main.js"></script>
+    
+    <script src="cordova.js"></script>
+    
+    <script async defer type="text/javascript" src="assets/scripts/hellojs/dist/hello.all.min.js"></script>
+    <script async defer type="text/javascript" src="assets/scripts/image-tools/image-tools.js"></script>
+    <script async defer type="text/javascript" src="assets/scripts/misc/geolocator.min.js"></script>
+    <script async defer type="text/javascript" src="assets/scripts/misc/blueimp-load-image.min.js"></script>
+    
+</body>
+
+</html>

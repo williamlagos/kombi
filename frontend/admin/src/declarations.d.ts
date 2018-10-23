@@ -6,9 +6,9 @@
   provide their own type declarations.
 
   To learn more about using third party libraries in an Ionic app, check out the docs here:
-  http://ionicframework.com/docs/v2/resources/third-party-libs/
+  http:
 
   For more info on type definition files, check out the Typescript docs here:
-  https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html
+  https:
 */
 declare module "*";

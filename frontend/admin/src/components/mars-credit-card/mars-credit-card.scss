@@ -1,4 +1,4 @@
- $credit-card-color: adjust-hue(saturate($secondary, 10), 10);
+ $credit-card-color: adjust-hue(lighten($danger, 2), 30);
  $secondary-cc-color: adjust-hue($credit-card-color, -40);
  [credit-card] {
      padding-bottom: 25px;

@@ -8,6 +8,7 @@
 import { Input, Output, Directive, ChangeDetectorRef } from "@angular/core";
 import { EventEmitter } from "@angular/core";
 import { AppGlobals } from "@app/app.globals";
+import { MarsInteractionService } from "@services/interaction.service";
 
 declare var google;
 
@@ -35,7 +36,9 @@ export class MarsAddressAutocompleteDirective {
         "country": "country"
     };
 
-    constructor(public globals: AppGlobals, public changeDetector: ChangeDetectorRef) { }
+    constructor(private globals: AppGlobals,
+        private changeDetector: ChangeDetectorRef,
+        private interactionService: MarsInteractionService) { }
 
     ngOnInit() {
         setTimeout(() => {
@@ -78,16 +81,22 @@ export class MarsAddressAutocompleteDirective {
 
     async getUserLocation() {
         return new Promise((resolve, reject) => {
-            window.navigator.geolocation.getCurrentPosition((location) => {
-                resolve(this.getLatLngFrom(location));
-            }, (err) => {
-                reject(err);
-            });
+            if (this.globals.currentLocation) {
+                window.navigator.geolocation.getCurrentPosition((location) => {
+                    resolve(this.getLatLngFrom(location));
+                }, (err) => {
+                    reject(err);
+                });
+            } else {
+                resolve(this.globals.currentLocation);
+            }
+
+
         });
     }
 
     getLatLngFrom(location) {
-        // In case we retrieve the location successfully, we must wrap it on a google maps friendly way.
+        
         let coordinates = typeof google !== "undefined" ? new google.maps.LatLng(location.coords.latitude, location.coords.longitude) : this.createFallbackCoordinates(location);
         return coordinates;
     }
@@ -125,8 +134,8 @@ export class MarsAddressAutocompleteDirective {
         }
         let address: any = {};
         let addressKeys = keyMapping || MarsAddressAutocompleteDirective.DEFAULT_KEY_MAPPING;
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
+        
+        
         for (let i = 0; i < place.address_components.length; i++) {
             let infoType = place.address_components[i].types[0];
             let infoIsRequired = addressKeys[infoType];

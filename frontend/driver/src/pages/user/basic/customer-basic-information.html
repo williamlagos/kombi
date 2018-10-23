@@ -1,0 +1,76 @@
+
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            <mars-translatable content="profile"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content #content text-center>
+    <mars-signup-progress></mars-signup-progress>
+    
+    <form user-info max-width-container #form="ngForm">
+        
+        <section margin-top *ngIf="!authService.isLoggedIn()">
+            <span tip>
+                <span hello>
+                    <mars-translatable content="hello"></mars-translatable>!
+                </span>
+                <mars-translatable content="please_input_your_data_below"></mars-translatable>
+            </span>
+        </section>
+        
+        <section *ngIf="!authService.isLoggedIn()">
+            
+            <ion-item>
+                <ion-label floating>
+                    <mars-translatable content="your_email"></mars-translatable>
+                </ion-label>
+                <ion-input autocomplete="on" autocorrect="on" name="email" [(ngModel)]="user.email" type="email" required></ion-input>
+            </ion-item>
+            <p validation-warn [ngClass]="{ 'show': user.email && !user.email.isValidEmail() }">
+                <mars-translatable content="invalid_email_message"></mars-translatable>
+            </p>
+            
+            <ion-item>
+                <ion-label floating>
+                    <mars-translatable content="your_password"></mars-translatable>
+                </ion-label>
+                <ion-input autocomplete="on" autocorrect="on" name="password" [(ngModel)]="user.password" type="password" required></ion-input>
+            </ion-item>
+            
+            <ion-item>
+                <ion-label floating>
+                    <mars-translatable content="password_confirmation"></mars-translatable>
+                </ion-label>
+                <ion-input autocomplete="on" autocorrect="on" name="passwordConfirmation" [(ngModel)]="user.passwordConfirmation" type="password"
+                    required></ion-input>
+            </ion-item>
+            <p validation-warn [ngClass]="{ 'show': user.password && user.passwordConfirmation && (user.password != user.passwordConfirmation ) }">
+                <mars-translatable content="wrong_password_confirmation_message"></mars-translatable>
+            </p>
+        </section>
+        
+        <ion-item no-border class="terms-acceptance" *ngIf="!authService.isLoggedIn()">
+            <ion-label>
+                <input type="checkbox" name="acceptedTerms" color="balanced" [(ngModel)]="user.acceptedTerms">
+                <label>
+                    <mars-translatable content="i_declare_to_have_read_and_agree_with_the"></mars-translatable>
+                    <a (click)="navigationService.goTo('TermsOfUsePage')">
+                        <mars-translatable content="application_terms_of_use"></mars-translatable>
+                    </a>.
+                </label>
+            </ion-label>
+        </ion-item>
+        
+        <button ion-button *ngIf="!authService.finishedSignup()" icon round large margin-top color="danger" (click)="goBack()">
+            <ion-icon name="close"> </ion-icon>
+        </button>
+        
+        <button ion-button icon round large margin-top color="balanced" [disabled]="authService.isLoggedIn() ? !form.valid : (!user.acceptedTerms || !form.valid)"
+            (click)="save()">
+            <ion-icon name="checkmark"> </ion-icon>
+        </button>
+    </form>
+</ion-content>

@@ -18,7 +18,7 @@ export class MarsViewService {
         let isFirstLoad = false;
         let load = () => {
             isFirstLoad = true;
-            // Remove the script before appending it to the body
+            
             let currentScriptTag = document.querySelector(`script[src="${url}"]`);
 
             let currentScriptTagIsAlreadyAppended = currentScriptTag && currentScriptTag.remove;
@@ -27,7 +27,7 @@ export class MarsViewService {
 
             let script: any = document.createElement("script")
             script.type = "text/javascript";
-            if (script.readyState) { // IE
+            if (script.readyState) { 
                 script.onreadystatechange = () => {
                     if (script.readyState == "loaded" || script.readyState == "complete") {
                         script.onreadystatechange = null;
@@ -35,7 +35,7 @@ export class MarsViewService {
                             callback();
                     }
                 }
-            } else { // Others
+            } else { 
                 script.onload = () => {
                     if (callback)
                         callback();

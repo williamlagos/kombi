@@ -1,10 +1,11 @@
-.ios {
+.md {
     ion-segment {
-        max-width: 300px;
+        max-width: 500px;
         margin: auto;
-        margin-top: 10px;
-    }
-    .segment-button.segment-activated {
-        @include secondary-gradient();
+        margin-top: 0px;
+        ion-segment-button.segment-button{
+            background-color: white;
+            color: $secondary;
+        }
     }
 }

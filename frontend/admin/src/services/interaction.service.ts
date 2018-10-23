@@ -17,7 +17,7 @@ export class MarsInteractionService {
     static LONG_TOAST_DURATION = 2000;
     static SHORT_TOAST_DURATION = 1000;
 
-    constructor(public alertCtrl: AlertController, public loadingCtrl: LoadingController, public toastCtrl: ToastController) { }
+    constructor(private alertCtrl: AlertController, private loadingCtrl: LoadingController, private toastCtrl: ToastController) { }
 
     toast(message: string, duration: number = MarsInteractionService.LONG_TOAST_DURATION, callback?: Function) {
         let toast = this.toastCtrl.create({

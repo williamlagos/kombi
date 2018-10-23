@@ -5,7 +5,7 @@
  * @description Signup pages progress component.
  */
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 
 import { AppUserPages } from '@pages/user-pages';
 
@@ -14,7 +14,8 @@ import { AppGlobals } from "@app/app.globals";
 
 @Component({
     selector: "mars-signup-progress",
-    templateUrl: "mars-signup-progress.html"
+    templateUrl: "mars-signup-progress.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class MarsSignupProgressComponent {
@@ -23,16 +24,17 @@ export class MarsSignupProgressComponent {
     currentPage = {};
     currentPageIndex;
 
-    constructor(public signupPages: AppUserPages,
-        public globals: AppGlobals,
-        public authService: MarsAuthService) {
+    constructor(private changeDetector: ChangeDetectorRef,
+        private userInformationPages: AppUserPages,
+        private globals: AppGlobals,
+        private authService: MarsAuthService) {
         this.init();
     }
 
     init() {
         if (!MarsAuthService.isLoggedIn()) return;
-        let role = MarsAuthService.getLoggedInUser().role;
-        this.pages = this.signupPages.getPagesFor(role);
-        this.currentPageIndex = this.signupPages.getCurrentStepIndex();
+        let role = MarsAuthService.getLoggedInUser().roles;
+        this.pages = this.userInformationPages.getPagesFor(role);
+        this.currentPageIndex = this.userInformationPages.getCurrentStepIndex();
     }
 }

@@ -25,10 +25,10 @@ export class MarsNearByService {
     map: any;
     init: EventEmitter<any> = new EventEmitter();
 
-    constructor(public locales: AppLocales,
-        public globals: AppGlobals,
-        public interactionService: MarsInteractionService,
-        public mapsService: MarsMapsService) {
+    constructor(private locales: AppLocales,
+        private globals: AppGlobals,
+        private interactionService: MarsInteractionService,
+        private mapsService: MarsMapsService) {
         this.initMap();
     }
 

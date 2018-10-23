@@ -12,18 +12,24 @@ import { IonicModule } from "ionic-angular";
 import { MarsElasticInputDirective } from "./mars-elastic-input";
 import { MarsMaskDirective } from "./mars-mask";
 import { MarsAddressAutocompleteDirective } from "./mars-address-autocomplete";
+import { MarsCpfValidator } from "@directives/mars-cpf-validator";
+import { MarsCnpjValidator } from "@directives/mars-cnpj-validator";
 
 @NgModule({
     imports: [CommonModule, IonicModule],
     declarations: [
         MarsElasticInputDirective,
         MarsMaskDirective,
-        MarsAddressAutocompleteDirective
+        MarsAddressAutocompleteDirective,
+        MarsCnpjValidator,
+        MarsCpfValidator
     ],
     exports: [
         MarsElasticInputDirective,
         MarsMaskDirective,
-        MarsAddressAutocompleteDirective
+        MarsAddressAutocompleteDirective,
+        MarsCnpjValidator,
+        MarsCpfValidator
     ]
 })
 export class DirectivesModule { }

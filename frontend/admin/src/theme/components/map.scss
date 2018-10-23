@@ -2,7 +2,7 @@ $marker-width: 40px;
 $marker-height: 40px;
 $grown-marker-width: 60px;
 $grown-marker-height: 60px;
-$enabled-color: $secondary;
+$enabled-color: $primary;
 $disabled-color: #999;
 [map-canvas] {
     transition-property: none;
@@ -13,23 +13,8 @@ $disabled-color: #999;
     top: 0;
 }
 
-.driver-marker {
-    background-image: url(/assets/images/map/vehicle.png);
-    background-size: cover;
-    width: $marker-width;
-    height: $marker-height;
-    transition-property: all;
-    transition-duration: 200ms;
-    animation-duration: 1s;
-    box-shadow: none;
-    [icon] {
-        display: none;
-    }
-}
-
-
-.place-marker {
-    @include secondary-gradient();
+.marker {
+    @include primary-gradient();
     width: $marker-width;
     height: $marker-height;
     border-radius: 50% 50% 50% 0;
@@ -37,7 +22,7 @@ $disabled-color: #999;
     transform: rotate(-45deg);
     left: 50%;
     top: 50%;
-    border: 1px solid $secondary;
+    border: 1px solid $primary;
     margin: -20px 0 0 -20px;
     transition-property: all;
     transition-duration: 200ms;
@@ -45,7 +30,7 @@ $disabled-color: #999;
     [icon] {
         background: white;
         color: white;
-        color: $secondary;
+        color: $primary;
         width: 30px;
         height: 30px;
         padding-bottom: 0px;
@@ -55,7 +40,7 @@ $disabled-color: #999;
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
         font-size: 20px;
-        padding-left: 5px;
+        padding-left: 2px;
     }
     &:hover {
         transform: rotate(-45deg) scale(1.3);

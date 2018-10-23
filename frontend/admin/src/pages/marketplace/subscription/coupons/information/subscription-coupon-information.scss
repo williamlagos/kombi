@@ -1,0 +1,41 @@
+page-subscription-coupon-information {
+    ion-content.content {
+        input[price-input][currencyMask]{
+            font-size: 28px;
+            text-align: center;
+            width: 100%;
+            height: auto;
+            color: $balanced;
+            text-align: center !important;
+            padding-top: 0px;
+            padding-bottom: 10px;
+        }
+        ion-item.item input,
+        ion-item.item textarea {
+            font-size: 12px;
+            margin-left: -10px;
+            text-align: center;
+        }
+        h6 {
+            margin-top: 10px;
+        }
+        ion-col[pet-infos] {
+            padding-top: 0px;
+        }
+        [full-width] {
+            overflow: visible;
+            min-width: 100%;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    page-pet-information {
+        ion-content.content {
+            ion-col[pet-infos] {
+                margin-top: -10px;
+                border-left: 1px solid #efefef;
+            }
+        }
+    }
+}

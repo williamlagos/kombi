@@ -1,0 +1,89 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>
+            <mars-translatable content="new_ride"></mars-translatable>
+        </ion-title>
+    </ion-navbar>
+    <ion-segment [(ngModel)]="segment" color="secondary" (ionChange)="onSegmentChange()">
+        <ion-segment-button value="ORIGIN">
+            1. Partida
+        </ion-segment-button>
+        <ion-segment-button value="DESTINATION">
+            2. Destino
+        </ion-segment-button>
+        <ion-segment-button value="FINISH">
+            3. Enviar
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+<ion-content *ngIf="!globals.isPlacingOrder">
+    <mars-view-spinner *ngIf="!globals.currentOrder"> </mars-view-spinner>
+    <article [ngClass]="{ 'show': !waiting }">
+        <article max-width-container *ngIf="segment == 'ORIGIN'">
+            <section no-padding>
+                <mars-freight-stop [(stop)]="globals.currentOrder.job.origin" [stop-title]="'Origem'" (onNewStopClick)="createStop({}, false)"
+                    (onDestinationClick)="segment = 'DESTINATION'" [is-origin]="true"></mars-freight-stop>
+            </section>
+        </article>
+        <article max-width-container *ngIf="segment == 'DESTINATION'">
+            <!-- <ion-col no-padding *ngFor="let stop of globals.currentOrder.job.stops; let stopIndex = index;">
+                    <mars-freight-stop [(stop)]="globals.currentOrder.job.stops[stopIndex]" [stop-title]="'Parada'"
+                        (onNewStopClick)="createStop({}, false)" (onDestinationClick)="showDestination = true"></mars-freight-stop>
+                </ion-col> -->
+            <ion-col no-padding>
+                <mars-freight-stop [(stop)]="globals.currentOrder.job.destination" [stop-title]="'Destino'"
+                    [is-destination]="true"></mars-freight-stop>
+            </ion-col>
+        </article>
+        <article max-width-container *ngIf="segment == 'FINISH'">
+            <ion-card order>
+                <ion-card-header>
+                    <ion-icon name="clipboard"></ion-icon>&nbsp;
+                    <mars-translatable content="information"></mars-translatable>
+                </ion-card-header>
+                <ion-card-content padding-bottom>
+                    <form padding-bottom #orderForm="ngForm">
+                        <ion-row>
+                            <ion-item ion-col col-12 col-6>
+                                <ion-row>
+                                    <ion-col col-6>
+                                        <mars-translatable content="ride_date"></mars-translatable>
+                                    </ion-col>
+                                    <ion-col col-6>
+                                        <input datetime-input class="flatpickr flatpickr-input" placeholder="Selecionar data/horário"
+                                            tabindex="0" readonly="readonly">
+                                    </ion-col>
+                                </ion-row>
+                            </ion-item>
+                            <ion-item ion-col col-12 col-6>
+                                <ion-label floating>
+                                    <ion-icon name="clipboard"></ion-icon>&nbsp;
+                                    <mars-translatable content="observations"></mars-translatable>:
+                                </ion-label>
+                                <ion-textarea name="observations" [(ngModel)]="globals.currentOrder.payload.observations"
+                                    class="mars-next-focus"></ion-textarea>
+                            </ion-item>
+                        </ion-row>
+                        <br />
+                        <section text-center>
+                            <button class="mars-next-focus" ion-button block rounded color="balanced" margin-top
+                                (click)="placeOrder()" [disabled]="!orderForm.valid">
+                                <mars-translatable content="place_order"></mars-translatable>
+                            </button>
+                        </section>
+                    </form>
+                </ion-card-content>
+            </ion-card>
+        </article>
+    </article>
+    <article waiting auto-fade [ngClass]="{ 'show': waiting }">
+        <ion-spinner name="crescent"></ion-spinner>
+        <br>
+        <mars-translatable content="loading"></mars-translatable>...
+    </article>
+</ion-content>
+<!-- <ion-fab bottom right>
+    <button ion-fab color="secondary" (click)="order()" [disabled]="disableSubmit()">
+        <ion-icon name="ios-paper-plane"></ion-icon>
+    </button>
+</ion-fab> -->

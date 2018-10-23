@@ -10,36 +10,32 @@ import { MarsAuthService } from "@services/auth.service";
 
 @Injectable()
 export class AppUserPages {
-    constructor(public globals: AppGlobals) {
+
+    constructor(private globals: AppGlobals) {
         this.init();
     };
 
-    public init() {
-        this.globals.adminInfoPages = [];
-        this.globals.customerInfoPages = [
-            { name: "contact", icon: "globe", page: "CustomerProfileInformationPage" },
-            { name: "location", icon: "pin", page: "CustomerLocationInformationPage" }
-        ];
-        let customerBasics = { name: "profile", icon: "contact", page: "CustomerBasicInformationPage" };
-        if (!MarsAuthService.isLoggedIn()) {
-            this.globals.adminInfoPages.unshift(customerBasics);
-            this.globals.customerInfoPages.unshift(customerBasics);
-        }
-
-        this.globals.merchantInfoPages = [
-            { name: "profile", icon: "contact", page: "MerchantBasicInformationPage" },
-            { name: "contact", icon: "globe", page: "MerchantContactInformationPage" },
-            { name: "location", icon: "pin", page: "MerchantLocationInformationPage" }
+    init() {
+        this.globals.userPages = [
+           /* Customer Pages */
+           { roles: ["CUSTOMER"], name: "profile", icon: "la-user", page: "CustomerProfileInformationPage" },
+           { roles: ["CUSTOMER"], name: "location", icon: "la-map-marker", page: "CustomerLocationInformationPage" },
+           { roles: ["CUSTOMER"], name: "my_pets", icon: "la-paw", page: "CustomerPetsListPage" },
+           { roles: ["CUSTOMER"], name: "payment_methods", icon: "la-credit-card", page: "PaymentInformationPage" },
         ];
     }
 
-    public getPagesFor(role) {
-        return this.globals[`${role.toLowerCase()}InfoPages`];
+    getPagesFor(roles) {
+        return this.globals.userPages.filter((page, pageIndex) => {
+            return roles.some((role) => {
+                return page.roles.indexOf(role) >= 0;
+            });
+        });
     }
 
-    getUserRole() {
+    getUserRoles() {
         if (!MarsAuthService.isLoggedIn()) return false;
-        return MarsAuthService.getLoggedInUser().role;
+        return MarsAuthService.getLoggedInUser().roles;
     }
 
     getCurrentStep() {
@@ -47,24 +43,24 @@ export class AppUserPages {
         return MarsAuthService.getLoggedInUser().signupStep;
     }
 
-    public getCurrentStepIndex(): number {
+    getCurrentStepIndex(): number {
         if (!MarsAuthService.isLoggedIn()) return 0;
-        let pages = this.getPagesFor(this.getUserRole());
+        let pages = this.getPagesFor(this.getUserRoles());
         let step = this.getCurrentStep();
         let stepIndex = 0;
         pages.map((current, index) => { if (current.page == step) stepIndex = index; });
         return stepIndex;
     }
 
-    public getNextStepFor(role, page) {
-        let pages = this.getPagesFor(role);
+    getNextStepFor(roles, page) {
+        let pages = this.getPagesFor(roles);
         let nextStep = 0;
         pages.forEach((current, index) => { if (current.page == page) nextStep = (index + 1); });
         return pages[nextStep] ? pages[nextStep].page : "finished";
     }
 
-    public getPreviousStepFor(role, page) {
-        let pages = this.getPagesFor(role);
+    getPreviousStepFor(roles, page) {
+        let pages = this.getPagesFor(roles);
         let nextStep = 0;
         pages.forEach((current, index) => { if (current.page == page) nextStep = (index - 1); });
         return pages[nextStep] ? pages[nextStep].page : "LoginPage";

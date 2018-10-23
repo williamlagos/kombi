@@ -4,31 +4,30 @@
  * @author M.A.R.S. Labs
  */
 
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { Platform } from "ionic-angular";
 import { IonicPage } from "ionic-angular";
 
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";
-import { AppConstants } from "@app/app.constants";
 
 @IonicPage({
-    segment: "content",
-    priority: "high"
+    segment: "about"
 })
-
 @Component({
     selector: "page-about",
-    templateUrl: "about.html"
+    templateUrl: "about.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class AboutPage {
 
     translations: AppTranslations;
 
-    constructor(public platform: Platform,
-        public locales: AppLocales,
-        public globals: AppGlobals) {
+    constructor(private changeDetector: ChangeDetectorRef,
+        private platform: Platform,
+        private locales: AppLocales,
+        private globals: AppGlobals) {
         this.translations = this.locales.load();
     }
 }

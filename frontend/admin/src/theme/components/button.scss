@@ -48,6 +48,7 @@ ion-header {
         &[large] {
             width: 50px;
             height: 50px;
+            padding-bottom: 15px;
         }
         &[outline] {
             border-width: 2px;
@@ -55,7 +56,9 @@ ion-header {
             box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
         }
         &[icon] {
-            font-size: 14px;
+            ion-icon:before{
+                font-size: 16px;
+            }
             &[unicode] {
                 font-size: 17px;
             }
@@ -72,7 +75,7 @@ ion-header {
             @include linearGradient($positive, adjust-hue($positive, 10));
         }
         &[color=danger] {
-            @include linearGradient($danger, adjust-hue($danger, 5));
+            @include linearGradient($danger, adjust-hue($danger, 10));
         }
         &[color=balanced] {
             @include linearGradient($balanced, adjust-hue($balanced, 35));

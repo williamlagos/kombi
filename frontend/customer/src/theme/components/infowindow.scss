@@ -1,0 +1,29 @@
+.infowindow {
+    max-width: 320px;
+    transition-property: none;
+    max-height: 100px;
+    &.disabled {
+        .infowindow-title {
+            color: #AAA;
+        }
+    }
+    .infowindow-content {
+        text-align: center;
+        .infowindow-title {
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 0px;
+            color: $primary;
+        }
+        .infowindow-body {
+            margin-top: -5px;
+            margin-bottom: 2px;
+            color: $light;
+        }
+    }
+}
+
+.infowindow-link {
+    display: block;
+}

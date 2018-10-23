@@ -13,7 +13,7 @@ import { NgModel } from "@angular/forms";
 })
 
 export class MarsElasticInputDirective {
-    constructor(public _view: ViewContainerRef, public model: NgModel) { }
+    constructor(private _view: ViewContainerRef, private model: NgModel) { }
 
     ngOnInit() {
         this.model.valueChanges.subscribe(() => { this.updateElementHeight(); });

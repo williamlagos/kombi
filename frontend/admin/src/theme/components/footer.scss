@@ -1,0 +1,8 @@
+[app-footer] {
+    border-top: 0px;
+    color: #AAA;
+    font-size: 12px;
+    &::before {
+        background: none;
+    }
+}

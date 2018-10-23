@@ -5,13 +5,8 @@
  * @description Application Module.
  */
 
-// Polyfills
-import "intl";
-/* import "intl/locale-data/jsonp/en.js";
-import "intl/locale-data/jsonp/pt.js"; */
-/* For keyboards without the pipe key, copy and paste: | */
+declare var window;
 
-// ----------------- External Modules
 import { Platform, Config } from "ionic-angular";
 import { NgModule } from "@angular/core";
 import { IonicModule } from "ionic-angular";
@@ -22,15 +17,10 @@ import { ErrorHandler } from "@angular/core";
 import { IonicErrorHandler } from "ionic-angular";
 import { LOCALE_ID } from "@angular/core";
 import { registerLocaleData } from "@angular/common";
-import { Vibration } from "@ionic-native/vibration";
 import localePt from "@angular/common/locales/pt";
-import localeEs from "@angular/common/locales/es";
 
-// 3rd Party Modules
 import { Uploader } from "angular2-http-file-upload/uploader/uploader";
-import flatpickr from "flatpickr";
 
-// App Global Modules
 import { MyApp } from "@app/app.component";
 import { AppConstants } from "@app/app.constants";
 import { AppGlobals } from "@app/app.globals";
@@ -41,13 +31,12 @@ import { AppMainPages } from "@pages/main-pages";
 import { AppUserPages } from "@pages/user-pages";
 import { Backend } from "@backend/index";
 
-// Feature Modules
 import { ComponentsModule } from "@components/components.module";
 import { MarsNavbarComponent } from "@components/mars-navbar/mars-navbar";
 import { DirectivesModule } from "@directives/directives.module";
 import { PipesModule } from "@pipes/pipes.module";
 
-// ----------------- Mars Services
+import { MarsCartService } from "@services/cart.service";
 import { MarsAuthService } from "@services/auth.service";
 import { MarsFileUploaderService } from "@services/file-uploader.service";
 import { MarsInteractionService } from "@services/interaction.service";
@@ -64,11 +53,6 @@ import { MarsMapMarkerService } from "@services/geolocation/marker.service";
 import { MarsInfoWindowService } from "@services/geolocation/infowindow.service";
 import { MarsMobileKeyboardService } from "@services/mobile-keyboard.service";
 
-let address = window.location.href;
-let isIP = RegExp('^http[s]?:\/\/((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])');
-let isLocalhost = address.indexOf("localhost") > -1 || isIP.test(address);
-let locationStrategy = isLocalhost ? 'hash' : 'path';
-
 @NgModule({
     declarations: [
         MyApp,
@@ -76,9 +60,8 @@ let locationStrategy = isLocalhost ? 'hash' : 'path';
     imports: [
         IonicModule.forRoot(MyApp, {
             backButtonText: "",
-            mode: 'md', // 'md' | 'ios' | 'wp'
-            useHash: false,
-            locationStrategy: locationStrategy
+            mode: 'md',
+            useHash: false
         }),
         BrowserModule,
         CommonModule,
@@ -91,7 +74,6 @@ let locationStrategy = isLocalhost ? 'hash' : 'path';
     providers: [
         { provide: ErrorHandler, useClass: IonicErrorHandler },
         { provide: LOCALE_ID, useValue: "pt-BR" },
-        /* { provide: LocationStrategy, useClass: (isLocalhost ? HashLocationStrategy : PathLocationStrategy) }, */
         AppConstants,
         AppGlobals,
         AppLocales,
@@ -99,6 +81,7 @@ let locationStrategy = isLocalhost ? 'hash' : 'path';
         AppUserPages,
         AppUtils,
         MarsSocket,
+        MarsCartService,
         MarsAuthService,
         MarsFileUploaderService,
         MarsInteractionService,
@@ -108,7 +91,7 @@ let locationStrategy = isLocalhost ? 'hash' : 'path';
         MarsPushNotificationService,
         MarsViewService,
         MarsNavbarComponent,
-        // Geolocation Modules
+
         MarsGeolocationService,
         MarsMapsService,
         MarsNearByService,
@@ -116,20 +99,22 @@ let locationStrategy = isLocalhost ? 'hash' : 'path';
         MarsDirectionsService,
         MarsMapMarkerService,
         MarsInfoWindowService,
-        Uploader,
+        Uploader
     ]
 })
 
 export class AppModule {
-    constructor(public platform: Platform, public config: Config, public keyboard: MarsMobileKeyboardService) {
+    constructor(public platform: Platform,
+        public config: Config,
+        public keyboard: MarsMobileKeyboardService) {
         Backend.setDomain(AppConstants.SERVER_ADDRESS);
         platform.ready().then((readySource) => {
             this.keyboard.initialize();
             if (platform.is("ios")) config.set("spinner", "dots");
-            if (platform.is("cordova")) { // Okay, so the platform is ready and our plugins are available.
-                /*  splashscreen.hide();
-                 statusbar.show();
-                 statusbar.backgroundColorByHexString(AppConstants.DARKER_primary_color); */
+            if (window.cordova) {
+                console.log("Hi! I'm in cordova mode.");
+                (window as any).StatusBar.show();
+                (window as any).StatusBar.backgroundColorByHexString(AppConstants.DARKER_SECONDARY_COLOR);
             }
         });
         registerLocaleData(localePt, 'pt-BR');

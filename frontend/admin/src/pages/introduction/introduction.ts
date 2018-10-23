@@ -4,7 +4,7 @@
  * @author M.A.R.S. Labs
  */
 
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { ViewChild } from "@angular/core";
 import { App, Platform, NavController } from "ionic-angular";
 import { IonicPage } from "ionic-angular";
@@ -17,12 +17,12 @@ import { MarsNavigationService } from "@services/navigation.service";
 import { MarsAuthService } from "@services/auth.service";
 
 @IonicPage({
-    segment: "hello",
-    priority: "high"
+    segment: "intro"
 })
 @Component({
     selector: "page-introduction",
     templateUrl: "introduction.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class IntroductionPage {
@@ -48,14 +48,15 @@ export class IntroductionPage {
         { icon: 'trending-up', text: 'merchant_app_step_five' },
     ];
 
-    public static INTRODUCTION_STATUS = AppConstants.CODENAME.toUpperCase() + "_INTRODUCTION_STATUS";
+    static INTRODUCTION_STATUS = AppConstants.NAME.toUpperCase() + "_INTRODUCTION_STATUS";
 
-    constructor(public platform: Platform,
-        public app: App,
-        public locales: AppLocales,
-        public navCtrl: NavController,
-        public authService: MarsAuthService,
-        public globals: AppGlobals) {
+    constructor(private platform: Platform,
+        private changeDetector: ChangeDetectorRef,
+        private app: App,
+        private locales: AppLocales,
+        private navCtrl: NavController,
+        private authService: MarsAuthService,
+        private globals: AppGlobals) {
         this.navigationService = new MarsNavigationService(this.app);
         this.navigationService.setNavCtrl(this.navCtrl);
         this.translations = this.locales.load();
@@ -99,7 +100,7 @@ export class IntroductionPage {
                      if (distance < -100)
                          this.slides.slidePrev();
                  };
-                 // swiper.addEventListener("mousewheel", shouldSwipe);
+                 
                  swiper.addEventListener("wheel", shouldSwipe);
              }, 1000); */
 

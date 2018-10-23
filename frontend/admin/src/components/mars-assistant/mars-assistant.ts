@@ -5,14 +5,17 @@
  * @description Assistant with message.
  */
 
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 
 @Component({
     selector: "mars-assistant",
-    templateUrl: "mars-assistant.html"
+    templateUrl: "mars-assistant.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class MarsAssistantComponent {
+    
     @Input("message") message: string;
-    constructor() { }
+
+    constructor(private changeDetector: ChangeDetectorRef) { }
 }

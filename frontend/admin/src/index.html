@@ -3,7 +3,6 @@
 
 <head>
     <title>name_placeholder</title>
-    <base href="/">
     <meta charset="UTF-8">
     <meta name="fragment" content="!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -14,10 +13,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="primary_color_placeholder">
     <link rel="icon" href="assets/icon/favicon.ico?v=2">
     <script>
-        document.onreadystatechange = () => {
+        document.onreadystatechange = function() {
             if (document.readyState === 'interactive') {
                 document.addEventListener("deviceready", function () { // Hides splashscreen as soons as the app is available
-                    navigator.splashscreen.hide();
+                    setTimeout(function() {
+                        window.StatusBar.backgroundColorByHexString("primary_color_placeholder");
+                        window.navigator.splashscreen.hide();
+                        window.StatusBar.show();
+                    }, 200);
                 }, false);
             }
         };
@@ -35,7 +38,7 @@
     <style>
         body {
             margin: 0px;
-            background-color: white;
+            background-color: #efefef;
         }
 
         [splashscreen] {
@@ -109,21 +112,22 @@
             color: #fff;
         }
     </style>
+    <style>
+        @font-face {
+          font-family: 'line-awesome';
+          src: url('assets/fonts/line-awesome/line-awesome.eot?39m2i2');
+          src: url('assets/fonts/line-awesome/line-awesome.eot?39m2i2#iefix') format('embedded-opentype'), url('assets/fonts/line-awesome/line-awesome.ttf?39m2i2') format('truetype'), url('assets/fonts/line-awesome/line-awesome.woff?39m2i2') format('woff'), url('assets/fonts/line-awesome/line-awesome.svg?39m2i2#line-awesome') format('svg');
+          font-weight: normal;
+          font-style: normal;
+        }
+    </style>
     <link rel="manifest" href="manifest.json">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="build/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link defer async href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link defer async href="build/main.css" rel="stylesheet">
     <noscript>
         <link rel="stylesheet" href="build/main.css">
     </noscript>
 </head>
-
-<article splashscreen class="vignette">
-    <img src="assets/images/logo.png" width="200" height="200">
-    <h1>name_placeholder</h1>
-    <section style="margin-top: 12px;">loading_placeholder...</section>
-    <spinner></spinner>
-</article>
 
 <body>
     <noscript>
@@ -132,22 +136,28 @@
         </h3>
         <p>Please enable it to get the full experience.</p>
     </noscript>
-    
+    <article splashscreen class="vignette">
+        <img src="assets/images/logo.png" width="200" height="200">
+        <h1>name_placeholder</h1>
+        <section style="margin-top: 12px;">loading_placeholder...</section>
+        <spinner></spinner>
+    </article>
+
     <ion-app></ion-app>
-    
+
     <script src="build/polyfills.js"></script>
-    
+
     <script src="build/vendor.js"></script>
-    
+
     <script src="build/main.js"></script>
-    
+
     <script src="cordova.js"></script>
-    
+
     <script async defer type="text/javascript" src="assets/scripts/hellojs/dist/hello.all.min.js"></script>
     <script async defer type="text/javascript" src="assets/scripts/image-tools/image-tools.js"></script>
     <script async defer type="text/javascript" src="assets/scripts/misc/geolocator.min.js"></script>
     <script async defer type="text/javascript" src="assets/scripts/misc/blueimp-load-image.min.js"></script>
-    
+
 </body>
 
 </html>

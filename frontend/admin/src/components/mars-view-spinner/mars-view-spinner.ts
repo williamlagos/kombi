@@ -5,13 +5,17 @@
  * @description Spinner component.
  */
 
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 @Component({
     selector: "mars-view-spinner",
-    templateUrl: "mars-view-spinner.html"
+    templateUrl: "mars-view-spinner.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class MarsViewSpinnerComponent {
-    constructor() { }
+    
+    constructor(private changeDetector: ChangeDetectorRef) { }
+    
     ngOnInit() { }
+
 }

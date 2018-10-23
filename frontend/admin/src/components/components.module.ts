@@ -23,17 +23,14 @@ import { Ionic2RatingModule } from "ionic2-rating/dist/ionic2-rating.module";
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { NgxMaskModule } from 'ngx-mask';
 
-// Marketplace
+
 import { MarketItemCategoryComponent } from "./marketplace/market-item-category/market-item-category";
 import { MarsProductComponent } from "./mars-product/mars-product";
 import { MarsProductOptionsMenu } from "./mars-product/options/mars-product-options";
 import { MarsBankAccountCardComponent } from './mars-bank-account-card/mars-bank-account-card';
-import { MarsRecipeComponent } from './mars-recipe/mars-recipe';
-import { MarsRecipeOptionsMenu } from './mars-recipe/options/mars-recipe-options';
-import { MarsFreightStopComponent } from './mars-freight-stop/mars-freight-stop';
 
 @NgModule({
-    entryComponents: [MarsProductOptionsMenu, MarsRecipeOptionsMenu],
+    entryComponents: [MarsProductOptionsMenu],
     imports: [
         CommonModule,
         IonicModule,
@@ -49,14 +46,12 @@ import { MarsFreightStopComponent } from './mars-freight-stop/mars-freight-stop'
         MarsSignupProgressComponent,
         MarsTranslatableComponent,
         MarsViewSpinnerComponent,
+        
         MarketItemCategoryComponent,
         MarsProductComponent,
         MarsProductOptionsMenu,
-        MarsRecipeComponent,
-        MarsRecipeOptionsMenu,
         MarsCreditCardComponent,
-        MarsBankAccountCardComponent,
-        MarsFreightStopComponent,
+        MarsBankAccountCardComponent
     ],
     exports: [
         MarsAssistantComponent,
@@ -64,13 +59,11 @@ import { MarsFreightStopComponent } from './mars-freight-stop/mars-freight-stop'
         MarsSignupProgressComponent,
         MarsTranslatableComponent,
         MarsViewSpinnerComponent,
+        
         MarketItemCategoryComponent,
         MarsProductComponent,
-        MarsRecipeComponent,
-        MarsRecipeOptionsMenu,
         MarsCreditCardComponent,
-        MarsBankAccountCardComponent,
-        MarsFreightStopComponent
+        MarsBankAccountCardComponent
     ]
 })
 export class ComponentsModule { }

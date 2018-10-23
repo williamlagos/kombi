@@ -31,4 +31,23 @@ ion-fab {
     .button-inner {
         overflow: visible;
     }
+    label {
+        font-size: 10px;
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin-top: 5px;
+        text-transform: uppercase;
+        color: $dark;
+        font-weight: bold;
+    }
+}
+
+ion-fab {
+    &[bottom] {
+        bottom: 80px;
+    }
+    &[right] {
+        right: 20px;
+    }
 }

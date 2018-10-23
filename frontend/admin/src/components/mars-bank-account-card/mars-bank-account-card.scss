@@ -75,17 +75,17 @@
          display: none;
      }
      [cardholder-container] {
-         width: 100%;
+         width: 75%;
          display: inline-block;
          [card-holder] {
-             width: 100%;
+             width: 90%;
          }
      }
      [bank-container] {
-         width: 75%;
+         width: 100%;
          display: inline-block;
          select {
-             width: 90%;
+             width: 100%;
          }
      }
      [agency-container] {

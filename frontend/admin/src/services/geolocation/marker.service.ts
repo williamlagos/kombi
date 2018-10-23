@@ -23,7 +23,7 @@ export class MarsMapMarkerService {
     static GOOGLE_MAPS_PROVIDER = "google";
     static MARS_PROVIDER = "mars";
 
-    constructor(public platform: Platform, public globals: AppGlobals) { }
+    constructor(private platform: Platform, private globals: AppGlobals) { }
 
     getMarker(map: google.maps.Map, position: google.maps.LatLng, place, options: any = {}) {
         let isMD = document.querySelector("ion-app").className.indexOf("md") > -1;
@@ -33,7 +33,6 @@ export class MarsMapMarkerService {
             map: map,
             visible: true,
             optimized: true,
-            shadow: 'none',
             content: `<section class='marker ${place.cssClasses}'>
                 <section icon>
                     <ion-icon class="icon icon-${platform} ion-${platform}-${place.ionIcon || this.globals.mapMarkerIcon}"></ion-icon> 

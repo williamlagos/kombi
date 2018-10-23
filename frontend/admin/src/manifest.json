@@ -1,6 +1,6 @@
 {
-    "name": "Frete Fácil",
-    "short_name": "Frete Fácil",
+    "name": "99Pets",
+    "short_name": "99Pets",
     "start_url": "index.html",
     "display": "standalone",
     "icons": [
@@ -10,6 +10,6 @@
             "type": "image/png"
         }
     ],
-    "background_color": "#ff9100",
-    "theme_color": "#ff6f00"
+    "background_color": "#ff0044",
+    "theme_color": "#ff145a"
 }

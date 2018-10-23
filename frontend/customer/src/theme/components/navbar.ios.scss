@@ -1,0 +1,185 @@
+.ios {
+    $navbar-width: 280px;
+    $shrinked-navbar-width: $navbar-ios-height;
+    $item-height: $navbar-ios-height;
+    mars-navbar {
+        height: 100vh;
+        display: block;
+        z-index: 100;
+        .drawer {
+            width: 100vw;
+            height: 100vh;
+            @include secondary-gradient();
+            &.scroll-left {
+                [header],
+                [footer] [footer-text] {
+                    width: $shrinked-navbar-width;
+                    font-weight: bold;
+                    font-size: 25px;
+                    padding-top: 10px;
+                    padding-right: 5px;
+                    [title] {
+                        font-size: 0px;
+                    }
+                    img {
+                        max-width: 80%;
+                        margin-left: 4px;
+                        margin-bottom: -10px;
+                    }
+                }
+                .tabbar {
+                    max-width: $shrinked-navbar-width;
+                    .tab-button {
+                        padding-left: 7px;
+                        height: $item-height;
+                        .tab-button-text {
+                            margin-left: -100vw;
+                        }
+                        .tab-button-icon {
+                            margin-top: 0px;
+                        }
+                        .tab-badge {
+                            margin-left: 0px;
+                        }
+                        &[aria-selected=true] {
+                            padding-top: 7px;
+                        }
+                    }
+                }
+                ion-tab {
+                    left: $shrinked-navbar-width;
+                    max-width: calc(100vw - #{$shrinked-navbar-width});
+                }
+            }
+            [header] {
+                height: $item-height;
+                width: $navbar-width;
+                font-size: 16px;
+                font-weight: bold;
+                color: white;
+                margin-right: 2px;
+                padding-top: 16px;
+                border: 1px solid $primary;
+                border-bottom: none;
+                cursor: pointer;
+                position: absolute;
+                z-index: 999999;
+                ion-icon {
+                    vertical-align: middle;
+                    font-size: 20px;
+                    margin-left: 5px;
+                }
+            }
+            [footer] {
+                position: fixed;
+                bottom: 20px;
+                max-width: $navbar-width;
+                [footer-text] {
+                    color: $light;
+                    width: $navbar-width;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @media(min-width: 768px) {
+        ion-navbar {
+            border-left: 1px solid $primary;
+        }
+        ion-tabs.tabs {
+            ion-tab {
+                left: calc(0px + #{$navbar-width});
+                max-width: calc(100vw - #{$navbar-width});
+                background-color: white;
+                .scroll-content {
+                    margin-bottom: 0px !important;
+                }
+            }
+            .tabbar {
+                display: block;
+                max-width: $navbar-width;
+                position: relative;
+                top: $item-height;
+                box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
+                height: 100vh;
+                background-color: white;
+            }
+            a.tab-button {
+                text-align: left;
+                display: block;
+                padding: 10px;
+                padding-top: 5px;
+                .tab-button-text,
+                .tab-button-icon {
+                    vertical-align: middle;
+                    color: #999;
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+                .tab-button-text {
+                    padding: 10px;
+                    padding-left: 0px;
+                }
+                .tab-badge {
+                    left: 29px;
+                    top: 8px;
+                    padding-top: 2px;
+                }
+                &[aria-selected=true] {
+                    padding: 10px;
+                    padding-top: 5px;
+                    font-weight: bold;
+                    background-color: $primary;
+                    @include secondary-gradient();
+                    span.tab-button-text,
+                    ion-icon.tab-button-icon {
+                        transform: none;
+                        color: white;
+                    }
+                }
+                &[aria-selected=true],
+                &:hover {
+                    padding-left: 75px;
+                    opacity: 1;
+                    .tab-badge {
+                        margin-left: 66px;
+                    }
+                }
+                &.tab-hidden {
+                    display: none;
+                }
+            }
+        }
+    }
+    @media(max-width: 768px) {
+        ion-tabs {
+            .tabbar {
+                background: white !important;
+                .tab-button {
+                    .tab-button-text {
+                        display: none;
+                    }
+                }
+                .tab-badge {
+                    padding-top: 3px;
+                    margin-top: 16px;
+                    margin-right: 16px;
+                }
+            }
+        }
+        .ios {
+            ion-tab {
+                .scroll-content {
+                    margin-bottom: $navbar-ios-height !important;
+                }
+            }
+        }
+        .md {
+            ion-tab {
+                .scroll-content {
+                    margin-bottom: $navbar-md-height !important;
+                }
+            }
+        }
+    }
+}

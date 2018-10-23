@@ -15,15 +15,20 @@ $font-path: "../assets/fonts";
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
-$primary: #ff6f00;
-$secondary: #ff9100;
-$terciary: #242b35;
+$primary: #ff145a;
+$secondary: #ff0044;
+$terciary: #1e88e5;
+$ong: #1e88e5;
+$service_provider: #1e88e5;
+$products_establishment: #1e88e5;
+$service_establishment: #1e88e5;
+$service_and_produts_establishment: #1e88e5;
 $positive: #1e88e5;
-$balanced : rgb(76, 175, 104);
-$danger : rgb(215, 83, 74);
+$balanced : rgb(75, 196, 110);
+$danger : rgb(247, 68, 68);
 $energized: #ffa114;
 $light : #f4f4f4;
-$dark : #666;
+$dark : #555;
 $white: #ffffff;
 $light-grey: #AAA;
 $almost-white: #dedede;
@@ -43,7 +48,7 @@ $text-input-highlight-color: #3ebfe2;
 $background-color: darken(white, 0%);
 $secondary-font-family: 'Roboto', sans-serif;
 $app-logo-src: "../assets/images/logo.png";
-$text-input-placeholder-color: $secondary;
+$text-input-placeholder-color: $dark;
 $navbar-width: 280px;
 // App iOS Variables
 $ios-bar-height: 56px;
@@ -68,7 +73,7 @@ $searchbar-ios-min-height: $ios-bar-height;
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/v2/ionicons/
-@import "ionic.ionicons";
+// @import "ionic.ionicons";
 // Fonts
 // --------------------------------------------------
 @import "roboto";

@@ -14,7 +14,7 @@ import { SafeHtml, SafeStyle } from "@angular/platform-browser";
     name: "safe"
 })
 export class SafePipe {
-    constructor(public sanitized: DomSanitizer) { }
+    constructor(private sanitized: DomSanitizer) { }
 
     transform(value, type): any {
         switch (type) {

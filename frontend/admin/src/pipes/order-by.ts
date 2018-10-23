@@ -20,11 +20,11 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class OrderByPipe implements PipeTransform {
 
-    value: string[] = [];
-    iterations: number = 1;
-    HEALTHY_MAXIMUM_ITERATIONS_NUMBER = 200;
-    thePipeIsOverloadingTheView = false;
-    overloadWarningHasBeenShown = false;
+    private value: string[] = [];
+    private iterations: number = 1;
+    private HEALTHY_MAXIMUM_ITERATIONS_NUMBER = 200;
+    private thePipeIsOverloadingTheView = false;
+    private overloadWarningHasBeenShown = false;
 
     static _orderByComparator(a: any, b: any): number {
 
@@ -39,23 +39,23 @@ export class OrderByPipe implements PipeTransform {
 
         if ((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))) {
 
-            // Isn"t a number so lowercase the string to properly compare
+            
             if (a.toLowerCase() < b.toLowerCase()) return -1;
             if (a.toLowerCase() > b.toLowerCase()) return 1;
         } else {
 
-            // Parse strings as numbers to compare properly
+            
             if (parseFloat(a) < parseFloat(b)) return -1;
             if (parseFloat(a) > parseFloat(b)) return 1;
 
         }
 
-        return 0; // equal each other
+        return 0; 
     }
 
     transform(input: any, config: string = "+"): any {
 
-        // invalid input given
+        
         if (!input) return input;
 
         this.iterations++;
@@ -64,7 +64,7 @@ export class OrderByPipe implements PipeTransform {
             console.warn(OrderByPipe.name + `: the change detection strategy is making the pipe run too many times in a row. 
             Please, consider changing it to ChangeStrategy.OnPush in order to make change detections only when necessary.`);
 
-        // make a copy of the input"s reference
+        
         this.value = [...input];
         let value = this.value;
 
@@ -74,7 +74,7 @@ export class OrderByPipe implements PipeTransform {
             let propertyToCheck: string = !Array.isArray(config) ? config : config[0];
             let desc = propertyToCheck.substr(0, 1) == "-";
 
-            // Basic array
+            
             if (!propertyToCheck || propertyToCheck == "-" || propertyToCheck == "+") {
                 return !desc ? value.sort() : value.sort().reverse();
             }
@@ -105,7 +105,7 @@ export class OrderByPipe implements PipeTransform {
             }
         }
         else {
-            // Loop over property of the array in order and sort
+            
             return value.sort(function (a: any, b: any) {
                 for (let i: number = 0; i < config.length; i++) {
                     let desc = config[i].substr(0, 1) == "-";
@@ -131,11 +131,11 @@ export class OrderByPipe implements PipeTransform {
                         ? OrderByPipe._orderByComparator(aValue, bValue)
                         : -OrderByPipe._orderByComparator(aValue, bValue);
 
-                    // Don"t return 0 yet in case of needing to sort by next property
+                    
                     if (comparison != 0) return comparison;
                 }
 
-                return 0; // equal each other
+                return 0; 
             });
         }
     }

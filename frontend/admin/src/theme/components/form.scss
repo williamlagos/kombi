@@ -29,22 +29,22 @@ ion-textarea textarea {
 
 input::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
-    color: $secondary;
+    color: #888 !important;
 }
 
 input::-moz-placeholder {
     /* Firefox 19+ */
-    color: $secondary;
+    color: #888 !important;
 }
 
 input:-ms-input-placeholder {
     /* IE 10+ */
-    color: $secondary;
+    color: #888 !important;
 }
 
 input:-moz-placeholder {
     /* Firefox 18- */
-    color: $secondary;
+    color: #888 !important;
 }
 
 [hello] {
@@ -126,7 +126,7 @@ input {
     background: transparent;
     font-size: 14px;
     height: 100%;
-    color: $light;
+    color: $dark;
 }
 
 ion-row {
@@ -145,7 +145,7 @@ input[currencyMask] {
     border: none;
     width: 100%;
     padding: 0px;
-    color: $light;
+    color: $dark;
     padding-top: 12px;
 }
 
