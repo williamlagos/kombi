@@ -18,14 +18,14 @@ import { MarsSocket } from "@app/app.socket";
 import { Backend } from "@backend/index";
 
 @IonicPage({
-    segment: "order-history",
+    segment: "job-history",
     priority: "high"
 })
 @Component({
-    selector: "page-order-history",
-    templateUrl: "order-history.html",
+    selector: "page-job-history",
+    templateUrl: "job-history.html",
 })
-export class OrderHistoryPage {
+export class JobHistoryPage {
 
     navigationService: MarsNavigationService;
     translations: AppTranslations;
@@ -57,7 +57,7 @@ export class OrderHistoryPage {
     }
 
     ionViewCanEnter() {
-        return this.navigationService.authCheck(OrderHistoryPage.name, ['customer']);
+        return this.navigationService.authCheck(JobHistoryPage.name, ['customer']);
     }
 
     ionViewDidEnter() {

@@ -5,21 +5,21 @@
  */
 
 import { NgModule } from "@angular/core";
-import { OrderCreationPage } from "./order-creation";
+import { JobHistoryPage } from "./job-history";
 import { IonicPageModule } from "ionic-angular";
 import { ComponentsModule } from "@components/components.module";
 import { DirectivesModule } from "@directives/directives.module";
 import { PipesModule } from "@pipes/pipes.module";
-import { CurrencyMaskModule } from "ng2-currency-mask";
+import { Ionic2RatingModule } from "ionic2-rating";
 
 @NgModule({
-  declarations: [OrderCreationPage],
+  declarations: [JobHistoryPage],
   imports: [
-    IonicPageModule.forChild(OrderCreationPage),
+    IonicPageModule.forChild(JobHistoryPage),
     ComponentsModule,
     DirectivesModule,
     PipesModule,
-    CurrencyMaskModule,
+    Ionic2RatingModule
   ],
 })
-export class OrderCreationPageModule { }
+export class JobHistoryPageModule { }

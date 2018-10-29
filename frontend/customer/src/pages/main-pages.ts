@@ -28,7 +28,7 @@ export class AppMainPages {
                 getRootParams: () => { return {} },
                 getTitle: () => { return "Home"; },
                 getUrlPath: () => { return "index" },
-                getIcon: () => { return "home"; },
+                getIcon: () => { return "car"; },
                 getBadge: () => { return 0; },
                 canShow: () => { return (!MarsAuthService.isLoggedIn()) || (MarsAuthService.hasRole('CUSTOMER')); },
                 disable: () => { return this.globals.disableNavigation }
@@ -44,10 +44,10 @@ export class AppMainPages {
                 disable: () => { return this.globals.disableNavigation }
             },
             {
-                getRoot: () => { return "OrderHistoryPage"; },
+                getRoot: () => { return "JobHistoryPage"; },
                 getRootParams: () => { return {} },
                 getTitle: () => { return "Meus Fretes"; },
-                getUrlPath: () => { return "orders" },
+                getUrlPath: () => { return "time" },
                 getIcon: () => { return "car"; },
                 getBadge: () => { return 0; },
                 canShow: () => { return MarsAuthService.hasRole('CUSTOMER') },
