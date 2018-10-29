@@ -419,7 +419,7 @@ module.exports = {
     "ride": `Frete`,
     "rides": `Fretes`,
     "ride_date": `Data do frete`,
-    "ride_time": `Tempo do frete`,
+    "ride_time": `Horário do frete`,
     "ride_start": `Endereço de partida (Ex: Av. Getúlio Vargas, 2332) ;)`,
     "ride_stop": `Parada opcional (Ex: Av. Getúlio Vargas, 2332)`,
     "ride_destiny": `Endereço de destino (Ex: Av. Getúlio Vargas, 2332)`,

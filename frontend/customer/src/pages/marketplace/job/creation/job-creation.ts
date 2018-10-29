@@ -17,6 +17,8 @@ import { MarsAuthService } from "@services/auth.service";
 import flatpickr from "flatpickr";
 import { Backend } from "@backend/index";
 import { MarsAddressAutocompleteDirective } from "@directives/mars-address-autocomplete";
+import { AppConstants } from "@app/app.constants";
+import { MarsSocket } from "@app/app.socket";
 
 @IonicPage({
     segment: "job-creation",
@@ -31,8 +33,15 @@ export class JobCreationPage {
     segment: string = "ORIGIN";
     navigationService: MarsNavigationService;
     translations: AppTranslations;
-    showDestination: boolean = false;
     pickr: any;
+    jobDate: string;
+    jobTime: string;
+    token: string;
+    merchant: any;
+    waiting: boolean;
+    receivingModes: Array<any>;
+    paymentModes: Array<any>;
+    CURRENCY_OPTIONS = AppConstants.CURRENCY_OPTIONS;
 
     constructor(public platform: Platform,
         public app: App,
@@ -47,16 +56,14 @@ export class JobCreationPage {
         this.translations = this.locales.load();
     }
 
-    ionViewDidLoad() {
-        if (this.globals.isPlacingOrder) this.navigationService.goTo("OrderCreationPage");
-        else this.initOrder();
-    }
-
     ionViewWillEnter() {
         this.initialize();
     };
 
-    initialize() { };
+    initialize() {
+        if (this.globals.isPlacingOrder) this.segment == "FINISH";
+        else this.initOrder();
+    };
 
     onSegmentChange() {
         if (this.segment == "FINISH" && !this.pickr) {
@@ -75,6 +82,7 @@ export class JobCreationPage {
 
 
     initOrder() {
+        this.globals.currentOrder.job.scheduledTo = {};
         this.createStop(this.globals.currentOrder.job.origin.address, true);
     };
 
@@ -94,18 +102,73 @@ export class JobCreationPage {
         return !this.globals.currentOrder.job.destination || !this.globals.currentOrder.job.destination.address || !this.globals.currentOrder.job.destination.address.number;
     };
 
-    order() {
+    showDestination() {
         if (this.globals.currentOrder && this.globals.currentOrder.job && this.globals.currentOrder.job.origin && this.globals.currentOrder.job.origin.items)
             this.globals.currentOrder.job.origin.items = this.globals.currentOrder.job.origin.items.filter((item) => { return item && item.description; });
+        this.segment = "DESTINATION";
+        this.changeDetector.detectChanges();
+    }
+
+    showFinalSegment() {
         if (MarsAuthService.isLoggedIn()) {
-            this.goToOrderPage();
+            this.segment = "FINISH";
+            this.changeDetector.detectChanges();
         } else {
-            this.interactionService.alert(this.translations.you_must_be_authenticated_to_finish_the_order, () => {
-                this.globals.isPlacingOrder = true;
-                this.navigationService.setRoot("LoginPage", { token: "access" });
-            })
+            this.redirectToAuthPage();
         }
     };
+
+    parseRideDate() {
+        let rideDate = this.globals.currentOrder.job.date;
+        let rideTime = this.globals.currentOrder.job.time;
+        let parsedDate = new Date();
+        parsedDate.setDate(parseInt(rideDate.split("/")[0]) + -1);
+        parsedDate.setDate(parseInt(rideDate.split("/")[1]) + -1);
+        parsedDate.setHours(parseInt(rideTime.split(":")[0]));
+        parsedDate.setMinutes(parseInt(rideTime.split(":")[1]));
+        return parsedDate;
+    }
+
+    async placeOrder() {
+        if (!MarsAuthService.isLoggedIn()) return this.redirectToAuthPage();
+        try {
+            let token = MarsAuthService.getMarsToken();
+            this.globals.currentOrder.job.scheduledTo = this.parseRideDate();
+            this.waiting = true;
+            let order = (await Backend.createOrder({ order: this.globals.currentOrder, xAccessToken: token })).data;
+            MarsSocket.emit('join', MarsAuthService.getLoggedInUser()._id);
+            this.finishOrder();
+        } catch (e) {
+            console.log(e);
+            this.waiting = false;
+            this.interactionService.alert(this.translations.server_failure);
+        } finally {
+            this.changeDetector.detectChanges();
+        }
+    }
+
+    async finishOrder() {
+        this.zone.run(() => {
+            this.interactionService.alert(this.translations.your_order_has_been_confirmed, () => {
+                setTimeout(() => {
+                    this.waiting = false;
+                    this.globals.isPlacingOrder = false;
+                    this.globals.disableNavigation = false;
+                    window.location.hash = "#";
+                    window.location.reload();
+                }, 500);
+            });
+        });
+    };
+
+    redirectToAuthPage() {
+        this.interactionService.alert(this.translations.you_must_be_authenticated_to_finish_the_order, () => {
+            setTimeout(() => {
+                this.globals.isPlacingOrder = true;
+                this.navigationService.setRoot("LoginPage", { token: "access" });
+            }, 500);
+        })
+    }
 
     goToOrderPage() {
         this.navigationService.goTo("OrderCreationPage");

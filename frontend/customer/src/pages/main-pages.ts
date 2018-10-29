@@ -24,6 +24,16 @@ export class AppMainPages {
     public refresh() {
         let pages = [
             {
+                getRoot: () => { return "MerchantsNearbyPage"; },
+                getRootParams: () => { return {} },
+                getTitle: () => { return "Home"; },
+                getUrlPath: () => { return "index" },
+                getIcon: () => { return "home"; },
+                getBadge: () => { return 0; },
+                canShow: () => { return (!MarsAuthService.isLoggedIn()) || (MarsAuthService.hasRole('CUSTOMER')); },
+                disable: () => { return this.globals.disableNavigation }
+            },
+            {
                 getRoot: () => { return "JobCreationPage"; },
                 getRootParams: () => { return {} },
                 getTitle: () => { return "Criar Frete"; },
@@ -65,7 +75,7 @@ export class AppMainPages {
             }
         ];
 
-        this.globals.mainPages = pages;
+        this.globals.rootTabs = pages;
         return pages;
     }
 }

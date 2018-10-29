@@ -5,7 +5,33 @@ page-job-creation {
             padding-bottom: 100px;
         }
         [max-width-container] {
-            max-width: 800px;
+            max-width: 600px;
+        }
+        ion-item[input-item] {
+            ion-icon{
+                vertical-align: bottom;
+                margin-right: 4px;
+            }
+            input {
+                text-align: center;
+                padding-bottom: 5px;
+                border-bottom: 2px solid #efefef;
+            }
+        }
+        [observations] {
+            .item-inner {
+                padding-right: 0px;
+            }
+            ion-textarea {
+                transition-property: all;
+                transition-duration: .4s;
+                border-bottom: 2px solid #efefef;
+                padding: 10px;
+                &:focus-within {
+                    border-bottom-width: 3px;
+                    border-bottom-color: lighten($secondary, 10%);
+                }
+            }
         }
         [order] {
             margin: auto;

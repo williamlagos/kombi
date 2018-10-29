@@ -21,6 +21,7 @@ export class MarsFreightStopComponent {
     @Input("stop") stop: any;
 
     @Output() onNewStopClick: EventEmitter<any> = new EventEmitter();
+    @Output() onNextClick: EventEmitter<any> = new EventEmitter();
     @Output() onDestinationClick: EventEmitter<any> = new EventEmitter();
     showAddressSpinner: boolean = false;
     uuid: string;

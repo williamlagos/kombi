@@ -63,7 +63,7 @@ export class MerchantsNearbyPage {
 
     ionViewDidLoad() {
         MarsGeolocationService.onLoad(() => {
-            if (this.globals.isPlacingOrder) this.navigationService.goTo("JobCreationPage");
+            if (this.globals.isPlacingOrder) this.goToJobCreationPage();
             this.generateMap();
             this.initListeners();
         });
@@ -95,12 +95,22 @@ export class MerchantsNearbyPage {
             address.complement = complement || "";
             this.globals.currentOrder.job.origin.address = address;
             this.changeDetector.detectChanges();
-            this.navigationService.goTo("JobCreationPage");
+            this.goToJobCreationPage();
         });
     }
 
     checkCartState() {
 
+    }
+
+    goToJobCreationPage() {
+        this.navCtrl.parent._tabs.forEach((tab, index) => {
+            console.log(tab.root);
+            if (tab.root == "JobCreationPage") {
+                this.navCtrl.parent.select(index);
+                this.navCtrl.parent._tabbar.nativeElement.children[index].setAttribute("aria-selected", true);
+            }
+        });
     }
 
     onMerchantNameInputChanged() {

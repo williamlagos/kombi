@@ -10,6 +10,8 @@ const ip = require("ip");
 const express = require("express");
 const packageInfo = require("./package.json");
 
+const wildcard = require('socketio-wildcard');
+
 const path = require("path");
 const fs = require("fs-extra");
 
@@ -50,6 +52,34 @@ const Mars = module.exports = {
             log(`♂ MongoDB connection failure: ${error}!`.red);
         }
     },
+    
+    socket: function (app, server) {
+        app.use(function (req, res, next) {
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "X-Requested-With");
+            res.header("Access-Control-Allow-Headers", "Content-Type");
+            res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
+            next();
+        });
+        const io = require('socket.io').listen(server);
+        io.use(wildcard());
+        io.on('connection', function (socket) {
+            console.log((`♂ Mars Server: An user connected.`).green);
+            socket.on('*', (event) => {
+                let name = event.data ? event.data[0] : "";
+                let data = event.data ? (event.data[1] || {}) : {};
+                let room = data.room;
+                delete data.room;
+                return room ? socket.to(room).emit(name, data) : socket.broadcast.emit(name, data);
+            });
+            socket.on('join', function (room) {
+                socket.join(room);
+            });
+            socket.on('leave', function (room) {
+                socket.leave(room);
+            });
+        });
+    },
 
     routes: function (app) {
         let isWin = process.platform === "win32";
@@ -69,7 +99,7 @@ const Mars = module.exports = {
         });
     },
 
-    assets: async function (app) {
+    static: async function (app) {
         app.use(express.static(path.join(__dirname, "public")));
         app.use(staticZip(path.join(__dirname, "public", "build"), { customCompressions: [{ encodingName: "gzip", fileExtension: "gz" }] }));
 

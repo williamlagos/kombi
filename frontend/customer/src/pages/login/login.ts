@@ -70,33 +70,9 @@ export class LoginPage {
         this.changeDetector.detectChanges();
         let params = new URLSearchParams(window.location.search);
         this.confirmationCode = this.navParams.get("token");
-        if (this.confirmationCode !== "access" && this.confirmationCode !== "admin")
-            this.confirmUserEmail();
     }
 
-    ionViewDidEnter() {
-        if (this.platform.is("cordova")) {
-            /*  this.splashscreen.hide();
-              this.statusbar.show();
-              this.statusbar.styleLightContent();
-               this.statusbar.backgroundColorByHexString(AppConstants.DARKER_PRIMARY_COLOR); */
-        }
-    }
-
-    async confirmUserEmail() {
-        /* this.zone.run(async () => {
-            let spinner = this.interactionService.spinner({ content: this.translations.loading + "..." });
-            try {
-                (await Backend.confirmUserEmail({ confirmation: this.confirmationCode })).data;
-                this.interactionService.alert(this.translations.your_email_has_been_confirmed_successfully);
-            } catch (e) {
-                this.interactionService.alert(this.translations.whoops_check_the_credentials_and_try_again)
-            } finally {
-                this.changeDetector.detectChanges();
-                spinner.dismiss();
-            }
-        }); */
-    };
+    ionViewDidEnter() { }
 
     async login() {
         this.zone.run(async () => {
@@ -104,10 +80,10 @@ export class LoginPage {
             try {
                 let user = (await Backend.authenticateUser({ user: this.user })).data;
                 this.storeUserData(user);
-                if (user.signupStep == "finished") this.navigationService.setRoot('HomePage')
-                else this.navigationService.setRoot(user.signupStep);
-                let redirect = localStorage[MarsNavigationService.AUTH_PAGE_REDIRECT];
-                if (redirect) this.app.getActiveNav().push(redirect);
+                setTimeout(() => {
+                    if (user.signupStep == "finished") window.location.hash = "#";
+                    else this.navigationService.setRoot(user.signupStep);
+                }, 500);
             } catch (e) {
                 this.interactionService.alert(this.translations.whoops_check_the_credentials_and_try_again)
             } finally {

@@ -17,7 +17,7 @@ export class AppGlobals {
   hideNavbar: boolean = false;
   keyboardIsUp: boolean = false;
   disableNavigation: boolean = false;
-  mainPages: Array<any> = [];
+  rootTabs: Array<any> = [];
   userPages: Array<any> = [];
   adminInfoPages: Array<any> = [];
   customerInfoPages: Array<any> = [];
@@ -39,7 +39,7 @@ export class AppGlobals {
   hasPendingOrders: boolean = false;
   currentOauthUser: any;
   merchantKeyword: string;
-  isPlacingOrder: any;
+  isPlacingOrder: boolean;
   currentOrder: any = {
     items: [],
     amount: 0,

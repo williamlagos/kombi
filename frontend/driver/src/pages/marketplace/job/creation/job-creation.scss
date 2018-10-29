@@ -7,6 +7,9 @@ page-job-creation {
         [max-width-container] {
             max-width: 800px;
         }
+        ion-item[input-item] {
+            border-bottom: 1px solid #eeffee;
+        }
     }
     ion-fab[margin-right] {
         margin-right: 40px !important;

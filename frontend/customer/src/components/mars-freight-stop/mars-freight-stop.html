@@ -17,7 +17,7 @@
                 required></ion-input>
         </ion-item>
         <section stop-items *ngIf="stop.address.number && !isDestination">
-            <h6 text-left text-color="positive">
+            <h6 text-left margin-top text-color="secondary">
                 <mars-translatable content="stop_items"></mars-translatable>:
             </h6>
             <ion-row padding-right *ngFor="let item of stop.items; let itemIndex = index;">
@@ -27,22 +27,22 @@
                     </button>
                 </ion-col>
                 <ion-item no-padding col stop-item-input [attr.col-9]="itemIndex > 0 ? '' : null" [attr.col-11]="itemIndex == 0 ? '' : null">
-                    <input text-left [placeholder]="translations.stop_item_example" name="{{ 'item-' + itemIndex + '-description' }}" [(ngModel)]="item.description">
+                    <input text-left [placeholder]="translations.stop_item_example" name="{{ 'item-' + itemIndex + '-description' }}"
+                        [(ngModel)]="item.description">
                 </ion-item>
                 <ion-col no-padding col-1 text-center>
-                    <button ion-button round icon color="balanced" (click)="addItem()">
+                    <button ion-button round icon color="secondary" (click)="addItem()">
                         <ion-icon name="add"></ion-icon>
                     </button>
                 </ion-col>
             </ion-row>
         </section>
-        <section actions text-center *ngIf="stop.address.number && !isDestination && stop.items.length > 1">
-            <!--  <button ion-button block margin-top rounded color="secondary" (click)="onNewStopClick.emit()">
-                <ion-icon name="add-circle"></ion-icon> &nbsp;
-                <mars-translatable content="add_new_ride_stop"></mars-translatable>
-            </button> -->
-            <button ion-button block margin-top rounded color="balanced" (click)="onDestinationClick.emit()">
+        <section actions text-center>
+            <button ion-button block margin-top rounded color="secondary" (click)="onDestinationClick.emit()" *ngIf="stop.address.number && !isDestination && stop.items.length > 1">
                 <mars-translatable content="add_ride_destination"></mars-translatable>
+            </button>
+            <button ion-button block margin-top rounded color="secondary" (click)="onNextClick.emit()" *ngIf="stop.address.number && isDestination">
+                <mars-translatable content="next"></mars-translatable>
             </button>
         </section>
     </ion-card-content>

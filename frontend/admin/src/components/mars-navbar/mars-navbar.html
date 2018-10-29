@@ -4,7 +4,6 @@
             <mars-translatable content="project_name"></mars-translatable>
         </span>
     </section>
-
     <ion-tabs [attr.hide]="globals.keyboardIsUp" name="mars-tabs" id="mars-tabs" tabsHighlight="tabsHighlight" tabsLayout="icon-top" tabsPlacement="bottom" [selectedIndex]="lastTab" #tabs>
         <ion-tab *ngFor="let tab of globals.rootTabs" [root]="tab.getRoot()" [rootParams]="tab.getRootParams()" [tabTitle]="tab.getTitle()"
             [tabUrlPath]="tab.getUrlPath()" [tabIcon]="tab.getIcon()" [tabBadge]="tab.getBadge()" [show]="tab.canShow()"></ion-tab>
@@ -13,9 +12,4 @@
         <section ads-bar>
         </section>
     </article>
-
-    <!-- <section footer *ngIf="screenIsDesktopSized()">
-        <section footer-text [innerHTML]="getFooterText()">
-        </section>
-    </section> -->
 </nav>

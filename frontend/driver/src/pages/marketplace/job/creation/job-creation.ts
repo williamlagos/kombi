@@ -44,19 +44,13 @@ export class JobCreationPage {
         this.translations = this.locales.load();
     }
 
-    ionViewDidLoad() {
-        if (this.globals.isPlacingOrder) this.navigationService.goTo("OrderCreationPage");
-        else this.initOrder();
-    }
+    ionViewDidLoad() { }
 
     ionViewWillEnter() {
         this.initialize();
     };
 
-    initialize() {
-
-     };
-
+    initialize() { };
 
     initOrder() {
         this.createStop(this.globals.currentOrder.job.origin.address, true);

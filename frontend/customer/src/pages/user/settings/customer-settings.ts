@@ -69,7 +69,9 @@ export class CustomerSettingsPage {
             {
                 text: this.translations.logout, cssClass: "strong", handler: () => {
                     this.authService.logout(() => {
-                        this.navigationService.goToRootPage();
+                        setTimeout(()=>{
+                            this.navigationService.setRoot("HomePage");
+                        }, 500);
                     });
                 }
             }]);
