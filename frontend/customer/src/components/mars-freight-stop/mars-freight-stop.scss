@@ -1,5 +1,9 @@
 mars-freight-stop {
     ion-card.card {
+        ion-item[mars-address-autocomplete].item-block .item-inner {
+            border-bottom: 2px solid #efefef;
+            box-shadow: inset 0 -2px 0 0 white;
+        }
         ion-input {
             input {
                 font-size: 12px;

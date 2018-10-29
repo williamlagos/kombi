@@ -8,10 +8,10 @@
         <ion-segment-button value="ORIGIN">
             1. Partida
         </ion-segment-button>
-        <ion-segment-button value="DESTINATION">
+        <ion-segment-button value="DESTINATION" [disabled]="!globals.currentOrder.job.origin || !globals.currentOrder.job.origin.location">
             2. Destino
         </ion-segment-button>
-        <ion-segment-button value="FINISH">
+        <ion-segment-button value="FINISH" [disabled]="globals.currentOrder.job.destination || !globals.currentOrder.job.destination.location">
             3. Enviar
         </ion-segment-button>
     </ion-segment>
@@ -21,7 +21,7 @@
     <article [ngClass]="{ 'show': !waiting }">
         <article max-width-container *ngIf="segment == 'ORIGIN'">
             <section no-padding>
-                <mars-freight-stop [(stop)]="globals.currentOrder.job.origin" [stop-title]="'Origem'" (onNewStopClick)="createStop({}, false)"
+                <mars-freight-stop [(stop)]="globals.currentOrder.job.origin" [stop-title]="'Partida'" (onNewStopClick)="createStop({}, false)"
                     (onDestinationClick)="segment = 'DESTINATION'" [is-origin]="true"></mars-freight-stop>
             </section>
         </article>
@@ -34,6 +34,11 @@
                 <mars-freight-stop [(stop)]="globals.currentOrder.job.destination" [stop-title]="'Destino'"
                     [is-destination]="true"></mars-freight-stop>
             </ion-col>
+            <section padding margin-top>
+                <button ion-button block rounded color="balanced" (click)="segment = 'FINISH'; changeDetector.detectChanges();">
+                    Finalizar
+                </button>
+            </section>
         </article>
         <article max-width-container *ngIf="segment == 'FINISH'">
             <ion-card order>

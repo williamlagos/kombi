@@ -14,10 +14,10 @@ mars-freight-stop {
         [stop-item-input] input {
             transition-property: all;
             transition-duration: .4s;
-            border-bottom: 1px solid #efefef;
+            border-bottom: 2px solid #efefef;
             padding: 10px;
             &:focus-within {
-                border-bottom-width: 2px;
+                border-bottom-width: 3px;
                 border-bottom-color: lighten($secondary, 10%);
             }
         }
