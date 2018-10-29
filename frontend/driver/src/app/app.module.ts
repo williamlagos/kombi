@@ -6,10 +6,6 @@
  */
 
 // Polyfills
-import "intl";
-/* import "intl/locale-data/jsonp/en.js";
-import "intl/locale-data/jsonp/pt.js"; */
-/* For keyboards without the pipe key, copy and paste: | */
 
 // ----------------- External Modules
 import { Platform, Config } from "ionic-angular";
@@ -64,11 +60,6 @@ import { MarsMapMarkerService } from "@services/geolocation/marker.service";
 import { MarsInfoWindowService } from "@services/geolocation/infowindow.service";
 import { MarsMobileKeyboardService } from "@services/mobile-keyboard.service";
 
-let address = window.location.href;
-let isIP = RegExp('^http[s]?:\/\/((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])');
-let isLocalhost = address.indexOf("localhost") > -1 || isIP.test(address);
-let locationStrategy = isLocalhost ? 'hash' : 'path';
-
 @NgModule({
     declarations: [
         MyApp,
@@ -77,8 +68,7 @@ let locationStrategy = isLocalhost ? 'hash' : 'path';
         IonicModule.forRoot(MyApp, {
             backButtonText: "",
             mode: 'md', // 'md' | 'ios' | 'wp'
-            useHash: false,
-            locationStrategy: locationStrategy
+            useHash: false
         }),
         BrowserModule,
         CommonModule,

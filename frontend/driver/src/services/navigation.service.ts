@@ -51,7 +51,6 @@ export class MarsNavigationService {
 
     goToRootPage(params?: any, animation?: any) {
         if (this.navControllerIsDefined()) {
-            this.setRoot('LoadingPage');
             this.setRoot('HomePage');
             let activeNav = this.app.getActiveNavs()[0];
             if (activeNav.getType() == "tab") {

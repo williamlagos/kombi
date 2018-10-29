@@ -37,8 +37,8 @@ export class AppMainPages {
                 getRoot: () => { return "MerchantCalendarPage"; },
                 getRootParams: () => { return {} },
                 getTitle: () => { return "Meus Fretes"; },
-                getUrlPath: () => { return "calendar" },
-                getIcon: () => { return "calendar"; },
+                getUrlPath: () => { return "car" },
+                getIcon: () => { return "car"; },
                 getBadge: () => { return 0; },
                 canShow: () => { return MarsAuthService.hasRole('MERCHANT') },
                 disable: () => { return this.globals.disableNavigation }
@@ -46,9 +46,9 @@ export class AppMainPages {
             {
                 getRoot: () => { return "JobsListPage"; },
                 getRootParams: () => { return {} },
-                getTitle: () => { return "Fretes"; },
+                getTitle: () => { return "Fazer Propostas"; },
                 getUrlPath: () => { return "jobs" },
-                getIcon: () => { return "car"; },
+                getIcon: () => { return "add-circle"; },
                 getBadge: () => { return 0; },
                 canShow: () => { return MarsAuthService.hasRole('MERCHANT') },
                 disable: () => { return this.globals.disableNavigation }
