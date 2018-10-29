@@ -11,18 +11,15 @@ import { IonicPage } from "ionic-angular";
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";
 
-@IonicPage({
-    segment: "404"
-})
+@IonicPage({ priority: "high" })
 @Component({
     selector: "page-not-found",
     templateUrl: "not-found.html",
-    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class NotFoundPage {
-    constructor(private platform: Platform,
-        private locales: AppLocales,
-        private globals: AppGlobals) {
+    constructor(platform: Platform,
+        locales: AppLocales,
+        globals: AppGlobals) {
     }
 }

@@ -17,15 +17,15 @@ import { MarsInteractionService } from "@services/interaction.service";
 import { MarsNavigationService } from "@services/navigation.service";
 
 import { Backend } from "@backend/index";
-import { AppUserPages } from "@pages/user-pages"
+import { AppUserPages } from "@pages/user-pages";
 
 @IonicPage({
-    segment: "admin-creation"
+    segment: "admin-signup",
+    priority: "high"
 })
 @Component({
     selector: "page-admin-basic-information",
-    templateUrl: "admin-basic-information.html",
-    changeDetection: ChangeDetectionStrategy.OnPush
+    templateUrl: "admin-basic-information.html"
 })
 
 export class AdminBasicInformationPage {
@@ -45,17 +45,17 @@ export class AdminBasicInformationPage {
     spinner: any;
     token: string;
 
-    constructor(private platform: Platform,
-        private app: App,
-        private zone: NgZone,
-        private navCtrl: NavController,
-        private navParams: NavParams,
-        private changeDetector: ChangeDetectorRef,
-        private locales: AppLocales,
-        private authService: MarsAuthService,
-        private userInformationPages: AppUserPages,
-        private globals: AppGlobals,
-        private interactionService: MarsInteractionService) {
+    constructor(public platform: Platform,
+        public app: App,
+        public zone: NgZone,
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public changeDetector: ChangeDetectorRef,
+        public locales: AppLocales,
+        public authService: MarsAuthService,
+        public signupPages: AppUserPages,
+        public globals: AppGlobals,
+        public interactionService: MarsInteractionService) {
         this.navigationService = new MarsNavigationService(this.app);
         this.navigationService.setNavCtrl(this.navCtrl);
         this.translations = this.locales.load();
@@ -66,7 +66,7 @@ export class AdminBasicInformationPage {
     }
 
     ionViewDidEnter() {
-        this.user.roles = [AppConstants.CUSTOMER_ROLE];
+        this.user.role = AppConstants.CUSTOMER_ROLE;
         setTimeout(() => { this.changeDetector.detectChanges(); }, 200);
     }
 
@@ -74,9 +74,9 @@ export class AdminBasicInformationPage {
         if (this.authService.isLoggedIn()) this.user = this.authService.getLoggedInUser();
         if (this.globals.currentOauthUser) this.user = this.globals.currentOauthUser;
         this.user.documents[0] = { type: "CPF", number: "" };
-        
-        this.nextStep = this.userInformationPages.getNextStepFor(this.user.roles, "CustomerBasicInformationPage");
-        this.previousStep = this.userInformationPages.getPreviousStepFor(this.user.roles, "CustomerBasicInformationPage");
+        // In case the user returned after starting the signup process
+        this.nextStep = this.signupPages.getNextStepFor("customer", "CustomerBasicInformationPage");
+        this.previousStep = this.signupPages.getPreviousStepFor("customer", "CustomerBasicInformationPage");
         if (!this.authService.finishedSignup()) this.user.signupStep = this.nextStep;
     }
 
@@ -88,7 +88,7 @@ export class AdminBasicInformationPage {
         try {
             this.spinner = this.interactionService.spinner({ content: `${this.translations.loading}...` });
             this.user.signupStep = "finished";
-            await Backend.createUser({ user: this.user });
+            await Backend.createUser({ customer: this.user });
             this.interactionService.alert(this.translations.admin_request_sent);
             return this.navigationService.goBack();
         } catch (e) {

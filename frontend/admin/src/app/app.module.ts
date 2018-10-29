@@ -36,7 +36,6 @@ import { MarsNavbarComponent } from "@components/mars-navbar/mars-navbar";
 import { DirectivesModule } from "@directives/directives.module";
 import { PipesModule } from "@pipes/pipes.module";
 
-import { MarsCartService } from "@services/cart.service";
 import { MarsAuthService } from "@services/auth.service";
 import { MarsFileUploaderService } from "@services/file-uploader.service";
 import { MarsInteractionService } from "@services/interaction.service";
@@ -81,7 +80,6 @@ import { MarsMobileKeyboardService } from "@services/mobile-keyboard.service";
         AppUserPages,
         AppUtils,
         MarsSocket,
-        MarsCartService,
         MarsAuthService,
         MarsFileUploaderService,
         MarsInteractionService,

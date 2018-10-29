@@ -12,15 +12,12 @@
     }
     ion-icon {
         font-size: 20px;
-        vertical-align: middle;
+        vertical-align: sub;
         padding-right: 5px;
     }
     [navigation] {
-        padding-bottom: 0px;
+        padding-top: 3px;
         color: #ddd;
-    }
-    a {
-        color: $dark !important;
     }
 }
 

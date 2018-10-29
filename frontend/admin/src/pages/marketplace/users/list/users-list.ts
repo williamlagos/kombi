@@ -21,12 +21,12 @@ import { MarsAuthService } from "@services/auth.service";
 import { AppConstants } from "@app/app.constants";
 
 @IonicPage({
-    segment: "users-list"
+    segment: "users-list",
+    priority: "high"
 })
 @Component({
     selector: "page-users-list",
     templateUrl: "users-list.html",
-    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class UsersListPage {
@@ -41,16 +41,16 @@ export class UsersListPage {
         currentPage: 1
     };
 
-    constructor(private platform: Platform,
-        private app: App,
-        private navCtrl: NavController,
-        private popoverCtrl: PopoverController,
-        private zone: NgZone,
-        private changeDetector: ChangeDetectorRef,
-        private locales: AppLocales,
-        private globals: AppGlobals,
-        private interactionService: MarsInteractionService,
-        private navigationService: MarsNavigationService,
+    constructor(public platform: Platform,
+        public app: App,
+        public navCtrl: NavController,
+        public popoverCtrl: PopoverController,
+        public zone: NgZone,
+        public changeDetector: ChangeDetectorRef,
+        public locales: AppLocales,
+        public globals: AppGlobals,
+        public interactionService: MarsInteractionService,
+        public navigationService: MarsNavigationService,
     ) {
         this.navigationService = new MarsNavigationService(this.app);
         this.navigationService.setNavCtrl(this.navCtrl);
@@ -74,7 +74,7 @@ export class UsersListPage {
 
     async getUsers() {
         this.zone.run(async () => {
-            if (!MarsAuthService.hasRole('ADMIN')) return;
+            if (!MarsAuthService.hasRole("ADMIN")) return;
             try {
                 let data = (await Backend.getUsersAsAdmin({
                     role: this.role,

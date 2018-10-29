@@ -1,7 +1,6 @@
 ion-content.content {
     /*     background-image: url(/assets/images/pet-texture2.jpg);
     background-size: 150px; */
-    /*  @include linearGradient(#f7f7f7, white); */
 }
 
 [max-width-container],
@@ -21,12 +20,4 @@ ion-content.content {
     ion-content {
         margin-top: -30px;
     }
-}
-
-[no-border] {
-    border: none;
-}
-
-[no-padding] {
-    padding: 0px !important;
 }

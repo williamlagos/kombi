@@ -10,21 +10,23 @@ pagination-template {
         font-size: 16px;
         padding-bottom: 20px;
         padding-top: 10px;
-        background-color: rgba(255, 255, 255, 0.9);
-        /*  background-color: adjust-hue($primary, 10); */
+        border-top: 1px solid #efefef;
+        background-color: rgba(255, 255, 255, 1.0);
+        background-color: $secondary;
         li {
             padding: 4px;
             vertical-align: middle;
         }
         a {
-            color: $secondary !important;
+            color: white;
             vertical-align: middle;
             border-radius: 50%;
         }
         .current {
             border-radius: 50%;
-            @include secondary-gradient();
-            color: white;
+            /* @include secondary-gradient(); */
+            background-color: white;
+            color: $secondary;
             vertical-align: middle;
             height: 27px;
             width: 27px;

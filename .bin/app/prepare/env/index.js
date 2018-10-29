@@ -27,7 +27,7 @@ const marsRootPath = path.join(rootPath, ".mars");
 const marsCopyPath = path.join(appRoot, ".mars");
 
 const build = async () => {
-    console.log((`♂ Mars Universal App: Starting ${app} app for ${envType} environment...`.yellow));
+    console.log((`♂ Mars Universal App: Preparing ${app} app for ${envType} environment...`.yellow));
     await fs.copy(environmentRootPath, environmentCopyPath);
     await fs.copy(masterKeyRootPath, masterKeyCopyPath);
     await fs.copy(marsRootPath, marsCopyPath);

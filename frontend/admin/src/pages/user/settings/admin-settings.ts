@@ -27,27 +27,27 @@ import { AppUserPages } from "@pages/user-pages";
 })
 @Component({
     selector: "page-admin-settings",
-    templateUrl: "admin-settings.html",
-    changeDetection: ChangeDetectionStrategy.OnPush
+    templateUrl: "admin-settings.html"
 })
 export class AdminSettingsPage {
 
     translations: AppTranslations;
+
     settings;
 
-    constructor(private platform: Platform,
-        private app: App,
-        private navCtrl: NavController,
-        private navParams: NavParams,
-        private changeDetector: ChangeDetectorRef,
-        private locales: AppLocales,
-        private interactionService: MarsInteractionService,
-        private authService: MarsAuthService,
-        private globals: AppGlobals,
-        private userInformationPages: AppUserPages,
-        private nearbyService: MarsNearByService,
-        private navigationService: MarsNavigationService,
-        private zone: NgZone) {
+    constructor(public platform: Platform,
+        public app: App,
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public changeDetector: ChangeDetectorRef,
+        public locales: AppLocales,
+        public interactionService: MarsInteractionService,
+        public authService: MarsAuthService,
+        public globals: AppGlobals,
+        public signupPages: AppUserPages,
+        public nearbyService: MarsNearByService,
+        public navigationService: MarsNavigationService,
+        public zone: NgZone) {
         this.navigationService = new MarsNavigationService(this.app);
         this.navigationService.setNavCtrl(this.navCtrl);
         this.translations = this.locales.load();
@@ -55,11 +55,10 @@ export class AdminSettingsPage {
 
     ionViewWillEnter() {
         let infoPages = [
-            { name: "change_password", icon: "la-lock", page: "PasswordUpdatePage" },
+            { name: "change_password", icon: "lock", page: "PasswordUpdatePage" },
             /* { name: "about", icon: "information-circle", page: "AboutPage" } */
         ];
-        this.settings = this.userInformationPages.getPagesFor(MarsAuthService.getLoggedInUser().roles).concat(infoPages);
-        this.changeDetector.detectChanges();
+        this.settings = this.globals.adminInfoPages.concat(infoPages);
     }
 
     logout() {
@@ -69,7 +68,9 @@ export class AdminSettingsPage {
             {
                 text: this.translations.logout, cssClass: "strong", handler: () => {
                     this.authService.logout(() => {
-                        window.location.reload();
+                        setTimeout(() => {
+                            this.navigationService.goToRootPage();
+                        }, 500);
                     });
                 }
             }]);

@@ -18,7 +18,7 @@
             <ion-col col-12 col-md-6 col-xl-4 *ngFor="let setting of settings">
                 <section ion-item category no-padding (click)="navigationService.goTo(setting.page)">
                     <ion-label>
-                        <ion-icon [name]="setting.icon" color="primary"></ion-icon>
+                        <ion-icon [name]="setting.icon" color="secondary"></ion-icon>
                         <mars-translatable [content]="setting.name"></mars-translatable>
                     </ion-label>
                 </section>

@@ -1,22 +1,5 @@
-ion-navbar {
-    [add-icon] {
+ion-navbar{
+    [add-icon]{
         font-size: 24px;
     }
-}
-
-ion-header[transparent] {
-    .toolbar-background.toolbar-background-md,
-    .toolbar-background.toolbar-background-ios {
-        background-color: transparent;
-    }
-    &::after {
-        background-image: none;
-    }
-}
-
-.header-md::after,
-.tabs-md[tabsPlacement="top"]>.tabbar::after,
-.footer-md::before,
-.tabs-md[tabsPlacement="bottom"]>.tabbar::before {
-    bottom: -7px;
 }

@@ -5,25 +5,18 @@
             <mars-translatable content="results"></mars-translatable>
         </ion-title>
     </ion-navbar>
-</ion-header>
-<ion-content>
-    
-    <ion-searchbar backgroundColor="light" [(ngModel)]="keyword" animated="true" showCancelButton="true" placeholder="Pesquise pelo nome do usuário ;)"
-        (ionInput)="onSearchInputChange()">
+    <ion-searchbar backgroundColor="light" [(ngModel)]="keyword" animated="true" showCancelButton="true" placeholder="Pesquise pelo nome do usuário ;)" (ionInput)="onSearchInputChange()">
     </ion-searchbar>
-    
-    <ion-segment [(ngModel)]="role" color="primary" (ionChange)="refreshUsers(1)">
+    <ion-segment [(ngModel)]="role" color="secondary" (ionChange)="refreshUsers(1)">
         <ion-segment-button *ngFor="let role of roles" [value]="role">
             <mars-translatable [content]="role.toLowerCase()"></mars-translatable>
         </ion-segment-button>
     </ion-segment>
-    
+</ion-header>
+<ion-content>
     <mars-view-spinner *ngIf="!users"> </mars-view-spinner>
-    
     <mars-assistant [message]="translations.no_users_found_message" *ngIf="users && !(users.length > 0)"></mars-assistant>
-    
     <ion-list padding users-list *ngIf="users">
-        
         <ion-item *ngFor="let user of users | paginate : config" [ngClass]="{ 'deleted': user.deleted }" no-padding>
             
             <ion-label>
@@ -38,8 +31,8 @@
             </ion-label>
             
             <section item-right>
-                <a (click)="showOptionsFor($event, user)" text-color="dark" more-options>
-                    <ion-icon name="la-ellipsis-v"></ion-icon>
+                <a (click)="showOptionsFor($event, user)" text-color="light" more-options>
+                    <ion-icon name="more"></ion-icon>
                 </a>
             </section>
         </ion-item>

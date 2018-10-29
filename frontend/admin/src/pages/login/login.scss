@@ -3,21 +3,9 @@ page-login {
     background-position: center;
     ion-content.content {
         background-size: 200px;
-        [max-width-container] {
-            padding: 30px;
-            padding-top: 10px;
-            margin-top: 10px;
-            max-width: 400px;
-            background-color: $white;
-            border-radius: 10px;
-            /* box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 5px; */
-        }
-        [project-name] {
-            color: $secondary;
-            font-weight: 100;
-            font-size: 24px;
-            padding-top: 10px;
-            padding-bottom: 10px;
+        [project-logo] {
+            width: 150px;
+            height: 150px;
         }
         [welcome] {
             font-size: 26px;
@@ -26,11 +14,15 @@ page-login {
             color: $primary;
         }
         [login-message] {
-            font-size: 12px;
+            font-size: 14px;
             max-width: 250px;
             margin: auto;
             color: #aaa;
             margin-top: 0px;
+        }
+        [max-width-container] {
+            padding-top: 0px;
+            max-width: 350px;
         }
         ion-label[floating] {
             font-weight: bold;
@@ -39,8 +31,5 @@ page-login {
             color: $primary;
             font-weight: bold;
         }
-    }
-    ion-footer[app-footer] {
-        color: white;
     }
 }

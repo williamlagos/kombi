@@ -4,7 +4,7 @@
  * @author M.A.R.S. Labs
  */
 
-import { Component, NgZone, ChangeDetectorRef, ChangeDetectionStrategy } from "@angular/core";
+import { Component, NgZone, ChangeDetectorRef } from "@angular/core";
 import { NavParams, ViewController } from "ionic-angular";
 import { IonicPage } from "ionic-angular";
 
@@ -18,13 +18,10 @@ import { Backend } from "@backend/index";
 import { MarsAuthService } from "@services/auth.service";
 import { AppConstants } from "@app/app.constants";
 
-@IonicPage({
-    segment: "user-options"
-})
+@IonicPage({})
 @Component({
     selector: "user-options",
-    templateUrl: "user-options.html",
-    changeDetection: ChangeDetectionStrategy.OnPush
+    templateUrl: "user-options.html"
 })
 
 export class UserOptionsMenu {
@@ -32,16 +29,18 @@ export class UserOptionsMenu {
     saving: boolean;
     spinner: any;
     token: string;
+
     translations: AppTranslations;
+
     roles = ["ADMIN", "MERCHANT", "CUSTOMER"];
 
-    constructor(private viewCtrl: ViewController,
-        private navParams: NavParams,
-        private zone: NgZone,
-        private changeDetector: ChangeDetectorRef,
-        private locales: AppLocales,
-        private globals: AppGlobals,
-        private interactionService: MarsInteractionService) {
+    constructor(public viewCtrl: ViewController,
+        public navParams: NavParams,
+        public zone: NgZone,
+        public changeDetector: ChangeDetectorRef,
+        public locales: AppLocales,
+        public globals: AppGlobals,
+        public interactionService: MarsInteractionService) {
         this.translations = locales.load();
         this.user = navParams.data.user;
         this.token = MarsAuthService.getMarsToken();
@@ -51,13 +50,13 @@ export class UserOptionsMenu {
         this.zone.run(async () => {
             this.spinner = this.interactionService.spinner({ content: this.translations.loading });
             try {
-                let data = await (Backend.changeUserRole({ id: user._id, role: user.roles, xAccessToken: this.token }));
+                let data = await (Backend.changeUserRole({ id: user._id, role: user.role, xAccessToken: this.token }));
             } catch (e) {
                 this.interactionService.alert(this.translations.server_failure);
             }
             finally {
-                this.spinner.dismiss();
                 this.changeDetector.detectChanges();
+                this.spinner.dismiss();
                 this.close();
             }
         });
@@ -72,8 +71,8 @@ export class UserOptionsMenu {
                 this.interactionService.alert(this.translations.server_failure);
             }
             finally {
-                this.spinner.dismiss();
                 this.changeDetector.detectChanges();
+                this.spinner.dismiss();
                 this.close();
             }
         });
@@ -89,8 +88,8 @@ export class UserOptionsMenu {
                 this.interactionService.alert(this.translations.server_failure);
             }
             finally {
-                this.spinner.dismiss();
                 this.changeDetector.detectChanges();
+                this.spinner.dismiss();
                 this.close();
             }
         });

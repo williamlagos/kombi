@@ -2,7 +2,7 @@
 <ion-header>
     <ion-navbar color="secondary">
         <ion-title>
-            <mars-translatable content="login"></mars-translatable>
+            <mars-translatable content="project_name"></mars-translatable>
         </ion-title>
     </ion-navbar>
 </ion-header>
@@ -11,24 +11,18 @@
     <article max-width-container>
         
         <article project-logo></article>
-        <article project-name>
-            <mars-translatable content="nice_seeing_you_here"></mars-translatable>!
-        </article>
-        <section login-message>
-            <mars-translatable content="please_input_your_credentials_below"></mars-translatable>
-        </section>
         <form #form="ngForm">
             
             <ion-item>
-                <ion-label text-color="light-grey" inline>
-                    <ion-icon name="la-user"></ion-icon>
+                <ion-label text-color="secondary" inline>
+                    <ion-icon name="contact"></ion-icon>
                 </ion-label>
                 <ion-input type="email" name="email" [(ngModel)]="user.email" [placeholder]="translations.your_email" required></ion-input>
             </ion-item>
             
             <ion-item>
-                <ion-label text-color="light-grey" inline>
-                    <ion-icon name="la-unlock"></ion-icon>
+                <ion-label text-color="secondary" inline>
+                    <ion-icon name="lock"></ion-icon>
                 </ion-label>
                 <ion-input name="password" type="password" [(ngModel)]="user.password" [placeholder]="translations.your_password" required></ion-input>
             </ion-item>
@@ -38,7 +32,7 @@
             </button>
         </form>
         
-        <button ion-button color="facebook" block rounded icon-left margin-top *ngIf="package == 'customer'" (click)="accessWithFacebook()">
+        <button ion-button color="facebook" block rounded icon-left margin-top *ngIf="!currentUserIsAMerchant" (click)="accessWithFacebook()">
             <ion-icon name="logo-facebook"></ion-icon>
             <mars-translatable content="access_with_facebook"></mars-translatable>
         </button>
@@ -58,8 +52,3 @@
         </ion-label>
     </article>
 </ion-content>
-<ion-footer padding app-footer>
-    <section text-center>
-        <mars-translatable content="slogan"></mars-translatable>
-    </section>
-</ion-footer>

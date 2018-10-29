@@ -9,6 +9,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone } from "@
 import { App, IonicPage, NavController, NavParams, Platform } from "ionic-angular";
 
 import { Backend } from "@backend/index";
+import * as querystring from "query-string";
 
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";
@@ -18,18 +19,18 @@ import { MarsAuthService } from "@services/auth.service";
 import { MarsInteractionService } from "@services/interaction.service";
 
 import { MarsNavigationService } from "@services/navigation.service";
+import { MarsOauthService } from "@services/oauth.service";
 
-declare var StatusBar;
 declare var window: any;
 declare var hello: any;
 
 @IonicPage({
-    segment: "auth"
+    segment: "login",
+    priority: "high"
 })
 @Component({
     selector: "page-login",
     templateUrl: "login.html",
-    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class LoginPage {
@@ -39,22 +40,20 @@ export class LoginPage {
 
     user: any = {};
     confirmationCode: string;
-    package: string;
-    signupPage: string;
     defaultOauthParams = { popup: { "location": "no" } };
-    facebookParams = Object.assign(this.defaultOauthParams, { scope: ["_profile", "user_work_history", "email"] });
+    facebookParams = Object.assign(this.defaultOauthParams, { scope: ["public_profile", "user_work_history", "email"] });
     linkedinParams = Object.assign(this.defaultOauthParams, { scope: ["email"] });
     twitterParams = Object.assign(this.defaultOauthParams, { scope: ["email"] });
 
-    constructor(private navCtrl: NavController,
-        private navParams: NavParams,
-        private platform: Platform,
-        private app: App,
-        private zone: NgZone,
-        private changeDetector: ChangeDetectorRef,
-        private locales: AppLocales,
-        private globals: AppGlobals,
-        private interactionService: MarsInteractionService) {
+    constructor(public navCtrl: NavController,
+        public navParams: NavParams,
+        public platform: Platform,
+        public app: App,
+        public zone: NgZone,
+        public changeDetector: ChangeDetectorRef,
+        public locales: AppLocales,
+        public globals: AppGlobals,
+        public interactionService: MarsInteractionService) {
         this.navigationService = new MarsNavigationService(this.app);
         this.navigationService.setNavCtrl(this.navCtrl);
         this.translations = this.locales.load();
@@ -62,22 +61,18 @@ export class LoginPage {
 
     ionViewCanEnter() {
         if (MarsAuthService.isLoggedIn())
-            return this.navigationService.canGoBack() ? this.navigationService.goBack : this.navigationService.setRoot('HomePage');
+            return this.navigationService.canGoBack() ?
+                this.navigationService.goBack :
+                this.navigationService.setRoot('HomePage');
     }
 
     ionViewWillEnter() {
-        this.signupPage = "AdminBasicInformationPage";
         this.changeDetector.detectChanges();
+        let params = new URLSearchParams(window.location.search);
+        this.confirmationCode = this.navParams.get("token");
     }
 
-    ionViewDidEnter() {
-        if (window.cordova) {
-            StatusBar.show();
-            StatusBar.styleLightContent();
-            StatusBar.backgroundColorByHexString(AppConstants.DARKER_SECONDARY_COLOR);
-        }
-    }
-
+    ionViewDidEnter() { }
 
     async login() {
         this.zone.run(async () => {
@@ -85,19 +80,27 @@ export class LoginPage {
             try {
                 let user = (await Backend.authenticateUser({ user: this.user })).data;
                 this.storeUserData(user);
-                if (user.signupStep == "finished") window.location.reload();
-                else this.navigationService.setRoot(user.signupStep);
+                setTimeout(() => {
+                    if (user.signupStep == "finished") window.location.hash = "#";
+                    else this.navigationService.setRoot(user.signupStep);
+                }, 500);
             } catch (e) {
                 this.interactionService.alert(this.translations.whoops_check_the_credentials_and_try_again)
             } finally {
-                spinner.dismiss();
                 this.changeDetector.detectChanges();
+                spinner.dismiss();
             }
         });
     }
 
     goToSignupPage() {
-        this.navigationService.setRoot(this.signupPage);
+        if (this.confirmationCode == "admin") // In case the user tries to access as an admin
+            this.navigationService.goTo("AdminBasicInformationPage")
+        else // Otherwise, prompts for the role
+            this.interactionService.prompt(this.translations.i_am, [], [
+                { text: this.translations.a_merchant, cssClass: "strong", handler: () => { this.navigationService.goTo("MerchantBasicInformationPage") } },
+                { text: this.translations.a_customer, cssClass: "strong", handler: () => { this.navigationService.goTo("CustomerBasicInformationPage") } }
+            ]);
     }
 
     async accessWithFacebook() {
@@ -109,11 +112,9 @@ export class LoginPage {
                 let access_token = facebook && facebook.authResponse && facebook.authResponse.access_token ? facebook.authResponse.access_token : undefined;
                 let data = (await Backend.accessWithFacebook({ accessToken: access_token })).data;
                 if (data.created) {
-                    let created = data.created;
-                    created.signupStep = "CustomerBasicInformationPage";
-                    this.globals.currentOauthUser = created;
-                    this.storeUserData(created);
-                    this.navigationService.goTo(created.signupStep);
+                    this.globals.currentOauthUser = data.created;
+                    this.storeUserData(data.created);
+                    this.navigationService.goTo('CustomerBasicInformationPage');
                 } else {
                     this.storeUserData(data);
                     this.navigationService.goToRootPage();
@@ -129,7 +130,6 @@ export class LoginPage {
     }
 
     storeUserData(user) {
-        console.log(user);
         MarsAuthService.setLoggedInUser(user);
         MarsAuthService.setMarsToken(user.token);
     }

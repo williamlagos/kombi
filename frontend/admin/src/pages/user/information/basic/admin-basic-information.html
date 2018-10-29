@@ -6,6 +6,7 @@
     </ion-navbar>
 </ion-header>
 <ion-content #content text-center>
+    <mars-signup-progress></mars-signup-progress>
     
     <form user-info max-width-container #form="ngForm">
         <section margin-top *ngIf="!authService.isLoggedIn()">
@@ -56,11 +57,11 @@
             </ion-label>
         </ion-item>
         <button ion-button *ngIf="!authService.finishedSignup()" icon round large margin-top color="danger" (click)="goBack()">
-            <ion-icon name="la-close"> </ion-icon>
+            <ion-icon name="close"> </ion-icon>
         </button>
         <button ion-button icon round large margin-top color="balanced" [disabled]="authService.isLoggedIn() ? !form.valid : (!user.acceptedTerms || !form.valid)"
             (click)="save()">
-            <ion-icon name="la-check"> </ion-icon>
+            <ion-icon name="checkmark"> </ion-icon>
         </button>
     </form>
 </ion-content>

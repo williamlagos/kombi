@@ -21,7 +21,7 @@
     }
     [notification] {
         text-align: center;
-        border-bottom: 1px solid #666;
+        border-bottom: 1px solid $almost-white;
         padding-top: 10px;
         padding-bottom: 10px;
         &:first {
@@ -48,7 +48,7 @@
         }
         [contents] {
             font-size: 12px;
-            color: #888;
+            color: $light;
             vertical-align: middle;
             &[time] {
                 color: lighten($dark, 30%);

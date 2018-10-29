@@ -1,26 +1,19 @@
 ion-content.content {
     ion-card {
-        border-radius: 10px;
+        border-radius: 15px;
         background-color: white;
-        &[color=grey] {
-            ion-card-header{
-                @include linearGradient(lighten($light-grey, 10), $light-grey);
-                opacity: 0.5;
-            }
-        }
-        ion-card-header {
+        ion-card-header {                                                                                                                       
             padding: 10px;
             color: white;
             margin: 0px;
-            @include secondary-gradient();
             &[color=primary] {
-                @include primary-gradient();
+                @include secondary-gradient();
             }
             &[color=balanced] {
                 @include linearGradient($balanced, adjust-hue($balanced, 25));
             }
             &[color=secondary] {
-                @include secondary-gradient();
+                @include linearGradient($secondary, adjust-hue($secondary, 10));
             }
         }
         ion-card-content {
