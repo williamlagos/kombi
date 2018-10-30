@@ -22,7 +22,6 @@ import localeEs from "@angular/common/locales/es";
 
 // 3rd Party Modules
 import { Uploader } from "angular2-http-file-upload/uploader/uploader";
-import flatpickr from "flatpickr";
 
 // App Global Modules
 import { MyApp } from "@app/app.component";

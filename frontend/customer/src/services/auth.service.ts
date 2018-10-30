@@ -13,8 +13,8 @@ export class MarsAuthService {
 
     constructor() { }
 
-    static USER_KEY = AppConstants.CODENAME.toUpperCase() + "_" + "MARS_USER";
-    static TOKEN_KEY = AppConstants.CODENAME.toUpperCase() + "_" + "MARS_TOKEN";
+    static USER_KEY = AppConstants.CODENAME.toDashCase() + "_" + AppConstants.SUBPACKAGE  + "_" + "MARS_USER";
+    static TOKEN_KEY = AppConstants.CODENAME.toDashCase() + "_" + AppConstants.SUBPACKAGE + "_" + "MARS_TOKEN";
 
     static isLoggedIn() {
         return localStorage[MarsAuthService.TOKEN_KEY] != "undefined" && localStorage[MarsAuthService.TOKEN_KEY] != undefined;
@@ -46,8 +46,13 @@ export class MarsAuthService {
     }
 
     static logout(callback: Function) {
-        localStorage.clear();
+        delete localStorage[MarsAuthService.USER_KEY];
+        delete localStorage[MarsAuthService.TOKEN_KEY];
         callback();
+    }
+
+    logout(callback: Function) {
+        MarsAuthService.logout(callback);
     }
 
     isLoggedIn() {
@@ -76,9 +81,5 @@ export class MarsAuthService {
 
     finishedSignup() {
         return MarsAuthService.finishedSignup();
-    }
-
-    logout(callback: Function) {
-        MarsAuthService.logout(callback);
     }
 }

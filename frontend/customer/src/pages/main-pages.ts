@@ -47,8 +47,8 @@ export class AppMainPages {
                 getRoot: () => { return "JobHistoryPage"; },
                 getRootParams: () => { return {} },
                 getTitle: () => { return "Meus Fretes"; },
-                getUrlPath: () => { return "time" },
-                getIcon: () => { return "car"; },
+                getUrlPath: () => { return "history" },
+                getIcon: () => { return "time"; },
                 getBadge: () => { return 0; },
                 canShow: () => { return MarsAuthService.hasRole('CUSTOMER') },
                 disable: () => { return this.globals.disableNavigation }

@@ -14,7 +14,6 @@ import { AppLocales } from "@app/app.locales";
 import { MarsInteractionService } from "@services/interaction.service";
 import { MarsNavigationService } from "@services/navigation.service";
 import { MarsAuthService } from "@services/auth.service";
-import flatpickr from "flatpickr";
 import { Backend } from "@backend/index";
 import { MarsAddressAutocompleteDirective } from "@directives/mars-address-autocomplete";
 import { AppConstants } from "@app/app.constants";
@@ -65,21 +64,7 @@ export class JobCreationPage {
         else this.initOrder();
     };
 
-    onSegmentChange() {
-        if (this.segment == "FINISH" && !this.pickr) {
-            setTimeout(() => { this.initDateInputs(); }, 100);
-        }
-    }
-
-    initDateInputs() {
-        this.pickr = flatpickr(".flatpickr", {
-            minDate: "today", enableTime: true, altInput: true,
-            altFormat: "d/m H:i",
-            time_24hr: true,
-            onChange: (values) => { this.globals.currentOrder.job.scheduledTo = values[0] }
-        });
-    }
-
+    onSegmentChange() { }
 
     initOrder() {
         this.globals.currentOrder.job.scheduledTo = {};
@@ -136,6 +121,7 @@ export class JobCreationPage {
             this.globals.currentOrder.job.scheduledTo = this.parseRideDate();
             this.waiting = true;
             let order = (await Backend.createOrder({ order: this.globals.currentOrder, xAccessToken: token })).data;
+            console.log(order);
             MarsSocket.emit('join', MarsAuthService.getLoggedInUser()._id);
             this.finishOrder();
         } catch (e) {

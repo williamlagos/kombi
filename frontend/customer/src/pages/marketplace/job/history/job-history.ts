@@ -80,6 +80,7 @@ export class JobHistoryPage {
     async load() {
         try {
             this.orders = (await Backend.getOrders({ xAccessToken: this.token })).data;
+            console.log(this.orders);
         } catch (e) {
             this.interactionService.alert(this.translations.server_failure);
         } finally {

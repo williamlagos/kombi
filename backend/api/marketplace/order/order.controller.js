@@ -29,6 +29,7 @@ const pad = (num) => {
 // --------------- Module controller
 const OrderCtrl = module.exports = {
     create: async function (user, order) {
+        order.customer = user; // Adds the user to the order
         order = (await Order.create(order)); // Assigns the amount calculated to the order
         return order;// Returns the created order to the front end
     },
