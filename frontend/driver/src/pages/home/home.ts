@@ -52,13 +52,7 @@ export class HomePage {
         this.translations = this.locales.load();
         this.navigationService = new MarsNavigationService(app);
         this.navigationService.setNavCtrl(this.navCtrl);
-        platform.ready().then(() => {
-            if (platform.is("cordova")) { // Okay, so the platform is ready and our plugins are available.
-                /*   splashscreen.hide();
-                  statusbar.show();
-                  statusbar.backgroundColorByHexString(AppConstants.DARKER_PRIMARY_COLOR); */
-            }
-        });
+        platform.ready().then(() => { });
     }
 
     ionViewDidLoad() {
@@ -69,53 +63,18 @@ export class HomePage {
     async init() {
         if (MarsAuthService.isLoggedIn()) {
             this.token = MarsAuthService.getMarsToken();
-            MarsSocket.connect(AppConstants.SOCKET_SERVER_ADDRESS);
-            await this.refreshUser();
-            if (MarsAuthService.hasRole('MERCHANT')) this.initMerchant();
-            if (MarsAuthService.hasRole('CUSTOMER')) this.initCustomer();
+            MarsSocket.connect(AppConstants.SERVER_ADDRESS);
+            let user = MarsAuthService.getLoggedInUser();
+            MarsSocket.on('connect', () => {
+                this.refreshNotifications();
+                MarsSocket.join(user._id);
+                MarsSocket.on('new order', async (notification) => {
+                    await this.refreshNotifications()
+                });
+                MarsSocket.on('notifications update', async (notification) => await this.refreshNotifications());
+            });
         }
     }
-
-    initMerchant() {
-        let user = MarsAuthService.getLoggedInUser();
-        MarsSocket.on('connect', () => {
-            this.refreshNotifications();
-            MarsSocket.join(user._id);
-            MarsSocket.on('new order', async (notification) => {
-                await this.getPendingOrders();
-                await this.refreshNotifications()
-            });
-            MarsSocket.on('notifications update', async (notification) => await this.refreshNotifications());
-        });
-    }
-
-    async initCustomer() {
-        MarsSocket.on('connect', () => {
-            this.refreshNotifications();
-            MarsSocket.join(MarsAuthService.getLoggedInUser()._id);
-            MarsSocket.on('order review', async (notification) => await this.refreshNotifications());
-            MarsSocket.on('notifications update', async (notification) => await this.refreshNotifications());
-        });
-        this.getPendingOrders();
-    }
-
-    async getPendingOrders() {
-        this.zone.run(async () => {
-            try {
-                let pendingOrders = (await Backend.getOrders({ xAccessToken: this.token, status: "created" })).data;
-                if (pendingOrders.length > 0) {
-                    this.globals.hasPendingOrders = true;
-                    // this.globals.disableNavigation = true;
-                    // this.app.getActiveNav().push("OrderCreationPage");
-                }
-            } catch (e) {
-
-            } finally {
-                this.changeDetector.detectChanges();
-            }
-        });
-    }
-
     async refreshUser() {
         return new Promise(async (resolve, reject) => {
             try {
@@ -139,6 +98,5 @@ export class HomePage {
                 this.changeDetector.detectChanges();
             }
         });
-
     }
 }

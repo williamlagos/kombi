@@ -68,53 +68,26 @@ export class LoginPage {
 
     ionViewWillEnter() {
         this.changeDetector.detectChanges();
-        let params = new URLSearchParams(window.location.search);
-        this.confirmationCode = this.navParams.get("token");
-        if (this.confirmationCode !== "access" && this.confirmationCode !== "admin")
-            this.confirmUserEmail();
     }
-
-    ionViewDidEnter() {
-        if (this.platform.is("cordova")) {
-            /*  this.splashscreen.hide();
-              this.statusbar.show();
-              this.statusbar.styleLightContent();
-               this.statusbar.backgroundColorByHexString(AppConstants.DARKER_PRIMARY_COLOR); */
-        }
-    }
-
-    async confirmUserEmail() {
-        /* this.zone.run(async () => {
-            let spinner = this.interactionService.spinner({ content: this.translations.loading + "..." });
-            try {
-                (await Backend.confirmUserEmail({ confirmation: this.confirmationCode })).data;
-                this.interactionService.alert(this.translations.your_email_has_been_confirmed_successfully);
-            } catch (e) {
-                this.interactionService.alert(this.translations.whoops_check_the_credentials_and_try_again)
-            } finally {
-                this.changeDetector.detectChanges();
-                spinner.dismiss();
-            }
-        }); */
-    };
 
     async login() {
-        this.zone.run(async () => {
-            let spinner = this.interactionService.spinner({ content: this.translations.loading + "..." });
-            try {
-                let user = (await Backend.authenticateUser({ user: this.user })).data;
-                this.storeUserData(user);
-                if (user.signupStep == "finished") this.navigationService.setRoot('HomePage')
+        let spinner = this.interactionService.spinner({ content: this.translations.loading + "..." });
+        try {
+            let user = (await Backend.authenticateUser({ user: this.user })).data;
+            this.storeUserData(user);
+            setTimeout(() => {
+                if (user.signupStep == "finished") {
+                    this.navigationService.setRoot('HomePage');
+                    this.navCtrl.parent.select(0);
+                }
                 else this.navigationService.setRoot(user.signupStep);
-                let redirect = localStorage[MarsNavigationService.AUTH_PAGE_REDIRECT];
-                if (redirect) this.app.getActiveNav().push(redirect);
-            } catch (e) {
-                this.interactionService.alert(this.translations.whoops_check_the_credentials_and_try_again)
-            } finally {
-                this.changeDetector.detectChanges();
-                spinner.dismiss();
-            }
-        });
+            });
+        } catch (e) {
+            this.interactionService.alert(this.translations.whoops_check_the_credentials_and_try_again);
+        } finally {
+            this.changeDetector.detectChanges();
+            spinner.dismiss();
+        }
     }
 
     goToSignupPage() {
@@ -125,32 +98,6 @@ export class LoginPage {
                 { text: this.translations.a_merchant, cssClass: "strong", handler: () => { this.navigationService.goTo("MerchantBasicInformationPage") } },
                 { text: this.translations.a_customer, cssClass: "strong", handler: () => { this.navigationService.goTo("CustomerBasicInformationPage") } }
             ]);
-    }
-
-    async accessWithFacebook() {
-        this.zone.run(async () => {
-            let spinner = this.interactionService.spinner({ content: this.translations.loading + "..." });
-            try {
-                hello.init({ facebook: AppConstants.FACEBOOK_CLIENT_ID }, { redirect_uri: AppConstants.OAUTH_REDIRECT });
-                let facebook = await hello.login("facebook", this.facebookParams)
-                let access_token = facebook && facebook.authResponse && facebook.authResponse.access_token ? facebook.authResponse.access_token : undefined;
-                let data = (await Backend.accessWithFacebook({ accessToken: access_token })).data;
-                if (data.created) {
-                    this.globals.currentOauthUser = data.created;
-                    this.storeUserData(data.created);
-                    this.navigationService.goTo('CustomerBasicInformationPage');
-                } else {
-                    this.storeUserData(data);
-                    this.navigationService.goToRootPage();
-                }
-            } catch (e) {
-                if (e && e.status == 401) this.interactionService.alert(this.translations.error_duplicated_email);
-            } finally {
-                this.changeDetector.detectChanges();
-                spinner.dismiss();
-            }
-        });
-
     }
 
     storeUserData(user) {

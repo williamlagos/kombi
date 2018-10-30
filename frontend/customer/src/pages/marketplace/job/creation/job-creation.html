@@ -40,29 +40,21 @@
                 <ion-card-content padding-bottom>
                     <form padding-bottom #orderForm="ngForm">
                         <ion-row>
-                            <ion-item input-item ion-col col-12 col-6>
-                                <ion-row>
-                                    <ion-col col-6>
-                                        <ion-icon name="calendar"></ion-icon>
-                                        <mars-translatable content="ride_date"></mars-translatable>
-                                    </ion-col>
-                                    <ion-col col-6>
-                                        <input required type="tel" name="rideDate" mars-mask="99/99" [(ngModel)]="globals.currentOrder.job.date"
-                                            placeholder="dd/mm">
-                                    </ion-col>
-                                </ion-row>
+                            <ion-item>
+                                <ion-label>
+                                    <ion-icon name="time"></ion-icon>&nbsp;
+                                    <mars-translatable content="ride_time"></mars-translatable>
+                                </ion-label>
+                                <ion-datetime name="rideTime" [placeholder]="translations.select" hourValues="7,8,9,10,11,12,13,14,15,16,17,18,19,20" minuteValues="0,15,30,45"
+                                    displayFormat="HH:mm" [(ngModel)]="globals.currentOrder.job.scheduledTo"></ion-datetime>
                             </ion-item>
-                            <ion-item input-item ion-col col-12 col-6>
-                                <ion-row>
-                                    <ion-col col-6>
-                                        <ion-icon name="time"></ion-icon>
-                                        <mars-translatable content="ride_time"></mars-translatable>
-                                    </ion-col>
-                                    <ion-col col-6>
-                                        <input required type="tel" name="rideTime" mars-mask="99:99" [(ngModel)]="globals.currentOrder.job.time"
-                                            placeholder="hh:ss">
-                                    </ion-col>
-                                </ion-row>
+                            <ion-item>
+                                <ion-label>
+                                    <ion-icon name="calendar"></ion-icon>&nbsp;
+                                    <mars-translatable content="ride_date"></mars-translatable>
+                                </ion-label>
+                                <ion-datetime name="rideDate" [placeholder]="translations.select" displayFormat="DD/MM"
+                                    [(ngModel)]="globals.currentOrder.job.scheduledTo" [min]="today"></ion-datetime>
                             </ion-item>
                             <ion-item observations ion-col col-12 col-6>
                                 <ion-label floating>

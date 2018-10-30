@@ -17,7 +17,7 @@ export class AppGlobals {
   hideNavbar: boolean = false;
   keyboardIsUp: boolean = false;
   disableNavigation: boolean = false;
-  mainPages: Array<any> = [];
+  rootTabs: Array<any> = [];
   userPages: Array<any> = [];
   adminInfoPages: Array<any> = [];
   customerInfoPages: Array<any> = [];
@@ -34,21 +34,7 @@ export class AppGlobals {
   orderAddress: any = { street: "" };
   currentLocation: any = { street: "" };
   currentAddress: any = { street: "" };
-
-  // Customer vars
-  hasPendingOrders: boolean = false;
-  currentOauthUser: any;
-  merchantKeyword: string;
-  isPlacingOrder: any;
-  currentOrder: any = {
-    job: {
-      origin: { address: {}, items: [{ quantity: 1, description: "" }] },
-      stops: [],
-      destination: { address: {}, observations: "" },
-    }
-  };
-
-
+ 
   constructor(public locales: AppLocales) {
     this.translations = this.locales.load();
   }

@@ -34,21 +34,21 @@ export class AppMainPages {
                 disable: () => { return this.globals.disableNavigation }
             },
             {
-                getRoot: () => { return "MerchantCalendarPage"; },
-                getRootParams: () => { return {} },
-                getTitle: () => { return "Meus Fretes"; },
-                getUrlPath: () => { return "car" },
-                getIcon: () => { return "car"; },
-                getBadge: () => { return 0; },
-                canShow: () => { return MarsAuthService.hasRole('MERCHANT') },
-                disable: () => { return this.globals.disableNavigation }
-            },
-            {
                 getRoot: () => { return "JobsListPage"; },
                 getRootParams: () => { return {} },
                 getTitle: () => { return "Fazer Propostas"; },
                 getUrlPath: () => { return "jobs" },
                 getIcon: () => { return "add-circle"; },
+                getBadge: () => { return 0; },
+                canShow: () => { return MarsAuthService.hasRole('MERCHANT') },
+                disable: () => { return this.globals.disableNavigation }
+            },
+            {
+                getRoot: () => { return "MerchantCalendarPage"; },
+                getRootParams: () => { return {} },
+                getTitle: () => { return "Meus Fretes"; },
+                getUrlPath: () => { return "my-jobs" },
+                getIcon: () => { return "car"; },
                 getBadge: () => { return 0; },
                 canShow: () => { return MarsAuthService.hasRole('MERCHANT') },
                 disable: () => { return this.globals.disableNavigation }
@@ -75,7 +75,7 @@ export class AppMainPages {
             }
         ];
 
-        this.globals.mainPages = pages;
+        this.globals.rootTabs = pages;
         return pages;
     }
 }

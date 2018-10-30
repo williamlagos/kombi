@@ -11,11 +11,12 @@ import { App, IonicPage, NavController, Platform } from "ionic-angular";
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";
 
+import * as moment from "moment-mini";
+
 import { MarsInteractionService } from "@services/interaction.service";
 import { MarsNavigationService } from "@services/navigation.service";
 import { MarsAuthService } from "@services/auth.service";
 import { Backend } from "@backend/index";
-import { MarsAddressAutocompleteDirective } from "@directives/mars-address-autocomplete";
 import { AppConstants } from "@app/app.constants";
 import { MarsSocket } from "@app/app.socket";
 
@@ -32,6 +33,7 @@ export class JobCreationPage {
     segment: string = "ORIGIN";
     navigationService: MarsNavigationService;
     translations: AppTranslations;
+    today: string = moment().add(1, "days").toISOString();
     pickr: any;
     jobDate: string;
     jobTime: string;
@@ -67,7 +69,7 @@ export class JobCreationPage {
     onSegmentChange() { }
 
     initOrder() {
-        this.globals.currentOrder.job.scheduledTo = {};
+        this.globals.currentOrder.job.scheduledTo = moment().add(1, "days").toISOString();
         this.createStop(this.globals.currentOrder.job.origin.address, true);
     };
 
@@ -103,22 +105,11 @@ export class JobCreationPage {
         }
     };
 
-    parseRideDate() {
-        let rideDate = this.globals.currentOrder.job.date;
-        let rideTime = this.globals.currentOrder.job.time;
-        let parsedDate = new Date();
-        parsedDate.setDate(parseInt(rideDate.split("/")[0]) + -1);
-        parsedDate.setDate(parseInt(rideDate.split("/")[1]) + -1);
-        parsedDate.setHours(parseInt(rideTime.split(":")[0]));
-        parsedDate.setMinutes(parseInt(rideTime.split(":")[1]));
-        return parsedDate;
-    }
-
     async placeOrder() {
         if (!MarsAuthService.isLoggedIn()) return this.redirectToAuthPage();
         try {
             let token = MarsAuthService.getMarsToken();
-            this.globals.currentOrder.job.scheduledTo = this.parseRideDate();
+            console.log(this.globals.currentOrder.job.scheduledTo);
             this.waiting = true;
             let order = (await Backend.createOrder({ order: this.globals.currentOrder, xAccessToken: token })).data;
             console.log(order);

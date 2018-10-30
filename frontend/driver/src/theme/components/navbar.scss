@@ -21,7 +21,7 @@ mars-navbar {
         height: 100vw;
         [header] {
             @include linearGradient($secondary, adjust-hue($secondary, -10));
-            height: $item-height;
+            height: calc(#{$item-height} - 1px);
             width: calc(#{$navbar-width} + 1px);
             font-size: 16px;
             font-weight: bold;
@@ -75,6 +75,7 @@ mars-navbar {
             max-width: $navbar-width;
             position: relative;
             top: $item-height;
+            margin-top: -2px;
             box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
             height: 100vh;
             background-color: $navbar-background-color;

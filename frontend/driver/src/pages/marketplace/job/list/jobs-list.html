@@ -8,19 +8,13 @@
 </ion-header>
 
 <ion-content>
-    
     <mars-view-spinner *ngIf="!orders"> </mars-view-spinner>
-    
     <mars-assistant [message]="translations.no_jobs_around_message" *ngIf="orders && (!orders.length > 0)"></mars-assistant>
-    
     <article *ngIf="orders && (orders.length > 0)">
         <ion-grid>
             <ion-row>
-                
                 <ion-col col-12 col-sm-12 col-lg-4 col-xl-4 *ngFor="let order of orders">
-                    
-                    <ion-card job>
-                        
+                    <ion-card order>
                         <ion-card-header color="primary" *ngIf="order.job && order.job.origin" text-center>
                             <span float-left>
                                 <ion-icon name="pin"></ion-icon>
@@ -41,12 +35,10 @@
                                             {{ order.job.scheduledTo | date }}
                                         </span>
                                     </section>
-                                    
                                     <section>
                                         <ion-icon name="time"></ion-icon> {{ order.job.createdAt | fromNow }}
                                     </section>
                                     <section>
-                                        
                                         <a view-more margin-top (click)="showJobDetailsFor(order)">
                                             <mars-translatable content="view_more"></mars-translatable>
                                         </a>
