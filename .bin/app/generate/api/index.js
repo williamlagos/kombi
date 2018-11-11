@@ -17,8 +17,8 @@ console.log((`♂ Mars API generator: Running server in order to update swagger.
 const app = (process.env.npm_config_app || params.app || "customer");
 
 const rootPath = path.resolve(__dirname, "../../../../");
-const appRoot = path.join(rootPath, "fronte nd", app);
-const serverRoot = path.join(rootPath, "backend", "server");
+const appRoot = path.join(rootPath, "frontend", app);
+const serverRoot = path.join(rootPath, "backend");
 
 const server = require(path.join(serverRoot, "app.js"));
 const swagger = require(path.join(serverRoot, "swagger.json"));
