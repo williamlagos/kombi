@@ -6,5 +6,5 @@ module.exports = {
     "codename": "fretefacil",
     "accounts_email": "fretefacildevteam@gmail.com",
     "contact_email": "ola@fretefacil.com",
-    "website": "www.fretefacil.com"
+    "website": "www.fretefacil.efforia.io"
 };

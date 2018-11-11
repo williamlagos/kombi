@@ -46,7 +46,7 @@ module.exports = {
     "application_terms_of_use": `termos de uso do aplicativo`,
     "at": "às",
     "available_items": `Itens disponíveis`,
-    "available_rides": `Fretes ativos`,
+    "available_rides": `Fretes disponíveis`,
     "available_balance": `Saldo`,
     "available_merchants": `Freteiros interessados`,
     "balance_current_releases": `Disponível`,
