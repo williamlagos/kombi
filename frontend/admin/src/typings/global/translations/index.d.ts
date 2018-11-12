@@ -492,6 +492,7 @@ interface AppTranslations {
     VISA_DEBIT: string;
     warning_you_dont_have_notifications_yet: string;
     waiting_for_the_establishment: string;
+    we_need_your_permission_for_geolocation: string;
     we_were_unable_to_locate_your_address: string;
     wednesday: string;
     weight: string;
@@ -507,6 +508,7 @@ interface AppTranslations {
     whoops_quantity_must_be_higher_or_equals_to_one: string;
     whoops_you_must_be_logged_in_to_access_this_content: string;
     whoops_you_have_delayed_payments: string;
+    whoops_the_address_must_contain_the_street_number: string;
     wrong_password_confirmation_message: string;
     years: string;
     yes: string;

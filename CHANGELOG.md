@@ -1,7 +1,8 @@
 ### CHANGELOG
 ---
-#### 12.11.18:
+#### 13.11.18:
 
+* Correção de bugs no aplicativo do admin.
 * Finalização do processo de propostas no leilão
 * Finalização do processo de seleção do Freteiro
 * Exibição da rota entre freteiro e ponto de partida/chegada
