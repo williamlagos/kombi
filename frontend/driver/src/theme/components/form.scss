@@ -16,12 +16,6 @@
     }
 }
 
-form {
-    ion-label {
-        font-size: 0.8em;
-    }
-}
-
 ion-input input,
 ion-textarea textarea {
     color: $dark; // font-size: 13px;
@@ -100,7 +94,7 @@ ion-item[with-mask].item-block {
 }
 
 .label-md[stacked] {
-    font-size: 1.5rem;
+    font-size: 14px;
 }
 
 .select-text {

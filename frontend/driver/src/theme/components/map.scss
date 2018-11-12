@@ -16,8 +16,8 @@ $disabled-color: #999;
 .driver-marker {
     background-image: url(/assets/images/map/vehicle.png);
     background-size: cover;
-    width: $marker-width;
-    height: $marker-height;
+    width: 27px;
+    height: 44px;
     transition-property: all;
     transition-duration: 200ms;
     animation-duration: 1s;

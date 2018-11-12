@@ -13,14 +13,14 @@ import { UploadItem } from "angular2-http-file-upload";
 @Injectable()
 export class MarsFileUploaderService {
 
-    constructor(public uploaderService: Uploader) { }
+    constructor(private uploaderService: Uploader) { }
 
     upload(url: string, file: File, params: any, headers: any, callback: Function) {
         let uploadItem = new UploadItem();
         uploadItem.file = file;
         uploadItem.url = url;
         uploadItem.headers = headers;
-        uploadItem.formData = params; // (optional) form data can be sent with file
+        uploadItem.formData = params; 
 
         this.uploaderService.upload(uploadItem);
 

@@ -64,10 +64,10 @@ export class MerchantBasicInformationPage {
     ionViewWillEnter() {
         // In case the user is logged in
         if (this.authService.isLoggedIn()) this.user = this.authService.getLoggedInUser();
-        else this.user.role = AppConstants.MERCHANT_ROLE;
+        else this.user.roles = [AppConstants.MERCHANT_ROLE];
         // In case the user returned after starting the signup process
-        this.nextStep = this.signupPages.getNextStepFor("merchant", "MerchantBasicInformationPage");
-        this.previousStep = this.signupPages.getPreviousStepFor("merchant", "MerchantBasicInformationPage");
+        this.nextStep = this.signupPages.getNextStepFor(this.user.roles, "MerchantBasicInformationPage");
+        this.previousStep = this.signupPages.getPreviousStepFor(this.user.roles, "MerchantBasicInformationPage");
         if (!this.authService.finishedSignup()) this.user.signupStep = this.nextStep;
     }
 
@@ -83,7 +83,7 @@ export class MerchantBasicInformationPage {
         try {
             this.spinner = this.interactionService.spinner({ content: `${this.translations.loading}...` });
             let isLoggedIn = this.authService.isLoggedIn();
-            let user = isLoggedIn ? (await Backend.updateUser({ customer: this.user, xAccessToken: MarsAuthService.getMarsToken() })).data : (await Backend.createUser({ customer: this.user })).data;
+            let user = isLoggedIn ? (await Backend.updateUser({ user: this.user, xAccessToken: MarsAuthService.getMarsToken() })).data : (await Backend.createUser({ user: this.user })).data;
             if (!MarsAuthService.finishedSignup()) this.interactionService.alert(this.translations.congrats_your_profile_has_been_created);
             this.storeDataFor(user);
             return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.goTo(this.nextStep);

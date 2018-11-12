@@ -13,8 +13,8 @@ export class MarsAuthService {
 
     constructor() { }
 
-    static USER_KEY = AppConstants.CODENAME.toUpperCase().toDashCase() + "_" + AppConstants.SUBPACKAGE.toUpperCase()  + "_" + "MARS_USER";
-    static TOKEN_KEY = AppConstants.CODENAME.toUpperCase().toDashCase() + "_" + AppConstants.SUBPACKAGE.toUpperCase() + "_" + "MARS_TOKEN";
+    static USER_KEY = AppConstants.CODENAME.toUpperCase().replace(/-/, "_") + "_" + AppConstants.SUBPACKAGE.toUpperCase()  + "_" + "MARS_USER";
+    static TOKEN_KEY = AppConstants.CODENAME.toUpperCase().replace(/-/, "_") + "_" + AppConstants.SUBPACKAGE.toUpperCase() + "_" + "MARS_TOKEN";
 
     static isLoggedIn() {
         return localStorage[MarsAuthService.TOKEN_KEY] != "undefined" && localStorage[MarsAuthService.TOKEN_KEY] != undefined;

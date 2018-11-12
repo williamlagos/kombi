@@ -81,8 +81,8 @@ export class MerchantContactInformationPage {
         // In case the user is logged in
         if (this.authService.isLoggedIn()) this.user = this.authService.getLoggedInUser();
         // In case the user returned after starting the signup process
-        this.nextStep = this.signupPages.getNextStepFor("merchant", "MerchantContactInformationPage");
-        this.previousStep = this.signupPages.getPreviousStepFor("merchant", "MerchantContactInformationPage");
+        this.nextStep = this.signupPages.getNextStepFor(this.user.roles, "MerchantContactInformationPage");
+        this.previousStep = this.signupPages.getPreviousStepFor(this.user.roles, "MerchantContactInformationPage");
         if (!this.authService.finishedSignup()) this.user.signupStep = this.nextStep;
         // Sets the username based on the e-mail
         this.user.username = this.user.email.split("@")[0].replace(/\./g, "");
@@ -188,7 +188,7 @@ export class MerchantContactInformationPage {
             this.spinner = this.interactionService.spinner({ content: `${this.translations.loading}...` });
             let token = MarsAuthService.getMarsToken();
             let isLoggedIn = this.authService.isLoggedIn();
-            let user = isLoggedIn ? (await Backend.updateUser({ customer: this.user, xAccessToken: token })).data : (await Backend.createUser({ customer: this.user })).data;
+            let user = isLoggedIn ? (await Backend.updateUser({ user: this.user, xAccessToken: token })).data : (await Backend.createUser({ user: this.user })).data;
             this.storeDataFor(user);
             return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.goTo(this.nextStep);
         } catch (e) {

@@ -66,7 +66,7 @@ export class MerchantSettingsPage {
         let infoPages = [
             { name: "change_password", icon: "lock", page: "PasswordUpdatePage" }
         ];
-        this.settings = this.globals.merchantInfoPages.concat(infoPages);
+        this.settings = this.globals.userPages.concat(infoPages);
         this.changeDetector.detectChanges();
     }
 

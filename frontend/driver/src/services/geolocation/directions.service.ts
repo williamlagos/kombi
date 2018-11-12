@@ -12,19 +12,18 @@ import { MarsGeolocationService } from "./geolocation.service";
 export class MarsDirectionsService {
 
     directionsService: google.maps.DirectionsService;
-    directionsRenderer: google.maps.DirectionsRenderer;
+    directionsDisplay: google.maps.DirectionsRenderer;
 
     constructor() {
         MarsGeolocationService.onLoad(() => {
             this.directionsService = new google.maps.DirectionsService();
-            this.directionsRenderer = new google.maps.DirectionsRenderer();
-            this.directionsRenderer.setOptions({ suppressMarkers: true });
+            this.directionsDisplay.setOptions({ suppressMarkers: true });
         });
     };
 
     drawNavigationRouteOn(map, originCoordinates, destinyCoordinates) {
         MarsGeolocationService.onLoad(() => {
-            this.directionsRenderer.setMap(map);
+            this.directionsDisplay.setMap(map);
             let request = <google.maps.DirectionsRequest>{
                 origin: originCoordinates,
                 destination: destinyCoordinates,
@@ -38,7 +37,7 @@ export class MarsDirectionsService {
             }
             this.directionsService.route(request, (response, status) => {
                 if (status == google.maps.DirectionsStatus.OK) {
-                    this.directionsRenderer.setDirections(response);
+                    this.directionsDisplay.setDirections(response);
                 }
             });
         });

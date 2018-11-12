@@ -58,7 +58,7 @@ export class AdminSettingsPage {
             { name: "change_password", icon: "lock", page: "PasswordUpdatePage" },
             /* { name: "about", icon: "information-circle", page: "AboutPage" } */
         ];
-        this.settings = this.globals.adminInfoPages.concat(infoPages);
+        this.settings = this.globals.userPages.concat(infoPages);
     }
 
     logout() {

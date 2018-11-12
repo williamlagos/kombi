@@ -75,8 +75,8 @@ export class MerchantLocationInformationPage {
         // In case the user is logged in
         if (this.authService.isLoggedIn()) this.user = this.authService.getLoggedInUser();
         // In case the user returned after starting the signup process
-        this.nextStep = this.signupPages.getNextStepFor("merchant", "MerchantLocationInformationPage");
-        this.previousStep = this.signupPages.getPreviousStepFor("merchant", "MerchantLocationInformationPage");
+        this.nextStep = this.signupPages.getNextStepFor(this.user.roles, "MerchantLocationInformationPage");
+        this.previousStep = this.signupPages.getPreviousStepFor(this.user.roles, "MerchantLocationInformationPage");
         if (!this.authService.finishedSignup()) this.user.signupStep = this.nextStep;
     }
 
@@ -143,9 +143,9 @@ export class MerchantLocationInformationPage {
             let token = MarsAuthService.getMarsToken();
             if (!this.user.address.location) this.user.address.location = await this.getCoordinates();
             let isLoggedIn = this.authService.isLoggedIn();
-            let user = isLoggedIn ? (await Backend.updateUser({ merchant: this.user, xAccessToken: token })).data : (await Backend.createUser({ merchant: this.user })).data;
+            let user = isLoggedIn ? (await Backend.updateUser({ user: this.user, xAccessToken: token })).data : (await Backend.createUser({ user: this.user })).data;
             this.storeDataFor(user);
-            return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.goTo(this.nextStep);
+            return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.setRoot("HomePage");
         } catch (e) {
             this.interactionService.alert(this.translations.server_failure);
         } finally {

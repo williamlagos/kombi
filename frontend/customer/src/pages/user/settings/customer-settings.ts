@@ -58,7 +58,7 @@ export class CustomerSettingsPage {
             { name: "change_password", icon: "lock", page: "PasswordUpdatePage" },
             /*  { name: "about", icon: "information-circle", page: "AboutPage" } */
         ];
-        this.settings = this.globals.customerInfoPages.concat(infoPages);
+        this.settings = this.globals.userPages.concat(infoPages);
         this.changeDetector.detectChanges();
     }
 

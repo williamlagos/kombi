@@ -26,8 +26,8 @@ export class MarsPushNotificationService {
     onesignalWebSDK: any = window.OneSignal;
     promptOptions: any;
 
-    constructor(public platform: Platform,
-        public globals: AppGlobals) { }
+    constructor(private platform: Platform,
+        private globals: AppGlobals) { }
 
     initialize(options: any) {
         this.platformIsMobile = this.platform.is("cordova");
@@ -60,7 +60,7 @@ export class MarsPushNotificationService {
             (notification) => {
                 this.onPush.emit(notification);
             });
-        window.plugins.OneSignal.enableInAppAlertNotification(true);  // Show an alert box if a notification comes in when the user is in your app.
+        window.plugins.OneSignal.enableInAppAlertNotification(true);  
     };
 
     setUserId(userId: string) {
