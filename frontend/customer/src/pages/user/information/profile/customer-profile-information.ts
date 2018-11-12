@@ -21,10 +21,13 @@ import { MarsNavigationService } from "@services/navigation.service";
 import { Backend } from "@backend/index";
 import { AppUserPages } from "@pages/user-pages";
 
-@IonicPage({ priority: "high" })
+@IonicPage({
+    segment: "user-profile-information"
+})
 @Component({
     selector: "page-customer-profile-information",
     templateUrl: "customer-profile-information.html",
+    changeDetection: ChangeDetectionStrategy.Default
 })
 
 export class CustomerProfileInformationPage {
@@ -33,18 +36,12 @@ export class CustomerProfileInformationPage {
     previousStep: string;
     nextStep: string;
     translations: AppTranslations;
-
     userDataForm;
-
     isReady: boolean;
-
     showAddressSpinner = false;
-
     windowIsDesktopSized = window.innerWidth > 768;
     spinner: any;
-
     currentGooglePlace: any;
-
     birthDate: string;
     user: any = {
         role: AppConstants.CUSTOMER_ROLE,
@@ -54,16 +51,16 @@ export class CustomerProfileInformationPage {
         birthDate: new Date()
     };
 
-    constructor(public platform: Platform,
-        public app: App,
-        public navCtrl: NavController,
-        public zone: NgZone,
-        public changeDetector: ChangeDetectorRef,
-        public locales: AppLocales,
-        public authService: MarsAuthService,
-        public signupPages: AppUserPages,
-        public globals: AppGlobals,
-        public interactionService: MarsInteractionService) {
+    constructor(private platform: Platform,
+        private app: App,
+        private navCtrl: NavController,
+        private zone: NgZone,
+        private changeDetector: ChangeDetectorRef,
+        private locales: AppLocales,
+        private authService: MarsAuthService,
+        private userInformationPages: AppUserPages,
+        private globals: AppGlobals,
+        private interactionService: MarsInteractionService) {
         this.navigationService = new MarsNavigationService(this.app);
         this.navigationService.setNavCtrl(this.navCtrl);
         this.translations = this.locales.load();
@@ -76,9 +73,9 @@ export class CustomerProfileInformationPage {
         }
         if (!this.user.documents[0]) this.user.documents[0] = {};
         if (!this.user.birthDate) this.user.birthDate = new Date();
-        // In case the user returned after starting the signup process
-        this.nextStep = this.signupPages.getNextStepFor("customer", "CustomerProfileInformationPage");
-        this.previousStep = this.signupPages.getPreviousStepFor("customer", "CustomerProfileInformationPage");
+        
+        this.nextStep = this.userInformationPages.getNextStepFor(this.user.roles, "CustomerProfileInformationPage");
+        this.previousStep = this.userInformationPages.getPreviousStepFor(this.user.roles, "CustomerProfileInformationPage");
         if (!this.authService.finishedSignup()) this.user.signupStep = this.nextStep;
     }
 
@@ -95,15 +92,16 @@ export class CustomerProfileInformationPage {
             this.spinner = this.interactionService.spinner({ content: `${this.translations.loading}...` });
             this.user.birthDate = moment(this.birthDate, "DD-MM-YYYY", "pt-BR").toDate();
             let isLoggedIn = this.authService.isLoggedIn();
-            let user = isLoggedIn ? (await Backend.updateUser({ customer: this.user, xAccessToken: MarsAuthService.getMarsToken() })).data : (await Backend.createUser({ customer: this.user })).data;
+            let user = isLoggedIn ? (await Backend.updateUser({ user: this.user, xAccessToken: MarsAuthService.getMarsToken() })).data : (await Backend.createUser({ user: this.user })).data;
             this.storeDataFor(user);
-            return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.goTo(this.nextStep);
+            setTimeout(() => {
+                return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.goTo(this.nextStep);
+            }, 500);
         } catch (e) {
-            console.log(e);
             this.interactionService.alert(this.translations.server_failure);
         } finally {
-            this.changeDetector.detectChanges();
             this.spinner.dismiss();
+            this.changeDetector.detectChanges();
         }
     }
 

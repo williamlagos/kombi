@@ -22,7 +22,7 @@ const client = {
 const server = {
     ENV_TYPE: "dev",
     HEROKU_DEPLOY_TOKEN: "af8da6d3-5dd0-4de1-b40b-6f6b31c0826c",
-    MONGODB: `mongodb://fretefacildevteam:cdmqXCAr-M5X8jBsE@ds261429.mlab.com:61429/fretefacildev`,
+    MONGODB: `mongodb://fretefacildevteam:cdmqXCAr-M5X8jBsE@fretefacildev-shard-00-00-uhxds.mongodb.net:27017,fretefacildev-shard-00-01-uhxds.mongodb.net:27017,fretefacildev-shard-00-02-uhxds.mongodb.net:27017/test?ssl=true&replicaSet=fretefacildev-shard-0&authSource=admin&retryWrites=true`,
     ONESIGNAL_API_KEY: "MTg2ZDRlZTItNjgwNC00OGQ1LWJmOGQtZTdiOTYzYzg1MzFh",
     SENDGRID_API_KEY: "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",
     FACEBOOK_CLIENT_SECRET: "27545f26f6e4d15a6c0b09f8a2ef4917",

@@ -10,7 +10,6 @@ import { IonicPageModule } from "ionic-angular";
 import { ComponentsModule } from "@components/components.module";
 import { DirectivesModule } from "@directives/directives.module";
 import { PipesModule } from "@pipes/pipes.module";
-import { CpfCnpjModule } from 'ng2-cpf-cnpj';
 import { NgxMaskModule } from "ngx-mask";
 
 @NgModule({
@@ -20,7 +19,6 @@ import { NgxMaskModule } from "ngx-mask";
     ComponentsModule,
     DirectivesModule,
     PipesModule,
-    CpfCnpjModule,
     NgxMaskModule.forRoot()
   ],
 })

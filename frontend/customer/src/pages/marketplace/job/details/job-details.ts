@@ -134,7 +134,7 @@ export class JobDetailsPage {
                         let location = new google.maps.LatLng(address.lat, address.lng);
                         google.maps.event.addListenerOnce(map, "center_changed", () => {
                             this.zone.run(() => {
-                                this.markerService.getMarker(map, location, {});
+                                this.markerService.getMarker(map, location, { cssClasses: "place-marker" });
                                 this.map.setCenter(location);
                                 this.map.setZoom(16);
                                 this.isLoadingMap = false;

@@ -12,6 +12,7 @@
         font-weight: normal !important;
     }
     .alert-wrapper {
+        border-radius: 15px;
         overflow: hidden;
         overflow-x: hidden;
         overflow-y: hidden;
@@ -39,6 +40,9 @@
         color: $dark;
         font-size: 14px;
         padding-bottom: 0px;
+    }
+    .alert-message:empty {
+        height: 0px;
     }
     button[ion-button].alert-button {
         font-weight: bold;

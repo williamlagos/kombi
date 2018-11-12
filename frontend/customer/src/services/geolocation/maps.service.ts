@@ -29,10 +29,10 @@ export class MarsMapsService {
     currentMarker;
     static ALREADY_RENDERED_MARKERS = "alreadyRenderedMarkers";
 
-    constructor(public platform: Platform,
-        public globals: AppGlobals,
-        public geolocationService: MarsGeolocationService,
-        public markerService: MarsMapMarkerService) { }
+    constructor(private platform: Platform,
+        private globals: AppGlobals,
+        private geolocationService: MarsGeolocationService,
+        private markerService: MarsMapMarkerService) { }
 
     getMap(mapElement: HTMLElement, options?, callback?: Function) {
         return new Promise(async (resolve, reject) => {

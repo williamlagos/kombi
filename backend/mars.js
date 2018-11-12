@@ -14,7 +14,7 @@ const path = require("path");
 const fs = require("fs-extra");
 
 const wildcard = require('socketio-wildcard');
-
+const ip = require("ip");
 const mongoose = require("mongoose");
 
 const swaggerSpecs = require("swagger-spec-express");
@@ -101,7 +101,8 @@ const Mars = module.exports = {
             log(`♂ Initializing ${displayName} routes...`.yellow);
             router.use(`/${apiPath}`, require(`${api}`));
         });
-        if (env.server.ENV_TYPE !== "local") {
+        let isLocalhost = ip.address().indexOf("192") > -1;
+        if (!isLocalhost) {
             app.use(subdomain(env.client.IS_DEVELOPMENT ? "dev.api" : "api", router)); // Add to API routes
         } else {
             app.use(router); // Add to app routes

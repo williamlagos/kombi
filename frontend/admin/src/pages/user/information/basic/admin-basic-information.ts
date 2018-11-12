@@ -62,11 +62,11 @@ export class AdminBasicInformationPage {
     }
 
     ionViewWillEnter() {
+        this.user.roles = [AppConstants.CUSTOMER_ROLE];
         this.initialize();
     }
 
     ionViewDidEnter() {
-        this.user.role = AppConstants.CUSTOMER_ROLE;
         setTimeout(() => { this.changeDetector.detectChanges(); }, 200);
     }
 
@@ -75,8 +75,8 @@ export class AdminBasicInformationPage {
         if (this.globals.currentOauthUser) this.user = this.globals.currentOauthUser;
         this.user.documents[0] = { type: "CPF", number: "" };
         // In case the user returned after starting the signup process
-        this.nextStep = this.signupPages.getNextStepFor("customer", "CustomerBasicInformationPage");
-        this.previousStep = this.signupPages.getPreviousStepFor("customer", "CustomerBasicInformationPage");
+        this.nextStep = this.signupPages.getNextStepFor(this.user.roles, "CustomerBasicInformationPage");
+        this.previousStep = this.signupPages.getPreviousStepFor(this.user.roles, "CustomerBasicInformationPage");
         if (!this.authService.finishedSignup()) this.user.signupStep = this.nextStep;
     }
 
@@ -88,7 +88,7 @@ export class AdminBasicInformationPage {
         try {
             this.spinner = this.interactionService.spinner({ content: `${this.translations.loading}...` });
             this.user.signupStep = "finished";
-            await Backend.createUser({ customer: this.user });
+            await Backend.createUser({ user: this.user });
             this.interactionService.alert(this.translations.admin_request_sent);
             return this.navigationService.goBack();
         } catch (e) {

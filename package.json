@@ -29,14 +29,14 @@
     "admin": "npm run prepare:app --app=admin & cd frontend/admin && npm run serve",
     "admin:export": "npm run prepare:app --app=admin & node .bin/app/export/web --app=admin",
     "customer_scripts": "|-------------- customer application scripts",
-    "customer": "npm run prepare:app --app=customer && cd frontend/customer && npm run serve",
+    "customer": "npm run prepare:app --app=customer & cd frontend/customer && npm run serve",
     "customer:export": "npm run prepare:app --app=customer & node .bin/app/export/web --app=customer",
     "driver_scripts": "|-------------- driver application scripts",
-    "driver": "npm run prepare:app --app=driver && cd frontend/driver && npm run serve",
+    "driver": "npm run prepare:app --app=driver & cd frontend/driver && npm run serve",
     "driver:export": "npm run prepare:app --app=driver & node .bin/app/export/web --app=driver",
     "landing_scripts": "|-------------- landing page scripts",
     "prepare:landing": "node .bin/landing/prepare/env",
-    "landing": "npm run prepare:landing && cd frontend/landing && npm run dev",
+    "landing": "npm run prepare:landing & cd frontend/landing && npm run dev",
     "landing:export": "npm run prepare:landing && node .bin/landing/export"
   },
   "dependencies": {

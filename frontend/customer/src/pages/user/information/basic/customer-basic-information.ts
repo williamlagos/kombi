@@ -20,12 +20,12 @@ import { Backend } from "@backend/index";
 import { AppUserPages } from "@pages/user-pages";
 
 @IonicPage({
-    segment: "signup/:role",
-    priority: "high"
+    segment: "signup"
 })
 @Component({
     selector: "page-customer-basic-information",
     templateUrl: "customer-basic-information.html",
+    changeDetection: ChangeDetectionStrategy.Default
 })
 
 export class CustomerBasicInformationPage {
@@ -45,41 +45,41 @@ export class CustomerBasicInformationPage {
     spinner: any;
     token: string;
 
-    constructor(public platform: Platform,
-        public app: App,
-        public zone: NgZone,
-        public navCtrl: NavController,
-        public navParams: NavParams,
-        public changeDetector: ChangeDetectorRef,
-        public locales: AppLocales,
-        public authService: MarsAuthService,
-        public signupPages: AppUserPages,
-        public globals: AppGlobals,
-        public interactionService: MarsInteractionService) {
+    constructor(private platform: Platform,
+        private app: App,
+        private zone: NgZone,
+        private navCtrl: NavController,
+        private navParams: NavParams,
+        private changeDetector: ChangeDetectorRef,
+        private locales: AppLocales,
+        private authService: MarsAuthService,
+        private userInformationPages: AppUserPages,
+        private globals: AppGlobals,
+        private interactionService: MarsInteractionService) {
         this.navigationService = new MarsNavigationService(this.app);
         this.navigationService.setNavCtrl(this.navCtrl);
         this.translations = this.locales.load();
     }
 
     ionViewWillEnter() {
+        this.user.roles = this.user.roles || [AppConstants.CUSTOMER_ROLE.toUpperCase()];
         this.initialize();
     }
 
     ionViewDidEnter() {
-        if (!this.navParams.data.role || (":role".indexOf(this.navParams.data.role) > -1))
-            this.navParams.data.role = AppConstants.CUSTOMER_ROLE.toLowerCase();
-        this.user.role = this.user.role || this.navParams.data.role.toUpperCase();
         setTimeout(() => { this.changeDetector.detectChanges(); }, 200);
     }
 
     initialize() {
         if (this.authService.isLoggedIn()) this.user = this.authService.getLoggedInUser();
         if (this.globals.currentOauthUser) this.user = this.globals.currentOauthUser;
+        if ((!this.user.roles) || !(this.user.roles.length > 0)) this.user.roles = ["CUSTOMER"];
         this.user.documents[0] = { type: "CPF", number: "" };
-        // In case the user returned after starting the signup process
-        this.nextStep = this.signupPages.getNextStepFor("customer", "CustomerBasicInformationPage");
-        this.previousStep = this.signupPages.getPreviousStepFor("customer", "CustomerBasicInformationPage");
+        
+        this.nextStep = this.userInformationPages.getNextStepFor(this.user.roles, "CustomerBasicInformationPage");
+        this.previousStep = this.userInformationPages.getPreviousStepFor(this.user.roles, "CustomerBasicInformationPage");
         if (!this.authService.finishedSignup()) this.user.signupStep = this.nextStep;
+        if(this.user.provider && this.user.provider !== "native" && !this.authService.finishedSignup()) this.save();
     }
 
     disableNextFor(form): boolean {
@@ -90,10 +90,13 @@ export class CustomerBasicInformationPage {
         try {
             this.spinner = this.interactionService.spinner({ content: `${this.translations.loading}...` });
             let isLoggedIn = this.authService.isLoggedIn();
-            let user = isLoggedIn ? (await Backend.updateUser({ customer: this.user, xAccessToken: MarsAuthService.getMarsToken() })).data : (await Backend.createUser({ customer: this.user })).data;
+            let user = isLoggedIn ? (await Backend.updateUser({ user: this.user, xAccessToken: MarsAuthService.getMarsToken() })).data : (await Backend.createUser({ user: this.user })).data;
             this.storeDataFor(user);
-            return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.goTo(this.nextStep);
+            setTimeout(() => {
+                return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.goTo(this.nextStep);
+            }, 500);
         } catch (e) {
+            console.log(e);
             this.interactionService.alert(this.translations.server_failure);
         } finally {
             this.spinner.dismiss();

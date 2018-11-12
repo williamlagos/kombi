@@ -19,7 +19,7 @@ export class MarsNavigationService {
     static AUTH_PAGE_REDIRECT = AppConstants.NAME.toUpperCase() + "_AUTH_PAGE_REDIRECT";
     _authRedirectPage;
 
-    constructor(public app: App) { }
+    constructor(private app: App) { }
 
     setNavCtrl(navCtrl: NavController) {
         this.navCtrl = navCtrl;
@@ -52,6 +52,7 @@ export class MarsNavigationService {
     goToRootPage(params?: any, animation?: any) {
         if (this.navControllerIsDefined()) {
             this.setRoot('HomePage');
+            this.setRoot('HomePage');
             let activeNav = this.app.getActiveNavs()[0];
             if (activeNav.getType() == "tab") {
                 let rootNav = this.app.getRootNavs()[0];
@@ -83,7 +84,7 @@ export class MarsNavigationService {
             return false;
         }
 
-        // Clears the page redirect for future authentications
+        
         delete localStorage[MarsNavigationService.AUTH_PAGE_REDIRECT];
 
         /* User has finished the signup process */
@@ -97,8 +98,8 @@ export class MarsNavigationService {
             let hasPermissions = false;
             roles.map((role) => { if (MarsAuthService.hasRole(role.toUpperCase())) hasPermissions = true; });
             if (!hasPermissions) {
-                if (this.canGoBack()) this.goBack(); // In case there are any views to return
-                else this.setRoot('HomePage'); // Otherwise, fallsback to the root page
+                if (this.canGoBack()) this.goBack(); 
+                else this.setRoot('HomePage'); 
                 return false;
             }
         }

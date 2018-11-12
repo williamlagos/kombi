@@ -48,7 +48,7 @@ export class AppMainPages {
                 getRoot: () => { return "AdminSettingsPage"; },
                 getRootParams: () => { return {} },
                 getTitle: () => { return "Configurações"; },
-                getUrlPath: () => { return "settings                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    " },
+                getUrlPath: () => { return "settings" },
                 getIcon: () => { return "settings"; },
                 getBadge: () => { return 0; },
                 canShow: () => { return MarsAuthService.hasRole("ADMIN") },

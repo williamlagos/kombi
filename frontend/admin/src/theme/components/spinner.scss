@@ -2,8 +2,9 @@ ion-spinner {
     vertical-align: middle;
     margin-right: 5px;
 }
+
 .ios {
-      ion-spinner {
+    ion-spinner {
         circle {
             fill: $balanced !important;
         }
@@ -15,5 +16,11 @@ ion-spinner {
         circle {
             stroke: $secondary !important;
         }
+    }
+}
+
+ion-loading[role=dialog] {
+    div.loading-wrapper {
+        border-radius: 10px;
     }
 }

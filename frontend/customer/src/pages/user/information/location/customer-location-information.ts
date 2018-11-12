@@ -23,10 +23,13 @@ import { MarsGeolocationService } from "@services/geolocation/geolocation.servic
 import { AppUserPages } from "@pages/user-pages";
 import { MarsGeocoderService } from "@services/geolocation/geocoder.service";
 
-@IonicPage({ priority: "high" })
+@IonicPage({
+    segment: "usr-location-information"
+})
 @Component({
     selector: "page-customer-location-information",
     templateUrl: "customer-location-information.html",
+    changeDetection: ChangeDetectionStrategy.Default
 })
 
 export class CustomerLocationInformationPage {
@@ -35,18 +38,12 @@ export class CustomerLocationInformationPage {
     previousStep: string;
     nextStep: string;
     translations: AppTranslations;
-
     userDataForm;
-
     isReady: boolean;
-
     showAddressSpinner = false;
-
     windowIsDesktopSized = window.innerWidth > 768;
     spinner: any;
-
     currentGooglePlace: any;
-
     user: any = {
         role: AppConstants.CUSTOMER_ROLE,
         address: {},
@@ -54,18 +51,18 @@ export class CustomerLocationInformationPage {
         documents: []
     };
 
-    constructor(public platform: Platform,
-        public app: App,
-        public navCtrl: NavController,
-        public zone: NgZone,
-        public changeDetector: ChangeDetectorRef,
-        public locales: AppLocales,
-        public authService: MarsAuthService,
-        public signupPages: AppUserPages,
-        public globals: AppGlobals,
-        public interactionService: MarsInteractionService,
-        public geocoderService: MarsGeocoderService,
-        public geolocationService: MarsGeolocationService) {
+    constructor(private platform: Platform,
+        private app: App,
+        private navCtrl: NavController,
+        private zone: NgZone,
+        private changeDetector: ChangeDetectorRef,
+        private locales: AppLocales,
+        private authService: MarsAuthService,
+        private userInformationPages: AppUserPages,
+        private globals: AppGlobals,
+        private interactionService: MarsInteractionService,
+        private geocoderService: MarsGeocoderService,
+        private geolocationService: MarsGeolocationService) {
         this.navigationService = new MarsNavigationService(this.app);
         this.navigationService.setNavCtrl(this.navCtrl);
         this.translations = this.locales.load();
@@ -75,9 +72,9 @@ export class CustomerLocationInformationPage {
     ionViewWillEnter() {
         if (this.authService.isLoggedIn())
             this.user = this.authService.getLoggedInUser();
-        // In case the user returned after starting the signup process
-        this.nextStep = this.signupPages.getNextStepFor("customer", "CustomerLocationInformationPage");
-        this.previousStep = this.signupPages.getPreviousStepFor("customer", "CustomerBasicInformationPage");
+
+        this.nextStep = this.userInformationPages.getNextStepFor(this.user.roles, "CustomerLocationInformationPage");
+        this.previousStep = this.userInformationPages.getPreviousStepFor(this.user.roles, "CustomerBasicInformationPage");
         if (!this.authService.finishedSignup()) this.user.signupStep = this.nextStep;
     }
 
@@ -92,31 +89,11 @@ export class CustomerLocationInformationPage {
     }
 
 
-    onAddressSelected($event) {
-        this.showAddressSpinner = false;
-        let complement = this.user.address.complement; // Keep user complement through the changes
-        let place: google.maps.places.PlaceResult = $event.place;
-        let address: any = {};
-        /* let address: any = MarsAddressAutocompleteDirective.getAddressFromPlace(place);*/
-        this.zone.run(() => {
-            let rawAddress = place.address_components;
-            address.googlePlace = this.currentGooglePlace = rawAddress;
-            let streetNumber = MarsAddressAutocompleteDirective.getAddressElement(rawAddress, "street_number");
-            if (!streetNumber) return alert("Ops! Por favor, informe o endereço com número ;)");
-
-            /* Parses address */
-            address.location = MarsAddressAutocompleteDirective.getPlaceLatLng(place);
-            address.street = MarsAddressAutocompleteDirective.getAddressElement(rawAddress, "route") + ", " + streetNumber;
-            address.number = MarsAddressAutocompleteDirective.getAddressElement(rawAddress, "street_number");
-            address.neighbourhood = MarsAddressAutocompleteDirective.getAddressElement(rawAddress, "sublocality");
-            address.city = MarsAddressAutocompleteDirective.getAddressElement(rawAddress, "administrative_area_level_2");
-            address.state = MarsAddressAutocompleteDirective.getAddressElement(rawAddress, "administrative_area_level_1");
-            address.country = MarsAddressAutocompleteDirective.getAddressElement(rawAddress, "country");
-            address.postalCode = MarsAddressAutocompleteDirective.getAddressElement(rawAddress, "postal_code");
-            address.complement = complement || "";
-            this.user.address = address;
-            this.changeDetector.detectChanges();
-        });
+    onAddressSelected(address) {
+        address.complement = this.user.address.complement || "";
+        if (!address.streetNumber) return this.interactionService.alert(this.translations.whoops_the_address_must_contain_the_street_number);;
+        this.user.address = address;
+        this.changeDetector.detectChanges();
     }
 
     disableNextFor(element): boolean {
@@ -143,17 +120,17 @@ export class CustomerLocationInformationPage {
         try {
             this.spinner = this.interactionService.spinner({ content: `${this.translations.loading}...` });
             if (!this.user.address.location) this.user.address.location = await this.getCoordinates();
-            console.log(this.user.address.location);
             let isLoggedIn = this.authService.isLoggedIn();
-            let user = isLoggedIn ? (await Backend.updateUser({ customer: this.user, xAccessToken: MarsAuthService.getMarsToken() })).data : (await Backend.createUser({ customer: this.user })).data;
+            let user = isLoggedIn ? (await Backend.updateUser({ user: this.user, xAccessToken: MarsAuthService.getMarsToken() })).data : (await Backend.createUser({ user: this.user })).data;
             this.storeDataFor(user);
-            return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.goTo(this.nextStep);
+            setTimeout(() => {
+                return MarsAuthService.finishedSignup() ? this.navigationService.goBack() : this.navigationService.setRoot("HomePage");
+            }, 500);
         } catch (e) {
-            console.log(e);
             this.interactionService.alert(this.translations.server_failure);
         } finally {
-            this.changeDetector.detectChanges();
             this.spinner.dismiss();
+            this.changeDetector.detectChanges();
         }
     }
 

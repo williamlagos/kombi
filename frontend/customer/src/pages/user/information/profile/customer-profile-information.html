@@ -9,7 +9,7 @@
 
 <ion-content #content text-center>
     
-    <mars-signup-progress></mars-signup-progress>
+
     
     <form user-info max-width-container #form="ngForm">
         
@@ -36,19 +36,20 @@
                 [(ngModel)]="user.phone" type="tel" required>
         </ion-item>
         
-        <ion-item with-mask>
+        <!-- <ion-item with-mask>
             <label>
                 <mars-translatable content="your_tax_document_CPF"></mars-translatable>
             </label>
             <input name="document" autocomplete="off" autocorrect="off" [placeholder]="translations.mask_cpf" [mask]="translations.mask_cpf"
-                [(ngModel)]="user.documents[0].number" type="tel" required [cpf]="user.documents[0].number">
-        </ion-item>
+                [(ngModel)]="user.documents[0].number" type="tel" required mars-cpf>
+        </ion-item> -->
         
         <button ion-button *ngIf="!authService.finishedSignup()" icon round large margin-top color="danger" (click)="goBack()">
             <ion-icon name="close"> </ion-icon>
         </button>
         
-        <button ion-button icon round large color="balanced" margin-top (click)="save()" [disabled]="disableNextFor(form)">
+        <button ion-button icon round large margin-top color="balanced" [disabled]="authService.isLoggedIn() ? !form.valid : (!user.acceptedTerms || !form.valid)"
+            (click)="save()">
             <ion-icon name="checkmark"> </ion-icon>
         </button>
     </form>

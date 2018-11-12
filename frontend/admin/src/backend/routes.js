@@ -3,46 +3,46 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.addSkipURL = exports.addSkip_TYPE = exports.addSkip_RAW_URL = exports.addSkip = exports.updatePasswordURL = exports.updatePassword_TYPE = exports.updatePassword_RAW_URL = exports.updatePassword = exports.recoverPasswordURL = exports.recoverPassword_TYPE = exports.recoverPassword_RAW_URL = exports.recoverPassword = exports.updateUserURL = exports.updateUser_TYPE = exports.updateUser_RAW_URL = exports.updateUser = exports.authenticateUserURL = exports.authenticateUser_TYPE = exports.authenticateUser_RAW_URL = exports.authenticateUser = exports.getUserProfileURL = exports.getUserProfile_TYPE = exports.getUserProfile_RAW_URL = exports.getUserProfile = exports.isUniqueUsernameURL = exports.isUniqueUsername_TYPE = exports.isUniqueUsername_RAW_URL = exports.isUniqueUsername = exports.createUserURL = exports.createUser_TYPE = exports.createUser_RAW_URL = exports.createUser = exports.removePictureURL = exports.removePicture_TYPE = exports.removePicture_RAW_URL = exports.removePicture = exports.getLatestURL = exports.getLatest_TYPE = exports.getLatest_RAW_URL = exports.getLatest = exports.getPictureURL = exports.getPicture_TYPE = exports.getPicture_RAW_URL = exports.getPicture = exports.addPictureURL = exports.addPicture_TYPE = exports.addPicture_RAW_URL = exports.addPicture = exports.accessWithFacebookURL = exports.accessWithFacebook_TYPE = exports.accessWithFacebook_RAW_URL = exports.accessWithFacebook = exports.getNotificationURL = exports.getNotification_TYPE = exports.getNotification_RAW_URL = exports.getNotification = exports.getNotificationsURL = exports.getNotifications_TYPE = exports.getNotifications_RAW_URL = exports.getNotifications = exports.sendNotificationURL = exports.sendNotification_TYPE = exports.sendNotification_RAW_URL = exports.sendNotification = exports.startOrderURL = exports.startOrder_TYPE = exports.startOrder_RAW_URL = exports.startOrder = exports.setOrderMerchantURL = exports.setOrderMerchant_TYPE = exports.setOrderMerchant_RAW_URL = exports.setOrderMerchant = exports.getOrdersNearbyURL = exports.getOrdersNearby_TYPE = exports.getOrdersNearby_RAW_URL = exports.getOrdersNearby = exports.getPaymentModesURL = exports.getPaymentModes_TYPE = exports.getPaymentModes_RAW_URL = exports.getPaymentModes = exports.getReceivingModesURL = exports.getReceivingModes_TYPE = exports.getReceivingModes_RAW_URL = exports.getReceivingModes = exports.rateOrderURL = exports.rateOrder_TYPE = exports.rateOrder_RAW_URL = exports.rateOrder = exports.cancelOrderURL = exports.cancelOrder_TYPE = exports.cancelOrder_RAW_URL = undefined;
-exports.cancelOrder = exports.acceptOrderURL = exports.acceptOrder_TYPE = exports.acceptOrder_RAW_URL = exports.acceptOrder = exports.getOrderURL = exports.getOrder_TYPE = exports.getOrder_RAW_URL = exports.getOrder = exports.getOrdersByPeriodURL = exports.getOrdersByPeriod_TYPE = exports.getOrdersByPeriod_RAW_URL = exports.getOrdersByPeriod = exports.getOrdersURL = exports.getOrders_TYPE = exports.getOrders_RAW_URL = exports.getOrders = exports.createOrderURL = exports.createOrder_TYPE = exports.createOrder_RAW_URL = exports.createOrder = exports.getNearbyMerchantsByServiceURL = exports.getNearbyMerchantsByService_TYPE = exports.getNearbyMerchantsByService_RAW_URL = exports.getNearbyMerchantsByService = exports.getNearbyMerchantsURL = exports.getNearbyMerchants_TYPE = exports.getNearbyMerchants_RAW_URL = exports.getNearbyMerchants = exports.createMerchantURL = exports.createMerchant_TYPE = exports.createMerchant_RAW_URL = exports.createMerchant = exports.getMerchantByUsernameURL = exports.getMerchantByUsername_TYPE = exports.getMerchantByUsername_RAW_URL = exports.getMerchantByUsername = exports.getMerchantByIdURL = exports.getMerchantById_TYPE = exports.getMerchantById_RAW_URL = exports.getMerchantById = exports.getFavoritesListURL = exports.getFavoritesList_TYPE = exports.getFavoritesList_RAW_URL = exports.getFavoritesList = exports.removeFavoriteMerchantURL = exports.removeFavoriteMerchant_TYPE = exports.removeFavoriteMerchant_RAW_URL = exports.removeFavoriteMerchant = exports.getOrderBidsURL = exports.getOrderBids_TYPE = exports.getOrderBids_RAW_URL = exports.getOrderBids = exports.placeFinalBidURL = exports.placeFinalBid_TYPE = exports.placeFinalBid_RAW_URL = exports.placeFinalBid = exports.placeBidURL = exports.placeBid_TYPE = exports.placeBid_RAW_URL = exports.placeBid = exports.getLeadURL = exports.getLead_TYPE = exports.getLead_RAW_URL = exports.getLead = exports.getLeadsURL = exports.getLeads_TYPE = exports.getLeads_RAW_URL = exports.getLeads = exports.addLeadURL = exports.addLead_TYPE = exports.addLead_RAW_URL = exports.addLead = exports.getChatURL = exports.getChat_TYPE = exports.getChat_RAW_URL = exports.getChat = exports.getChatsURL = exports.getChats_TYPE = exports.getChats_RAW_URL = exports.getChats = exports.changeUserRoleURL = exports.changeUserRole_TYPE = exports.changeUserRole_RAW_URL = exports.changeUserRole = exports.activateUserAsAdminURL = exports.activateUserAsAdmin_TYPE = exports.activateUserAsAdmin_RAW_URL = exports.activateUserAsAdmin = exports.deactivateUserAsAdminURL = exports.deactivateUserAsAdmin_TYPE = exports.deactivateUserAsAdmin_RAW_URL = exports.deactivateUserAsAdmin = exports.getUsersAsAdminURL = exports.getUsersAsAdmin_TYPE = exports.getUsersAsAdmin_RAW_URL = exports.getUsersAsAdmin = exports.request = exports.setDomain = exports.getDomain = undefined;
+exports.cancelOrder = exports.acceptOrderURL = exports.acceptOrder_TYPE = exports.acceptOrder_RAW_URL = exports.acceptOrder = exports.getOrderURL = exports.getOrder_TYPE = exports.getOrder_RAW_URL = exports.getOrder = exports.getOrdersByPeriodURL = exports.getOrdersByPeriod_TYPE = exports.getOrdersByPeriod_RAW_URL = exports.getOrdersByPeriod = exports.getOrdersURL = exports.getOrders_TYPE = exports.getOrders_RAW_URL = exports.getOrders = exports.createOrderURL = exports.createOrder_TYPE = exports.createOrder_RAW_URL = exports.createOrder = exports.getNearbyMerchantsByServiceURL = exports.getNearbyMerchantsByService_TYPE = exports.getNearbyMerchantsByService_RAW_URL = exports.getNearbyMerchantsByService = exports.getNearbyMerchantsURL = exports.getNearbyMerchants_TYPE = exports.getNearbyMerchants_RAW_URL = exports.getNearbyMerchants = exports.createMerchantURL = exports.createMerchant_TYPE = exports.createMerchant_RAW_URL = exports.createMerchant = exports.getMerchantByUsernameURL = exports.getMerchantByUsername_TYPE = exports.getMerchantByUsername_RAW_URL = exports.getMerchantByUsername = exports.getMerchantByIdURL = exports.getMerchantById_TYPE = exports.getMerchantById_RAW_URL = exports.getMerchantById = exports.getFavoritesListURL = exports.getFavoritesList_TYPE = exports.getFavoritesList_RAW_URL = exports.getFavoritesList = exports.removeFavoriteMerchantURL = exports.removeFavoriteMerchant_TYPE = exports.removeFavoriteMerchant_RAW_URL = exports.removeFavoriteMerchant = exports.getOrderBidsURL = exports.getOrderBids_TYPE = exports.getOrderBids_RAW_URL = exports.getOrderBids = exports.placeFinalBidURL = exports.placeFinalBid_TYPE = exports.placeFinalBid_RAW_URL = exports.placeFinalBid = exports.placeBidURL = exports.placeBid_TYPE = exports.placeBid_RAW_URL = exports.placeBid = exports.getLeadURL = exports.getLead_TYPE = exports.getLead_RAW_URL = exports.getLead = exports.getLeadsURL = exports.getLeads_TYPE = exports.getLeads_RAW_URL = exports.getLeads = exports.addLeadURL = exports.addLead_TYPE = exports.addLead_RAW_URL = exports.addLead = exports.getChatURL = exports.getChat_TYPE = exports.getChat_RAW_URL = exports.getChat = exports.getChatsURL = exports.getChats_TYPE = exports.getChats_RAW_URL = exports.getChats = exports.changeUserRoleURL = exports.changeUserRole_TYPE = exports.changeUserRole_RAW_URL = exports.changeUserRole = exports.activateUserAsAdminURL = exports.activateUserAsAdmin_TYPE = exports.activateUserAsAdmin_RAW_URL = exports.activateUserAsAdmin = exports.deactivateUserAsAdminURL = exports.deactivateUserAsAdmin_TYPE = exports.deactivateUserAsAdmin_RAW_URL = exports.deactivateUserAsAdmin = exports.getUsersAsAdminURL = exports.getUsersAsAdmin_TYPE = exports.getUsersAsAdmin_RAW_URL = exports.getUsersAsAdmin = exports.request = exports.setDomain = exports.getDomain = void 0;
+exports.addSkipURL = exports.addSkip_TYPE = exports.addSkip_RAW_URL = exports.addSkip = exports.updatePasswordURL = exports.updatePassword_TYPE = exports.updatePassword_RAW_URL = exports.updatePassword = exports.recoverPasswordURL = exports.recoverPassword_TYPE = exports.recoverPassword_RAW_URL = exports.recoverPassword = exports.updateUserURL = exports.updateUser_TYPE = exports.updateUser_RAW_URL = exports.updateUser = exports.authenticateUserURL = exports.authenticateUser_TYPE = exports.authenticateUser_RAW_URL = exports.authenticateUser = exports.getUserProfileURL = exports.getUserProfile_TYPE = exports.getUserProfile_RAW_URL = exports.getUserProfile = exports.isUniqueUsernameURL = exports.isUniqueUsername_TYPE = exports.isUniqueUsername_RAW_URL = exports.isUniqueUsername = exports.createUserURL = exports.createUser_TYPE = exports.createUser_RAW_URL = exports.createUser = exports.removePictureURL = exports.removePicture_TYPE = exports.removePicture_RAW_URL = exports.removePicture = exports.getLatestURL = exports.getLatest_TYPE = exports.getLatest_RAW_URL = exports.getLatest = exports.getPictureURL = exports.getPicture_TYPE = exports.getPicture_RAW_URL = exports.getPicture = exports.addPictureURL = exports.addPicture_TYPE = exports.addPicture_RAW_URL = exports.addPicture = exports.accessWithFacebookURL = exports.accessWithFacebook_TYPE = exports.accessWithFacebook_RAW_URL = exports.accessWithFacebook = exports.getNotificationURL = exports.getNotification_TYPE = exports.getNotification_RAW_URL = exports.getNotification = exports.getNotificationsURL = exports.getNotifications_TYPE = exports.getNotifications_RAW_URL = exports.getNotifications = exports.sendNotificationURL = exports.sendNotification_TYPE = exports.sendNotification_RAW_URL = exports.sendNotification = exports.startOrderURL = exports.startOrder_TYPE = exports.startOrder_RAW_URL = exports.startOrder = exports.setOrderMerchantURL = exports.setOrderMerchant_TYPE = exports.setOrderMerchant_RAW_URL = exports.setOrderMerchant = exports.getOrdersNearbyURL = exports.getOrdersNearby_TYPE = exports.getOrdersNearby_RAW_URL = exports.getOrdersNearby = exports.getPaymentModesURL = exports.getPaymentModes_TYPE = exports.getPaymentModes_RAW_URL = exports.getPaymentModes = exports.getReceivingModesURL = exports.getReceivingModes_TYPE = exports.getReceivingModes_RAW_URL = exports.getReceivingModes = exports.rateOrderURL = exports.rateOrder_TYPE = exports.rateOrder_RAW_URL = exports.rateOrder = exports.cancelOrderURL = exports.cancelOrder_TYPE = exports.cancelOrder_RAW_URL = void 0;
 
-var _axios = require("axios");
+var _axios = _interopRequireDefault(require("axios"));
 
-var _axios2 = _interopRequireDefault(_axios);
-
-var _qs = require("qs");
-
-var _qs2 = _interopRequireDefault(_qs);
+var _qs = _interopRequireDefault(require("qs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* eslint-disable */
 let domain = '';
 
-const getDomain = exports.getDomain = () => {
+const getDomain = () => {
   return domain;
 };
 
-const setDomain = exports.setDomain = $domain => {
+exports.getDomain = getDomain;
+
+const setDomain = $domain => {
   domain = $domain;
 };
 
-const request = exports.request = (method, url, body, queryParameters, form, config) => {
+exports.setDomain = setDomain;
+
+const request = (method, url, body, queryParameters, form, config) => {
   method = method.toLowerCase();
   let keys = Object.keys(queryParameters);
   let queryUrl = url;
 
   if (keys.length > 0) {
-    queryUrl = url + '?' + _qs2.default.stringify(queryParameters);
+    queryUrl = url + '?' + _qs.default.stringify(queryParameters);
   } // let queryUrl = url+(keys.length > 0 ? '?' + (keys.map(key => key + '=' + encodeURIComponent(queryParameters[key])).join('&')) : '')
 
 
   if (body) {
-    return _axios2.default[method](queryUrl, body, config);
+    return _axios.default[method](queryUrl, body, config);
   } else if (method === 'get' || method === 'delete' || method === 'head' || method === 'option') {
-    return _axios2.default[method](queryUrl, config);
+    return _axios.default[method](queryUrl, config);
   } else {
-    return _axios2.default[method](queryUrl, _qs2.default.stringify(form), config);
+    return _axios.default[method](queryUrl, _qs.default.stringify(form), config);
   }
 };
 /*==========================================================
@@ -63,12 +63,14 @@ const request = exports.request = (method, url, body, queryParameters, form, con
  */
 
 
-const getUsersAsAdmin = exports.getUsersAsAdmin = function (parameters = {}) {
+exports.request = request;
+
+const getUsersAsAdmin = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/admin/users';
+  let path = '/admin/users';
   let body;
   let queryParameters = {};
   let form = {};
@@ -118,18 +120,24 @@ const getUsersAsAdmin = exports.getUsersAsAdmin = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getUsersAsAdmin_RAW_URL = exports.getUsersAsAdmin_RAW_URL = function () {
-  return '/api/admin/users';
+exports.getUsersAsAdmin = getUsersAsAdmin;
+
+const getUsersAsAdmin_RAW_URL = function () {
+  return '/admin/users';
 };
 
-const getUsersAsAdmin_TYPE = exports.getUsersAsAdmin_TYPE = function () {
+exports.getUsersAsAdmin_RAW_URL = getUsersAsAdmin_RAW_URL;
+
+const getUsersAsAdmin_TYPE = function () {
   return 'get';
 };
 
-const getUsersAsAdminURL = exports.getUsersAsAdminURL = function (parameters = {}) {
+exports.getUsersAsAdmin_TYPE = getUsersAsAdmin_TYPE;
+
+const getUsersAsAdminURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/admin/users';
+  let path = '/admin/users';
 
   if (parameters['role'] !== undefined) {
     queryParameters['role'] = parameters['role'];
@@ -167,12 +175,14 @@ const getUsersAsAdminURL = exports.getUsersAsAdminURL = function (parameters = {
  */
 
 
-const deactivateUserAsAdmin = exports.deactivateUserAsAdmin = function (parameters = {}) {
+exports.getUsersAsAdminURL = getUsersAsAdminURL;
+
+const deactivateUserAsAdmin = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/admin/users/{id}';
+  let path = '/admin/users/{id}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -200,18 +210,24 @@ const deactivateUserAsAdmin = exports.deactivateUserAsAdmin = function (paramete
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const deactivateUserAsAdmin_RAW_URL = exports.deactivateUserAsAdmin_RAW_URL = function () {
-  return '/api/admin/users/{id}';
+exports.deactivateUserAsAdmin = deactivateUserAsAdmin;
+
+const deactivateUserAsAdmin_RAW_URL = function () {
+  return '/admin/users/{id}';
 };
 
-const deactivateUserAsAdmin_TYPE = exports.deactivateUserAsAdmin_TYPE = function () {
+exports.deactivateUserAsAdmin_RAW_URL = deactivateUserAsAdmin_RAW_URL;
+
+const deactivateUserAsAdmin_TYPE = function () {
   return 'post';
 };
 
-const deactivateUserAsAdminURL = exports.deactivateUserAsAdminURL = function (parameters = {}) {
+exports.deactivateUserAsAdmin_TYPE = deactivateUserAsAdmin_TYPE;
+
+const deactivateUserAsAdminURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/admin/users/{id}';
+  let path = '/admin/users/{id}';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -234,12 +250,14 @@ const deactivateUserAsAdminURL = exports.deactivateUserAsAdminURL = function (pa
  */
 
 
-const activateUserAsAdmin = exports.activateUserAsAdmin = function (parameters = {}) {
+exports.deactivateUserAsAdminURL = deactivateUserAsAdminURL;
+
+const activateUserAsAdmin = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/admin/users/{id}/activate';
+  let path = '/admin/users/{id}/activate';
   let body;
   let queryParameters = {};
   let form = {};
@@ -267,18 +285,24 @@ const activateUserAsAdmin = exports.activateUserAsAdmin = function (parameters =
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const activateUserAsAdmin_RAW_URL = exports.activateUserAsAdmin_RAW_URL = function () {
-  return '/api/admin/users/{id}/activate';
+exports.activateUserAsAdmin = activateUserAsAdmin;
+
+const activateUserAsAdmin_RAW_URL = function () {
+  return '/admin/users/{id}/activate';
 };
 
-const activateUserAsAdmin_TYPE = exports.activateUserAsAdmin_TYPE = function () {
+exports.activateUserAsAdmin_RAW_URL = activateUserAsAdmin_RAW_URL;
+
+const activateUserAsAdmin_TYPE = function () {
   return 'post';
 };
 
-const activateUserAsAdminURL = exports.activateUserAsAdminURL = function (parameters = {}) {
+exports.activateUserAsAdmin_TYPE = activateUserAsAdmin_TYPE;
+
+const activateUserAsAdminURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/admin/users/{id}/activate';
+  let path = '/admin/users/{id}/activate';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -302,12 +326,14 @@ const activateUserAsAdminURL = exports.activateUserAsAdminURL = function (parame
  */
 
 
-const changeUserRole = exports.changeUserRole = function (parameters = {}) {
+exports.activateUserAsAdminURL = activateUserAsAdminURL;
+
+const changeUserRole = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/admin/users/{id}/role/{role}';
+  let path = '/admin/users/{id}/role/{role}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -341,18 +367,24 @@ const changeUserRole = exports.changeUserRole = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const changeUserRole_RAW_URL = exports.changeUserRole_RAW_URL = function () {
-  return '/api/admin/users/{id}/role/{role}';
+exports.changeUserRole = changeUserRole;
+
+const changeUserRole_RAW_URL = function () {
+  return '/admin/users/{id}/role/{role}';
 };
 
-const changeUserRole_TYPE = exports.changeUserRole_TYPE = function () {
+exports.changeUserRole_RAW_URL = changeUserRole_RAW_URL;
+
+const changeUserRole_TYPE = function () {
   return 'post';
 };
 
-const changeUserRoleURL = exports.changeUserRoleURL = function (parameters = {}) {
+exports.changeUserRole_TYPE = changeUserRole_TYPE;
+
+const changeUserRoleURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/admin/users/{id}/role/{role}';
+  let path = '/admin/users/{id}/role/{role}';
   path = path.replace('{id}', `${parameters['id']}`);
   path = path.replace('{role}', `${parameters['role']}`);
 
@@ -375,12 +407,14 @@ const changeUserRoleURL = exports.changeUserRoleURL = function (parameters = {})
  */
 
 
-const getChats = exports.getChats = function (parameters = {}) {
+exports.changeUserRoleURL = changeUserRoleURL;
+
+const getChats = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/chat/chats';
+  let path = '/chat/chats';
   let body;
   let queryParameters = {};
   let form = {};
@@ -402,18 +436,24 @@ const getChats = exports.getChats = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getChats_RAW_URL = exports.getChats_RAW_URL = function () {
-  return '/api/chat/chats';
+exports.getChats = getChats;
+
+const getChats_RAW_URL = function () {
+  return '/chat/chats';
 };
 
-const getChats_TYPE = exports.getChats_TYPE = function () {
+exports.getChats_RAW_URL = getChats_RAW_URL;
+
+const getChats_TYPE = function () {
   return 'get';
 };
 
-const getChatsURL = exports.getChatsURL = function (parameters = {}) {
+exports.getChats_TYPE = getChats_TYPE;
+
+const getChatsURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/chat/chats';
+  let path = '/chat/chats';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -435,12 +475,14 @@ const getChatsURL = exports.getChatsURL = function (parameters = {}) {
  */
 
 
-const getChat = exports.getChat = function (parameters = {}) {
+exports.getChatsURL = getChatsURL;
+
+const getChat = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/chat/{chat}';
+  let path = '/chat/{chat}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -468,18 +510,24 @@ const getChat = exports.getChat = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getChat_RAW_URL = exports.getChat_RAW_URL = function () {
-  return '/api/chat/{chat}';
+exports.getChat = getChat;
+
+const getChat_RAW_URL = function () {
+  return '/chat/{chat}';
 };
 
-const getChat_TYPE = exports.getChat_TYPE = function () {
+exports.getChat_RAW_URL = getChat_RAW_URL;
+
+const getChat_TYPE = function () {
   return 'get';
 };
 
-const getChatURL = exports.getChatURL = function (parameters = {}) {
+exports.getChat_TYPE = getChat_TYPE;
+
+const getChatURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/chat/{chat}';
+  let path = '/chat/{chat}';
   path = path.replace('{chat}', `${parameters['chat']}`);
 
   if (parameters.$queryParameters) {
@@ -501,12 +549,14 @@ const getChatURL = exports.getChatURL = function (parameters = {}) {
  */
 
 
-const addLead = exports.addLead = function (parameters = {}) {
+exports.getChatURL = getChatURL;
+
+const addLead = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/lead';
+  let path = '/lead';
   let body;
   let queryParameters = {};
   let form = {};
@@ -524,18 +574,24 @@ const addLead = exports.addLead = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const addLead_RAW_URL = exports.addLead_RAW_URL = function () {
-  return '/api/lead';
+exports.addLead = addLead;
+
+const addLead_RAW_URL = function () {
+  return '/lead';
 };
 
-const addLead_TYPE = exports.addLead_TYPE = function () {
+exports.addLead_RAW_URL = addLead_RAW_URL;
+
+const addLead_TYPE = function () {
   return 'post';
 };
 
-const addLeadURL = exports.addLeadURL = function (parameters = {}) {
+exports.addLead_TYPE = addLead_TYPE;
+
+const addLeadURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/lead';
+  let path = '/lead';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -556,12 +612,14 @@ const addLeadURL = exports.addLeadURL = function (parameters = {}) {
  */
 
 
-const getLeads = exports.getLeads = function (parameters = {}) {
+exports.addLeadURL = addLeadURL;
+
+const getLeads = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/lead';
+  let path = '/lead';
   let body;
   let queryParameters = {};
   let form = {};
@@ -583,18 +641,24 @@ const getLeads = exports.getLeads = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getLeads_RAW_URL = exports.getLeads_RAW_URL = function () {
-  return '/api/lead';
+exports.getLeads = getLeads;
+
+const getLeads_RAW_URL = function () {
+  return '/lead';
 };
 
-const getLeads_TYPE = exports.getLeads_TYPE = function () {
+exports.getLeads_RAW_URL = getLeads_RAW_URL;
+
+const getLeads_TYPE = function () {
   return 'get';
 };
 
-const getLeadsURL = exports.getLeadsURL = function (parameters = {}) {
+exports.getLeads_TYPE = getLeads_TYPE;
+
+const getLeadsURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/lead';
+  let path = '/lead';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -616,12 +680,14 @@ const getLeadsURL = exports.getLeadsURL = function (parameters = {}) {
  */
 
 
-const getLead = exports.getLead = function (parameters = {}) {
+exports.getLeadsURL = getLeadsURL;
+
+const getLead = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/lead/{id}';
+  let path = '/lead/{id}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -649,18 +715,24 @@ const getLead = exports.getLead = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getLead_RAW_URL = exports.getLead_RAW_URL = function () {
-  return '/api/lead/{id}';
+exports.getLead = getLead;
+
+const getLead_RAW_URL = function () {
+  return '/lead/{id}';
 };
 
-const getLead_TYPE = exports.getLead_TYPE = function () {
+exports.getLead_RAW_URL = getLead_RAW_URL;
+
+const getLead_TYPE = function () {
   return 'get';
 };
 
-const getLeadURL = exports.getLeadURL = function (parameters = {}) {
+exports.getLead_TYPE = getLead_TYPE;
+
+const getLeadURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/lead/{id}';
+  let path = '/lead/{id}';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -684,12 +756,14 @@ const getLeadURL = exports.getLeadURL = function (parameters = {}) {
  */
 
 
-const placeBid = exports.placeBid = function (parameters = {}) {
+exports.getLeadURL = getLeadURL;
+
+const placeBid = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/bid/{order}/place';
+  let path = '/bid/{order}/place';
   let body;
   let queryParameters = {};
   let form = {};
@@ -721,18 +795,24 @@ const placeBid = exports.placeBid = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const placeBid_RAW_URL = exports.placeBid_RAW_URL = function () {
-  return '/api/bid/{order}/place';
+exports.placeBid = placeBid;
+
+const placeBid_RAW_URL = function () {
+  return '/bid/{order}/place';
 };
 
-const placeBid_TYPE = exports.placeBid_TYPE = function () {
+exports.placeBid_RAW_URL = placeBid_RAW_URL;
+
+const placeBid_TYPE = function () {
   return 'post';
 };
 
-const placeBidURL = exports.placeBidURL = function (parameters = {}) {
+exports.placeBid_TYPE = placeBid_TYPE;
+
+const placeBidURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/bid/{order}/place';
+  let path = '/bid/{order}/place';
   path = path.replace('{order}', `${parameters['order']}`);
 
   if (parameters.$queryParameters) {
@@ -756,12 +836,14 @@ const placeBidURL = exports.placeBidURL = function (parameters = {}) {
  */
 
 
-const placeFinalBid = exports.placeFinalBid = function (parameters = {}) {
+exports.placeBidURL = placeBidURL;
+
+const placeFinalBid = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/bid/{order}/final';
+  let path = '/bid/{order}/final';
   let body;
   let queryParameters = {};
   let form = {};
@@ -793,18 +875,24 @@ const placeFinalBid = exports.placeFinalBid = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const placeFinalBid_RAW_URL = exports.placeFinalBid_RAW_URL = function () {
-  return '/api/bid/{order}/final';
+exports.placeFinalBid = placeFinalBid;
+
+const placeFinalBid_RAW_URL = function () {
+  return '/bid/{order}/final';
 };
 
-const placeFinalBid_TYPE = exports.placeFinalBid_TYPE = function () {
+exports.placeFinalBid_RAW_URL = placeFinalBid_RAW_URL;
+
+const placeFinalBid_TYPE = function () {
   return 'post';
 };
 
-const placeFinalBidURL = exports.placeFinalBidURL = function (parameters = {}) {
+exports.placeFinalBid_TYPE = placeFinalBid_TYPE;
+
+const placeFinalBidURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/bid/{order}/final';
+  let path = '/bid/{order}/final';
   path = path.replace('{order}', `${parameters['order']}`);
 
   if (parameters.$queryParameters) {
@@ -827,12 +915,14 @@ const placeFinalBidURL = exports.placeFinalBidURL = function (parameters = {}) {
  */
 
 
-const getOrderBids = exports.getOrderBids = function (parameters = {}) {
+exports.placeFinalBidURL = placeFinalBidURL;
+
+const getOrderBids = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/bid/by-order/{order}';
+  let path = '/bid/by-order/{order}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -860,18 +950,24 @@ const getOrderBids = exports.getOrderBids = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getOrderBids_RAW_URL = exports.getOrderBids_RAW_URL = function () {
-  return '/api/bid/by-order/{order}';
+exports.getOrderBids = getOrderBids;
+
+const getOrderBids_RAW_URL = function () {
+  return '/bid/by-order/{order}';
 };
 
-const getOrderBids_TYPE = exports.getOrderBids_TYPE = function () {
+exports.getOrderBids_RAW_URL = getOrderBids_RAW_URL;
+
+const getOrderBids_TYPE = function () {
   return 'get';
 };
 
-const getOrderBidsURL = exports.getOrderBidsURL = function (parameters = {}) {
+exports.getOrderBids_TYPE = getOrderBids_TYPE;
+
+const getOrderBidsURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/bid/by-order/{order}';
+  let path = '/bid/by-order/{order}';
   path = path.replace('{order}', `${parameters['order']}`);
 
   if (parameters.$queryParameters) {
@@ -894,12 +990,14 @@ const getOrderBidsURL = exports.getOrderBidsURL = function (parameters = {}) {
  */
 
 
-const removeFavoriteMerchant = exports.removeFavoriteMerchant = function (parameters = {}) {
+exports.getOrderBidsURL = getOrderBidsURL;
+
+const removeFavoriteMerchant = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/customer/favorites/merchant/{merchant}';
+  let path = '/customer/favorites/merchant/{merchant}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -927,18 +1025,24 @@ const removeFavoriteMerchant = exports.removeFavoriteMerchant = function (parame
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const removeFavoriteMerchant_RAW_URL = exports.removeFavoriteMerchant_RAW_URL = function () {
-  return '/api/customer/favorites/merchant/{merchant}';
+exports.removeFavoriteMerchant = removeFavoriteMerchant;
+
+const removeFavoriteMerchant_RAW_URL = function () {
+  return '/customer/favorites/merchant/{merchant}';
 };
 
-const removeFavoriteMerchant_TYPE = exports.removeFavoriteMerchant_TYPE = function () {
+exports.removeFavoriteMerchant_RAW_URL = removeFavoriteMerchant_RAW_URL;
+
+const removeFavoriteMerchant_TYPE = function () {
   return 'post';
 };
 
-const removeFavoriteMerchantURL = exports.removeFavoriteMerchantURL = function (parameters = {}) {
+exports.removeFavoriteMerchant_TYPE = removeFavoriteMerchant_TYPE;
+
+const removeFavoriteMerchantURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/customer/favorites/merchant/{merchant}';
+  let path = '/customer/favorites/merchant/{merchant}';
   path = path.replace('{merchant}', `${parameters['merchant']}`);
 
   if (parameters.$queryParameters) {
@@ -960,12 +1064,14 @@ const removeFavoriteMerchantURL = exports.removeFavoriteMerchantURL = function (
  */
 
 
-const getFavoritesList = exports.getFavoritesList = function (parameters = {}) {
+exports.removeFavoriteMerchantURL = removeFavoriteMerchantURL;
+
+const getFavoritesList = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/customer/favorites/merchants';
+  let path = '/customer/favorites/merchants';
   let body;
   let queryParameters = {};
   let form = {};
@@ -987,18 +1093,24 @@ const getFavoritesList = exports.getFavoritesList = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getFavoritesList_RAW_URL = exports.getFavoritesList_RAW_URL = function () {
-  return '/api/customer/favorites/merchants';
+exports.getFavoritesList = getFavoritesList;
+
+const getFavoritesList_RAW_URL = function () {
+  return '/customer/favorites/merchants';
 };
 
-const getFavoritesList_TYPE = exports.getFavoritesList_TYPE = function () {
+exports.getFavoritesList_RAW_URL = getFavoritesList_RAW_URL;
+
+const getFavoritesList_TYPE = function () {
   return 'get';
 };
 
-const getFavoritesListURL = exports.getFavoritesListURL = function (parameters = {}) {
+exports.getFavoritesList_TYPE = getFavoritesList_TYPE;
+
+const getFavoritesListURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/customer/favorites/merchants';
+  let path = '/customer/favorites/merchants';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -1019,12 +1131,14 @@ const getFavoritesListURL = exports.getFavoritesListURL = function (parameters =
  */
 
 
-const getMerchantById = exports.getMerchantById = function (parameters = {}) {
+exports.getFavoritesListURL = getFavoritesListURL;
+
+const getMerchantById = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/merchant/{id}/details';
+  let path = '/merchant/{id}/details';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1043,18 +1157,24 @@ const getMerchantById = exports.getMerchantById = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getMerchantById_RAW_URL = exports.getMerchantById_RAW_URL = function () {
-  return '/api/merchant/{id}/details';
+exports.getMerchantById = getMerchantById;
+
+const getMerchantById_RAW_URL = function () {
+  return '/merchant/{id}/details';
 };
 
-const getMerchantById_TYPE = exports.getMerchantById_TYPE = function () {
+exports.getMerchantById_RAW_URL = getMerchantById_RAW_URL;
+
+const getMerchantById_TYPE = function () {
   return 'get';
 };
 
-const getMerchantByIdURL = exports.getMerchantByIdURL = function (parameters = {}) {
+exports.getMerchantById_TYPE = getMerchantById_TYPE;
+
+const getMerchantByIdURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/merchant/{id}/details';
+  let path = '/merchant/{id}/details';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -1076,12 +1196,14 @@ const getMerchantByIdURL = exports.getMerchantByIdURL = function (parameters = {
  */
 
 
-const getMerchantByUsername = exports.getMerchantByUsername = function (parameters = {}) {
+exports.getMerchantByIdURL = getMerchantByIdURL;
+
+const getMerchantByUsername = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/merchant/by-username/{username}';
+  let path = '/merchant/by-username/{username}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1100,18 +1222,24 @@ const getMerchantByUsername = exports.getMerchantByUsername = function (paramete
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getMerchantByUsername_RAW_URL = exports.getMerchantByUsername_RAW_URL = function () {
-  return '/api/merchant/by-username/{username}';
+exports.getMerchantByUsername = getMerchantByUsername;
+
+const getMerchantByUsername_RAW_URL = function () {
+  return '/merchant/by-username/{username}';
 };
 
-const getMerchantByUsername_TYPE = exports.getMerchantByUsername_TYPE = function () {
+exports.getMerchantByUsername_RAW_URL = getMerchantByUsername_RAW_URL;
+
+const getMerchantByUsername_TYPE = function () {
   return 'get';
 };
 
-const getMerchantByUsernameURL = exports.getMerchantByUsernameURL = function (parameters = {}) {
+exports.getMerchantByUsername_TYPE = getMerchantByUsername_TYPE;
+
+const getMerchantByUsernameURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/merchant/by-username/{username}';
+  let path = '/merchant/by-username/{username}';
   path = path.replace('{username}', `${parameters['username']}`);
 
   if (parameters.$queryParameters) {
@@ -1134,12 +1262,14 @@ const getMerchantByUsernameURL = exports.getMerchantByUsernameURL = function (pa
  */
 
 
-const createMerchant = exports.createMerchant = function (parameters = {}) {
+exports.getMerchantByUsernameURL = getMerchantByUsernameURL;
+
+const createMerchant = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/merchant/account/payment';
+  let path = '/merchant/account/payment';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1165,18 +1295,24 @@ const createMerchant = exports.createMerchant = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const createMerchant_RAW_URL = exports.createMerchant_RAW_URL = function () {
-  return '/api/merchant/account/payment';
+exports.createMerchant = createMerchant;
+
+const createMerchant_RAW_URL = function () {
+  return '/merchant/account/payment';
 };
 
-const createMerchant_TYPE = exports.createMerchant_TYPE = function () {
+exports.createMerchant_RAW_URL = createMerchant_RAW_URL;
+
+const createMerchant_TYPE = function () {
   return 'post';
 };
 
-const createMerchantURL = exports.createMerchantURL = function (parameters = {}) {
+exports.createMerchant_TYPE = createMerchant_TYPE;
+
+const createMerchantURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/merchant/account/payment';
+  let path = '/merchant/account/payment';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -1200,12 +1336,14 @@ const createMerchantURL = exports.createMerchantURL = function (parameters = {})
  */
 
 
-const getNearbyMerchants = exports.getNearbyMerchants = function (parameters = {}) {
+exports.createMerchantURL = createMerchantURL;
+
+const getNearbyMerchants = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/merchant/nearby';
+  let path = '/merchant/nearby';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1243,18 +1381,24 @@ const getNearbyMerchants = exports.getNearbyMerchants = function (parameters = {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getNearbyMerchants_RAW_URL = exports.getNearbyMerchants_RAW_URL = function () {
-  return '/api/merchant/nearby';
+exports.getNearbyMerchants = getNearbyMerchants;
+
+const getNearbyMerchants_RAW_URL = function () {
+  return '/merchant/nearby';
 };
 
-const getNearbyMerchants_TYPE = exports.getNearbyMerchants_TYPE = function () {
+exports.getNearbyMerchants_RAW_URL = getNearbyMerchants_RAW_URL;
+
+const getNearbyMerchants_TYPE = function () {
   return 'get';
 };
 
-const getNearbyMerchantsURL = exports.getNearbyMerchantsURL = function (parameters = {}) {
+exports.getNearbyMerchants_TYPE = getNearbyMerchants_TYPE;
+
+const getNearbyMerchantsURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/merchant/nearby';
+  let path = '/merchant/nearby';
 
   if (parameters['latitude'] !== undefined) {
     queryParameters['latitude'] = parameters['latitude'];
@@ -1295,12 +1439,14 @@ const getNearbyMerchantsURL = exports.getNearbyMerchantsURL = function (paramete
  */
 
 
-const getNearbyMerchantsByService = exports.getNearbyMerchantsByService = function (parameters = {}) {
+exports.getNearbyMerchantsURL = getNearbyMerchantsURL;
+
+const getNearbyMerchantsByService = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/merchant/nearby/{service}';
+  let path = '/merchant/nearby/{service}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1343,18 +1489,24 @@ const getNearbyMerchantsByService = exports.getNearbyMerchantsByService = functi
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getNearbyMerchantsByService_RAW_URL = exports.getNearbyMerchantsByService_RAW_URL = function () {
-  return '/api/merchant/nearby/{service}';
+exports.getNearbyMerchantsByService = getNearbyMerchantsByService;
+
+const getNearbyMerchantsByService_RAW_URL = function () {
+  return '/merchant/nearby/{service}';
 };
 
-const getNearbyMerchantsByService_TYPE = exports.getNearbyMerchantsByService_TYPE = function () {
+exports.getNearbyMerchantsByService_RAW_URL = getNearbyMerchantsByService_RAW_URL;
+
+const getNearbyMerchantsByService_TYPE = function () {
   return 'get';
 };
 
-const getNearbyMerchantsByServiceURL = exports.getNearbyMerchantsByServiceURL = function (parameters = {}) {
+exports.getNearbyMerchantsByService_TYPE = getNearbyMerchantsByService_TYPE;
+
+const getNearbyMerchantsByServiceURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/merchant/nearby/{service}';
+  let path = '/merchant/nearby/{service}';
   path = path.replace('{service}', `${parameters['service']}`);
 
   if (parameters['latitude'] !== undefined) {
@@ -1393,12 +1545,14 @@ const getNearbyMerchantsByServiceURL = exports.getNearbyMerchantsByServiceURL = 
  */
 
 
-const createOrder = exports.createOrder = function (parameters = {}) {
+exports.getNearbyMerchantsByServiceURL = getNearbyMerchantsByServiceURL;
+
+const createOrder = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order';
+  let path = '/order';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1424,18 +1578,24 @@ const createOrder = exports.createOrder = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const createOrder_RAW_URL = exports.createOrder_RAW_URL = function () {
-  return '/api/order';
+exports.createOrder = createOrder;
+
+const createOrder_RAW_URL = function () {
+  return '/order';
 };
 
-const createOrder_TYPE = exports.createOrder_TYPE = function () {
+exports.createOrder_RAW_URL = createOrder_RAW_URL;
+
+const createOrder_TYPE = function () {
   return 'post';
 };
 
-const createOrderURL = exports.createOrderURL = function (parameters = {}) {
+exports.createOrder_TYPE = createOrder_TYPE;
+
+const createOrderURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order';
+  let path = '/order';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -1457,12 +1617,14 @@ const createOrderURL = exports.createOrderURL = function (parameters = {}) {
  */
 
 
-const getOrders = exports.getOrders = function (parameters = {}) {
+exports.createOrderURL = createOrderURL;
+
+const getOrders = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order';
+  let path = '/order';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1488,18 +1650,24 @@ const getOrders = exports.getOrders = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getOrders_RAW_URL = exports.getOrders_RAW_URL = function () {
-  return '/api/order';
+exports.getOrders = getOrders;
+
+const getOrders_RAW_URL = function () {
+  return '/order';
 };
 
-const getOrders_TYPE = exports.getOrders_TYPE = function () {
+exports.getOrders_RAW_URL = getOrders_RAW_URL;
+
+const getOrders_TYPE = function () {
   return 'get';
 };
 
-const getOrdersURL = exports.getOrdersURL = function (parameters = {}) {
+exports.getOrders_TYPE = getOrders_TYPE;
+
+const getOrdersURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order';
+  let path = '/order';
 
   if (parameters['status'] !== undefined) {
     queryParameters['status'] = parameters['status'];
@@ -1527,12 +1695,14 @@ const getOrdersURL = exports.getOrdersURL = function (parameters = {}) {
  */
 
 
-const getOrdersByPeriod = exports.getOrdersByPeriod = function (parameters = {}) {
+exports.getOrdersURL = getOrdersURL;
+
+const getOrdersByPeriod = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/between-dates';
+  let path = '/order/between-dates';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1566,18 +1736,24 @@ const getOrdersByPeriod = exports.getOrdersByPeriod = function (parameters = {})
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getOrdersByPeriod_RAW_URL = exports.getOrdersByPeriod_RAW_URL = function () {
-  return '/api/order/between-dates';
+exports.getOrdersByPeriod = getOrdersByPeriod;
+
+const getOrdersByPeriod_RAW_URL = function () {
+  return '/order/between-dates';
 };
 
-const getOrdersByPeriod_TYPE = exports.getOrdersByPeriod_TYPE = function () {
+exports.getOrdersByPeriod_RAW_URL = getOrdersByPeriod_RAW_URL;
+
+const getOrdersByPeriod_TYPE = function () {
   return 'get';
 };
 
-const getOrdersByPeriodURL = exports.getOrdersByPeriodURL = function (parameters = {}) {
+exports.getOrdersByPeriod_TYPE = getOrdersByPeriod_TYPE;
+
+const getOrdersByPeriodURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/between-dates';
+  let path = '/order/between-dates';
 
   if (parameters['status'] !== undefined) {
     queryParameters['status'] = parameters['status'];
@@ -1611,12 +1787,14 @@ const getOrdersByPeriodURL = exports.getOrdersByPeriodURL = function (parameters
  */
 
 
-const getOrder = exports.getOrder = function (parameters = {}) {
+exports.getOrdersByPeriodURL = getOrdersByPeriodURL;
+
+const getOrder = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/{id}';
+  let path = '/order/{id}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1644,18 +1822,24 @@ const getOrder = exports.getOrder = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getOrder_RAW_URL = exports.getOrder_RAW_URL = function () {
-  return '/api/order/{id}';
+exports.getOrder = getOrder;
+
+const getOrder_RAW_URL = function () {
+  return '/order/{id}';
 };
 
-const getOrder_TYPE = exports.getOrder_TYPE = function () {
+exports.getOrder_RAW_URL = getOrder_RAW_URL;
+
+const getOrder_TYPE = function () {
   return 'get';
 };
 
-const getOrderURL = exports.getOrderURL = function (parameters = {}) {
+exports.getOrder_TYPE = getOrder_TYPE;
+
+const getOrderURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/{id}';
+  let path = '/order/{id}';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -1678,12 +1862,14 @@ const getOrderURL = exports.getOrderURL = function (parameters = {}) {
  */
 
 
-const acceptOrder = exports.acceptOrder = function (parameters = {}) {
+exports.getOrderURL = getOrderURL;
+
+const acceptOrder = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/{id}/accept';
+  let path = '/order/{id}/accept';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1711,18 +1897,24 @@ const acceptOrder = exports.acceptOrder = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const acceptOrder_RAW_URL = exports.acceptOrder_RAW_URL = function () {
-  return '/api/order/{id}/accept';
+exports.acceptOrder = acceptOrder;
+
+const acceptOrder_RAW_URL = function () {
+  return '/order/{id}/accept';
 };
 
-const acceptOrder_TYPE = exports.acceptOrder_TYPE = function () {
+exports.acceptOrder_RAW_URL = acceptOrder_RAW_URL;
+
+const acceptOrder_TYPE = function () {
   return 'post';
 };
 
-const acceptOrderURL = exports.acceptOrderURL = function (parameters = {}) {
+exports.acceptOrder_TYPE = acceptOrder_TYPE;
+
+const acceptOrderURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/{id}/accept';
+  let path = '/order/{id}/accept';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -1745,12 +1937,14 @@ const acceptOrderURL = exports.acceptOrderURL = function (parameters = {}) {
  */
 
 
-const cancelOrder = exports.cancelOrder = function (parameters = {}) {
+exports.acceptOrderURL = acceptOrderURL;
+
+const cancelOrder = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/{id}/cancel';
+  let path = '/order/{id}/cancel';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1778,18 +1972,24 @@ const cancelOrder = exports.cancelOrder = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const cancelOrder_RAW_URL = exports.cancelOrder_RAW_URL = function () {
-  return '/api/order/{id}/cancel';
+exports.cancelOrder = cancelOrder;
+
+const cancelOrder_RAW_URL = function () {
+  return '/order/{id}/cancel';
 };
 
-const cancelOrder_TYPE = exports.cancelOrder_TYPE = function () {
+exports.cancelOrder_RAW_URL = cancelOrder_RAW_URL;
+
+const cancelOrder_TYPE = function () {
   return 'get';
 };
 
-const cancelOrderURL = exports.cancelOrderURL = function (parameters = {}) {
+exports.cancelOrder_TYPE = cancelOrder_TYPE;
+
+const cancelOrderURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/{id}/cancel';
+  let path = '/order/{id}/cancel';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -1813,12 +2013,14 @@ const cancelOrderURL = exports.cancelOrderURL = function (parameters = {}) {
  */
 
 
-const rateOrder = exports.rateOrder = function (parameters = {}) {
+exports.cancelOrderURL = cancelOrderURL;
+
+const rateOrder = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/{id}/rate/{rate}';
+  let path = '/order/{id}/rate/{rate}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1852,18 +2054,24 @@ const rateOrder = exports.rateOrder = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const rateOrder_RAW_URL = exports.rateOrder_RAW_URL = function () {
-  return '/api/order/{id}/rate/{rate}';
+exports.rateOrder = rateOrder;
+
+const rateOrder_RAW_URL = function () {
+  return '/order/{id}/rate/{rate}';
 };
 
-const rateOrder_TYPE = exports.rateOrder_TYPE = function () {
+exports.rateOrder_RAW_URL = rateOrder_RAW_URL;
+
+const rateOrder_TYPE = function () {
   return 'post';
 };
 
-const rateOrderURL = exports.rateOrderURL = function (parameters = {}) {
+exports.rateOrder_TYPE = rateOrder_TYPE;
+
+const rateOrderURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/{id}/rate/{rate}';
+  let path = '/order/{id}/rate/{rate}';
   path = path.replace('{id}', `${parameters['id']}`);
   path = path.replace('{rate}', `${parameters['rate']}`);
 
@@ -1885,12 +2093,14 @@ const rateOrderURL = exports.rateOrderURL = function (parameters = {}) {
  */
 
 
-const getReceivingModes = exports.getReceivingModes = function (parameters = {}) {
+exports.rateOrderURL = rateOrderURL;
+
+const getReceivingModes = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/receiving-modes';
+  let path = '/order/receiving-modes';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1904,18 +2114,24 @@ const getReceivingModes = exports.getReceivingModes = function (parameters = {})
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getReceivingModes_RAW_URL = exports.getReceivingModes_RAW_URL = function () {
-  return '/api/order/receiving-modes';
+exports.getReceivingModes = getReceivingModes;
+
+const getReceivingModes_RAW_URL = function () {
+  return '/order/receiving-modes';
 };
 
-const getReceivingModes_TYPE = exports.getReceivingModes_TYPE = function () {
+exports.getReceivingModes_RAW_URL = getReceivingModes_RAW_URL;
+
+const getReceivingModes_TYPE = function () {
   return 'get';
 };
 
-const getReceivingModesURL = exports.getReceivingModesURL = function (parameters = {}) {
+exports.getReceivingModes_TYPE = getReceivingModes_TYPE;
+
+const getReceivingModesURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/receiving-modes';
+  let path = '/order/receiving-modes';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -1935,12 +2151,14 @@ const getReceivingModesURL = exports.getReceivingModesURL = function (parameters
  */
 
 
-const getPaymentModes = exports.getPaymentModes = function (parameters = {}) {
+exports.getReceivingModesURL = getReceivingModesURL;
+
+const getPaymentModes = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/payment-modes/list';
+  let path = '/order/payment-modes/list';
   let body;
   let queryParameters = {};
   let form = {};
@@ -1954,18 +2172,24 @@ const getPaymentModes = exports.getPaymentModes = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getPaymentModes_RAW_URL = exports.getPaymentModes_RAW_URL = function () {
-  return '/api/order/payment-modes/list';
+exports.getPaymentModes = getPaymentModes;
+
+const getPaymentModes_RAW_URL = function () {
+  return '/order/payment-modes/list';
 };
 
-const getPaymentModes_TYPE = exports.getPaymentModes_TYPE = function () {
+exports.getPaymentModes_RAW_URL = getPaymentModes_RAW_URL;
+
+const getPaymentModes_TYPE = function () {
   return 'get';
 };
 
-const getPaymentModesURL = exports.getPaymentModesURL = function (parameters = {}) {
+exports.getPaymentModes_TYPE = getPaymentModes_TYPE;
+
+const getPaymentModesURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/payment-modes/list';
+  let path = '/order/payment-modes/list';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -1991,12 +2215,14 @@ const getPaymentModesURL = exports.getPaymentModesURL = function (parameters = {
  */
 
 
-const getOrdersNearby = exports.getOrdersNearby = function (parameters = {}) {
+exports.getPaymentModesURL = getPaymentModesURL;
+
+const getOrdersNearby = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/by-location/nearby';
+  let path = '/order/by-location/nearby';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2046,18 +2272,24 @@ const getOrdersNearby = exports.getOrdersNearby = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getOrdersNearby_RAW_URL = exports.getOrdersNearby_RAW_URL = function () {
-  return '/api/order/by-location/nearby';
+exports.getOrdersNearby = getOrdersNearby;
+
+const getOrdersNearby_RAW_URL = function () {
+  return '/order/by-location/nearby';
 };
 
-const getOrdersNearby_TYPE = exports.getOrdersNearby_TYPE = function () {
+exports.getOrdersNearby_RAW_URL = getOrdersNearby_RAW_URL;
+
+const getOrdersNearby_TYPE = function () {
   return 'get';
 };
 
-const getOrdersNearbyURL = exports.getOrdersNearbyURL = function (parameters = {}) {
+exports.getOrdersNearby_TYPE = getOrdersNearby_TYPE;
+
+const getOrdersNearbyURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/by-location/nearby';
+  let path = '/order/by-location/nearby';
 
   if (parameters['latitude'] !== undefined) {
     queryParameters['latitude'] = parameters['latitude'];
@@ -2104,12 +2336,14 @@ const getOrdersNearbyURL = exports.getOrdersNearbyURL = function (parameters = {
  */
 
 
-const setOrderMerchant = exports.setOrderMerchant = function (parameters = {}) {
+exports.getOrdersNearbyURL = getOrdersNearbyURL;
+
+const setOrderMerchant = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/{id}/merchant/{merchant}';
+  let path = '/order/{id}/merchant/{merchant}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2143,18 +2377,24 @@ const setOrderMerchant = exports.setOrderMerchant = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const setOrderMerchant_RAW_URL = exports.setOrderMerchant_RAW_URL = function () {
-  return '/api/order/{id}/merchant/{merchant}';
+exports.setOrderMerchant = setOrderMerchant;
+
+const setOrderMerchant_RAW_URL = function () {
+  return '/order/{id}/merchant/{merchant}';
 };
 
-const setOrderMerchant_TYPE = exports.setOrderMerchant_TYPE = function () {
+exports.setOrderMerchant_RAW_URL = setOrderMerchant_RAW_URL;
+
+const setOrderMerchant_TYPE = function () {
   return 'post';
 };
 
-const setOrderMerchantURL = exports.setOrderMerchantURL = function (parameters = {}) {
+exports.setOrderMerchant_TYPE = setOrderMerchant_TYPE;
+
+const setOrderMerchantURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/{id}/merchant/{merchant}';
+  let path = '/order/{id}/merchant/{merchant}';
   path = path.replace('{id}', `${parameters['id']}`);
   path = path.replace('{merchant}', `${parameters['merchant']}`);
 
@@ -2178,12 +2418,14 @@ const setOrderMerchantURL = exports.setOrderMerchantURL = function (parameters =
  */
 
 
-const startOrder = exports.startOrder = function (parameters = {}) {
+exports.setOrderMerchantURL = setOrderMerchantURL;
+
+const startOrder = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/order/{id}/start';
+  let path = '/order/{id}/start';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2211,18 +2453,24 @@ const startOrder = exports.startOrder = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const startOrder_RAW_URL = exports.startOrder_RAW_URL = function () {
-  return '/api/order/{id}/start';
+exports.startOrder = startOrder;
+
+const startOrder_RAW_URL = function () {
+  return '/order/{id}/start';
 };
 
-const startOrder_TYPE = exports.startOrder_TYPE = function () {
+exports.startOrder_RAW_URL = startOrder_RAW_URL;
+
+const startOrder_TYPE = function () {
   return 'post';
 };
 
-const startOrderURL = exports.startOrderURL = function (parameters = {}) {
+exports.startOrder_TYPE = startOrder_TYPE;
+
+const startOrderURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/order/{id}/start';
+  let path = '/order/{id}/start';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -2244,12 +2492,14 @@ const startOrderURL = exports.startOrderURL = function (parameters = {}) {
  */
 
 
-const sendNotification = exports.sendNotification = function (parameters = {}) {
+exports.startOrderURL = startOrderURL;
+
+const sendNotification = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/notification/send';
+  let path = '/notification/send';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2271,18 +2521,24 @@ const sendNotification = exports.sendNotification = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const sendNotification_RAW_URL = exports.sendNotification_RAW_URL = function () {
-  return '/api/notification/send';
+exports.sendNotification = sendNotification;
+
+const sendNotification_RAW_URL = function () {
+  return '/notification/send';
 };
 
-const sendNotification_TYPE = exports.sendNotification_TYPE = function () {
+exports.sendNotification_RAW_URL = sendNotification_RAW_URL;
+
+const sendNotification_TYPE = function () {
   return 'post';
 };
 
-const sendNotificationURL = exports.sendNotificationURL = function (parameters = {}) {
+exports.sendNotification_TYPE = sendNotification_TYPE;
+
+const sendNotificationURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/notification/send';
+  let path = '/notification/send';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -2303,12 +2559,14 @@ const sendNotificationURL = exports.sendNotificationURL = function (parameters =
  */
 
 
-const getNotifications = exports.getNotifications = function (parameters = {}) {
+exports.sendNotificationURL = sendNotificationURL;
+
+const getNotifications = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/notification';
+  let path = '/notification';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2330,18 +2588,24 @@ const getNotifications = exports.getNotifications = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getNotifications_RAW_URL = exports.getNotifications_RAW_URL = function () {
-  return '/api/notification';
+exports.getNotifications = getNotifications;
+
+const getNotifications_RAW_URL = function () {
+  return '/notification';
 };
 
-const getNotifications_TYPE = exports.getNotifications_TYPE = function () {
+exports.getNotifications_RAW_URL = getNotifications_RAW_URL;
+
+const getNotifications_TYPE = function () {
   return 'get';
 };
 
-const getNotificationsURL = exports.getNotificationsURL = function (parameters = {}) {
+exports.getNotifications_TYPE = getNotifications_TYPE;
+
+const getNotificationsURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/notification';
+  let path = '/notification';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -2363,12 +2627,14 @@ const getNotificationsURL = exports.getNotificationsURL = function (parameters =
  */
 
 
-const getNotification = exports.getNotification = function (parameters = {}) {
+exports.getNotificationsURL = getNotificationsURL;
+
+const getNotification = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/notification/{id}';
+  let path = '/notification/{id}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2396,18 +2662,24 @@ const getNotification = exports.getNotification = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getNotification_RAW_URL = exports.getNotification_RAW_URL = function () {
-  return '/api/notification/{id}';
+exports.getNotification = getNotification;
+
+const getNotification_RAW_URL = function () {
+  return '/notification/{id}';
 };
 
-const getNotification_TYPE = exports.getNotification_TYPE = function () {
+exports.getNotification_RAW_URL = getNotification_RAW_URL;
+
+const getNotification_TYPE = function () {
   return 'get';
 };
 
-const getNotificationURL = exports.getNotificationURL = function (parameters = {}) {
+exports.getNotification_TYPE = getNotification_TYPE;
+
+const getNotificationURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/notification/{id}';
+  let path = '/notification/{id}';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -2429,12 +2701,14 @@ const getNotificationURL = exports.getNotificationURL = function (parameters = {
  */
 
 
-const accessWithFacebook = exports.accessWithFacebook = function (parameters = {}) {
+exports.getNotificationURL = getNotificationURL;
+
+const accessWithFacebook = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/oauth/access/facebook';
+  let path = '/oauth/access/facebook';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2456,18 +2730,24 @@ const accessWithFacebook = exports.accessWithFacebook = function (parameters = {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const accessWithFacebook_RAW_URL = exports.accessWithFacebook_RAW_URL = function () {
-  return '/api/oauth/access/facebook';
+exports.accessWithFacebook = accessWithFacebook;
+
+const accessWithFacebook_RAW_URL = function () {
+  return '/oauth/access/facebook';
 };
 
-const accessWithFacebook_TYPE = exports.accessWithFacebook_TYPE = function () {
+exports.accessWithFacebook_RAW_URL = accessWithFacebook_RAW_URL;
+
+const accessWithFacebook_TYPE = function () {
   return 'post';
 };
 
-const accessWithFacebookURL = exports.accessWithFacebookURL = function (parameters = {}) {
+exports.accessWithFacebook_TYPE = accessWithFacebook_TYPE;
+
+const accessWithFacebookURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/oauth/access/facebook';
+  let path = '/oauth/access/facebook';
 
   if (parameters['accessToken'] !== undefined) {
     queryParameters['access_token'] = parameters['accessToken'];
@@ -2493,12 +2773,14 @@ const accessWithFacebookURL = exports.accessWithFacebookURL = function (paramete
  */
 
 
-const addPicture = exports.addPicture = function (parameters = {}) {
+exports.accessWithFacebookURL = accessWithFacebookURL;
+
+const addPicture = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/picture/save';
+  let path = '/picture/save';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2524,18 +2806,24 @@ const addPicture = exports.addPicture = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const addPicture_RAW_URL = exports.addPicture_RAW_URL = function () {
-  return '/api/picture/save';
+exports.addPicture = addPicture;
+
+const addPicture_RAW_URL = function () {
+  return '/picture/save';
 };
 
-const addPicture_TYPE = exports.addPicture_TYPE = function () {
+exports.addPicture_RAW_URL = addPicture_RAW_URL;
+
+const addPicture_TYPE = function () {
   return 'post';
 };
 
-const addPictureURL = exports.addPictureURL = function (parameters = {}) {
+exports.addPicture_TYPE = addPicture_TYPE;
+
+const addPictureURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/picture/save';
+  let path = '/picture/save';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -2557,12 +2845,14 @@ const addPictureURL = exports.addPictureURL = function (parameters = {}) {
  */
 
 
-const getPicture = exports.getPicture = function (parameters = {}) {
+exports.addPictureURL = addPictureURL;
+
+const getPicture = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/picture/{id}';
+  let path = '/picture/{id}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2590,18 +2880,24 @@ const getPicture = exports.getPicture = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getPicture_RAW_URL = exports.getPicture_RAW_URL = function () {
-  return '/api/picture/{id}';
+exports.getPicture = getPicture;
+
+const getPicture_RAW_URL = function () {
+  return '/picture/{id}';
 };
 
-const getPicture_TYPE = exports.getPicture_TYPE = function () {
+exports.getPicture_RAW_URL = getPicture_RAW_URL;
+
+const getPicture_TYPE = function () {
   return 'get';
 };
 
-const getPictureURL = exports.getPictureURL = function (parameters = {}) {
+exports.getPicture_TYPE = getPicture_TYPE;
+
+const getPictureURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/picture/{id}';
+  let path = '/picture/{id}';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -2624,12 +2920,14 @@ const getPictureURL = exports.getPictureURL = function (parameters = {}) {
  */
 
 
-const getLatest = exports.getLatest = function (parameters = {}) {
+exports.getPictureURL = getPictureURL;
+
+const getLatest = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/picture/{itemId}';
+  let path = '/picture/{itemId}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2657,18 +2955,24 @@ const getLatest = exports.getLatest = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getLatest_RAW_URL = exports.getLatest_RAW_URL = function () {
-  return '/api/picture/{itemId}';
+exports.getLatest = getLatest;
+
+const getLatest_RAW_URL = function () {
+  return '/picture/{itemId}';
 };
 
-const getLatest_TYPE = exports.getLatest_TYPE = function () {
+exports.getLatest_RAW_URL = getLatest_RAW_URL;
+
+const getLatest_TYPE = function () {
   return 'get';
 };
 
-const getLatestURL = exports.getLatestURL = function (parameters = {}) {
+exports.getLatest_TYPE = getLatest_TYPE;
+
+const getLatestURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/picture/{itemId}';
+  let path = '/picture/{itemId}';
   path = path.replace('{itemId}', `${parameters['itemId']}`);
 
   if (parameters.$queryParameters) {
@@ -2691,12 +2995,14 @@ const getLatestURL = exports.getLatestURL = function (parameters = {}) {
  */
 
 
-const removePicture = exports.removePicture = function (parameters = {}) {
+exports.getLatestURL = getLatestURL;
+
+const removePicture = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/picture/remove/{id}';
+  let path = '/picture/remove/{id}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2724,18 +3030,24 @@ const removePicture = exports.removePicture = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const removePicture_RAW_URL = exports.removePicture_RAW_URL = function () {
-  return '/api/picture/remove/{id}';
+exports.removePicture = removePicture;
+
+const removePicture_RAW_URL = function () {
+  return '/picture/remove/{id}';
 };
 
-const removePicture_TYPE = exports.removePicture_TYPE = function () {
+exports.removePicture_RAW_URL = removePicture_RAW_URL;
+
+const removePicture_TYPE = function () {
   return 'post';
 };
 
-const removePictureURL = exports.removePictureURL = function (parameters = {}) {
+exports.removePicture_TYPE = removePicture_TYPE;
+
+const removePictureURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/picture/remove/{id}';
+  let path = '/picture/remove/{id}';
   path = path.replace('{id}', `${parameters['id']}`);
 
   if (parameters.$queryParameters) {
@@ -2757,12 +3069,14 @@ const removePictureURL = exports.removePictureURL = function (parameters = {}) {
  */
 
 
-const createUser = exports.createUser = function (parameters = {}) {
+exports.removePictureURL = removePictureURL;
+
+const createUser = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/user/create';
+  let path = '/user/create';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2780,18 +3094,24 @@ const createUser = exports.createUser = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const createUser_RAW_URL = exports.createUser_RAW_URL = function () {
-  return '/api/user/create';
+exports.createUser = createUser;
+
+const createUser_RAW_URL = function () {
+  return '/user/create';
 };
 
-const createUser_TYPE = exports.createUser_TYPE = function () {
+exports.createUser_RAW_URL = createUser_RAW_URL;
+
+const createUser_TYPE = function () {
   return 'post';
 };
 
-const createUserURL = exports.createUserURL = function (parameters = {}) {
+exports.createUser_TYPE = createUser_TYPE;
+
+const createUserURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/user/create';
+  let path = '/user/create';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -2812,12 +3132,14 @@ const createUserURL = exports.createUserURL = function (parameters = {}) {
  */
 
 
-const isUniqueUsername = exports.isUniqueUsername = function (parameters = {}) {
+exports.createUserURL = createUserURL;
+
+const isUniqueUsername = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/user/username/exists/{username}';
+  let path = '/user/username/exists/{username}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2836,18 +3158,24 @@ const isUniqueUsername = exports.isUniqueUsername = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const isUniqueUsername_RAW_URL = exports.isUniqueUsername_RAW_URL = function () {
-  return '/api/user/username/exists/{username}';
+exports.isUniqueUsername = isUniqueUsername;
+
+const isUniqueUsername_RAW_URL = function () {
+  return '/user/username/exists/{username}';
 };
 
-const isUniqueUsername_TYPE = exports.isUniqueUsername_TYPE = function () {
+exports.isUniqueUsername_RAW_URL = isUniqueUsername_RAW_URL;
+
+const isUniqueUsername_TYPE = function () {
   return 'get';
 };
 
-const isUniqueUsernameURL = exports.isUniqueUsernameURL = function (parameters = {}) {
+exports.isUniqueUsername_TYPE = isUniqueUsername_TYPE;
+
+const isUniqueUsernameURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/user/username/exists/{username}';
+  let path = '/user/username/exists/{username}';
   path = path.replace('{username}', `${parameters['username']}`);
 
   if (parameters.$queryParameters) {
@@ -2869,12 +3197,14 @@ const isUniqueUsernameURL = exports.isUniqueUsernameURL = function (parameters =
  */
 
 
-const getUserProfile = exports.getUserProfile = function (parameters = {}) {
+exports.isUniqueUsernameURL = isUniqueUsernameURL;
+
+const getUserProfile = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/user/profile';
+  let path = '/user/profile';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2896,18 +3226,24 @@ const getUserProfile = exports.getUserProfile = function (parameters = {}) {
   return request('get', domain + path, body, queryParameters, form, config);
 };
 
-const getUserProfile_RAW_URL = exports.getUserProfile_RAW_URL = function () {
-  return '/api/user/profile';
+exports.getUserProfile = getUserProfile;
+
+const getUserProfile_RAW_URL = function () {
+  return '/user/profile';
 };
 
-const getUserProfile_TYPE = exports.getUserProfile_TYPE = function () {
+exports.getUserProfile_RAW_URL = getUserProfile_RAW_URL;
+
+const getUserProfile_TYPE = function () {
   return 'get';
 };
 
-const getUserProfileURL = exports.getUserProfileURL = function (parameters = {}) {
+exports.getUserProfile_TYPE = getUserProfile_TYPE;
+
+const getUserProfileURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/user/profile';
+  let path = '/user/profile';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -2928,12 +3264,14 @@ const getUserProfileURL = exports.getUserProfileURL = function (parameters = {})
  */
 
 
-const authenticateUser = exports.authenticateUser = function (parameters = {}) {
+exports.getUserProfileURL = getUserProfileURL;
+
+const authenticateUser = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/user/authenticate';
+  let path = '/user/authenticate';
   let body;
   let queryParameters = {};
   let form = {};
@@ -2951,18 +3289,24 @@ const authenticateUser = exports.authenticateUser = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const authenticateUser_RAW_URL = exports.authenticateUser_RAW_URL = function () {
-  return '/api/user/authenticate';
+exports.authenticateUser = authenticateUser;
+
+const authenticateUser_RAW_URL = function () {
+  return '/user/authenticate';
 };
 
-const authenticateUser_TYPE = exports.authenticateUser_TYPE = function () {
+exports.authenticateUser_RAW_URL = authenticateUser_RAW_URL;
+
+const authenticateUser_TYPE = function () {
   return 'post';
 };
 
-const authenticateUserURL = exports.authenticateUserURL = function (parameters = {}) {
+exports.authenticateUser_TYPE = authenticateUser_TYPE;
+
+const authenticateUserURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/user/authenticate';
+  let path = '/user/authenticate';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -2984,12 +3328,14 @@ const authenticateUserURL = exports.authenticateUserURL = function (parameters =
  */
 
 
-const updateUser = exports.updateUser = function (parameters = {}) {
+exports.authenticateUserURL = authenticateUserURL;
+
+const updateUser = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/user/update';
+  let path = '/user/update';
   let body;
   let queryParameters = {};
   let form = {};
@@ -3015,18 +3361,24 @@ const updateUser = exports.updateUser = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const updateUser_RAW_URL = exports.updateUser_RAW_URL = function () {
-  return '/api/user/update';
+exports.updateUser = updateUser;
+
+const updateUser_RAW_URL = function () {
+  return '/user/update';
 };
 
-const updateUser_TYPE = exports.updateUser_TYPE = function () {
+exports.updateUser_RAW_URL = updateUser_RAW_URL;
+
+const updateUser_TYPE = function () {
   return 'post';
 };
 
-const updateUserURL = exports.updateUserURL = function (parameters = {}) {
+exports.updateUser_TYPE = updateUser_TYPE;
+
+const updateUserURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/user/update';
+  let path = '/user/update';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -3047,12 +3399,14 @@ const updateUserURL = exports.updateUserURL = function (parameters = {}) {
  */
 
 
-const recoverPassword = exports.recoverPassword = function (parameters = {}) {
+exports.updateUserURL = updateUserURL;
+
+const recoverPassword = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/user/password/recover/{email}';
+  let path = '/user/password/recover/{email}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -3071,18 +3425,24 @@ const recoverPassword = exports.recoverPassword = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const recoverPassword_RAW_URL = exports.recoverPassword_RAW_URL = function () {
-  return '/api/user/password/recover/{email}';
+exports.recoverPassword = recoverPassword;
+
+const recoverPassword_RAW_URL = function () {
+  return '/user/password/recover/{email}';
 };
 
-const recoverPassword_TYPE = exports.recoverPassword_TYPE = function () {
+exports.recoverPassword_RAW_URL = recoverPassword_RAW_URL;
+
+const recoverPassword_TYPE = function () {
   return 'post';
 };
 
-const recoverPasswordURL = exports.recoverPasswordURL = function (parameters = {}) {
+exports.recoverPassword_TYPE = recoverPassword_TYPE;
+
+const recoverPasswordURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/user/password/recover/{email}';
+  let path = '/user/password/recover/{email}';
   path = path.replace('{email}', `${parameters['email']}`);
 
   if (parameters.$queryParameters) {
@@ -3105,12 +3465,14 @@ const recoverPasswordURL = exports.recoverPasswordURL = function (parameters = {
  */
 
 
-const updatePassword = exports.updatePassword = function (parameters = {}) {
+exports.recoverPasswordURL = recoverPasswordURL;
+
+const updatePassword = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/user/password/update';
+  let path = '/user/password/update';
   let body;
   let queryParameters = {};
   let form = {};
@@ -3136,18 +3498,24 @@ const updatePassword = exports.updatePassword = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const updatePassword_RAW_URL = exports.updatePassword_RAW_URL = function () {
-  return '/api/user/password/update';
+exports.updatePassword = updatePassword;
+
+const updatePassword_RAW_URL = function () {
+  return '/user/password/update';
 };
 
-const updatePassword_TYPE = exports.updatePassword_TYPE = function () {
+exports.updatePassword_RAW_URL = updatePassword_RAW_URL;
+
+const updatePassword_TYPE = function () {
   return 'post';
 };
 
-const updatePasswordURL = exports.updatePasswordURL = function (parameters = {}) {
+exports.updatePassword_TYPE = updatePassword_TYPE;
+
+const updatePasswordURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/user/password/update';
+  let path = '/user/password/update';
 
   if (parameters.$queryParameters) {
     Object.keys(parameters.$queryParameters).forEach(function (parameterName) {
@@ -3169,12 +3537,14 @@ const updatePasswordURL = exports.updatePasswordURL = function (parameters = {})
  */
 
 
-const addSkip = exports.addSkip = function (parameters = {}) {
+exports.updatePasswordURL = updatePasswordURL;
+
+const addSkip = function (parameters = {}) {
   const domain = parameters.$domain ? parameters.$domain : getDomain();
   const config = parameters.$config || {
     headers: {}
   };
-  let path = '/api/user/skips/{skip}';
+  let path = '/user/skips/{skip}';
   let body;
   let queryParameters = {};
   let form = {};
@@ -3202,18 +3572,24 @@ const addSkip = exports.addSkip = function (parameters = {}) {
   return request('post', domain + path, body, queryParameters, form, config);
 };
 
-const addSkip_RAW_URL = exports.addSkip_RAW_URL = function () {
-  return '/api/user/skips/{skip}';
+exports.addSkip = addSkip;
+
+const addSkip_RAW_URL = function () {
+  return '/user/skips/{skip}';
 };
 
-const addSkip_TYPE = exports.addSkip_TYPE = function () {
+exports.addSkip_RAW_URL = addSkip_RAW_URL;
+
+const addSkip_TYPE = function () {
   return 'post';
 };
 
-const addSkipURL = exports.addSkipURL = function (parameters = {}) {
+exports.addSkip_TYPE = addSkip_TYPE;
+
+const addSkipURL = function (parameters = {}) {
   let queryParameters = {};
   const domain = parameters.$domain ? parameters.$domain : getDomain();
-  let path = '/api/user/skips/{skip}';
+  let path = '/user/skips/{skip}';
   path = path.replace('{skip}', `${parameters['skip']}`);
 
   if (parameters.$queryParameters) {
@@ -3225,3 +3601,5 @@ const addSkipURL = exports.addSkipURL = function (parameters = {}) {
   let keys = Object.keys(queryParameters);
   return domain + path + (keys.length > 0 ? '?' + keys.map(key => key + '=' + encodeURIComponent(queryParameters[key])).join('&') : '');
 };
+
+exports.addSkipURL = addSkipURL;

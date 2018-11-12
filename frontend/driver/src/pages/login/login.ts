@@ -91,13 +91,8 @@ export class LoginPage {
     }
 
     goToSignupPage() {
-        if (this.confirmationCode == "admin") // In case the user tries to access as an admin
-            this.navigationService.goTo("AdminBasicInformationPage")
-        else // Otherwise, prompts for the role
-            this.interactionService.prompt(this.translations.i_am, [], [
-                { text: this.translations.a_merchant, cssClass: "strong", handler: () => { this.navigationService.goTo("MerchantBasicInformationPage") } },
-                { text: this.translations.a_customer, cssClass: "strong", handler: () => { this.navigationService.goTo("CustomerBasicInformationPage") } }
-            ]);
+        this.navigationService.goTo("MerchantBasicInformationPage")
+
     }
 
     storeUserData(user) {

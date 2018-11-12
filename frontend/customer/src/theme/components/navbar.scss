@@ -5,6 +5,12 @@ $navbar-background-color: white;
 $navbar-text-color: white;
 /* $ads-width: 188px; */
 
+ion-navbar[color=primary] .toolbar-background.toolbar-background-md,
+ion-navbar[color=primary] .toolbar-background.toolbar-background-ios,
+mars-navbar [header] {
+    @include linearGradient($secondary, adjust-hue($secondary, -10));
+}
+
 $ads-width: 0px;
 mars-navbar {
     height: auto;
@@ -21,10 +27,10 @@ mars-navbar {
         height: 100vw;
         [header] {
             @include linearGradient($secondary, adjust-hue($secondary, -10));
-            height: $item-height;
-            width: calc(#{$navbar-width} + 1px);
+            height:calc(#{$item-height} - 1px);
+            width: calc(#{$navbar-width});
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 400;
             color: white;
             margin-right: 2px;
             padding-top: 16px;
@@ -35,6 +41,7 @@ mars-navbar {
             margin-bottom: -2px;
             border-color: $primary;
             margin-right: -2px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
             ion-icon {
                 vertical-align: middle;
                 font-size: 20px;
@@ -99,9 +106,12 @@ mars-navbar {
             .tab-button-text,
             .tab-button-icon {
                 vertical-align: middle;
-                color: $primary;
+                color: #888;
                 display: inline-block;
                 margin-left: 10px;
+            }
+            .tab-button-icon:before {
+                font-size: 27px;
             }
             .tab-button-text {
                 padding: 10px;
@@ -116,8 +126,7 @@ mars-navbar {
                 padding: 10px;
                 padding-top: 5px;
                 font-weight: bold;
-                /* @include primary-gradient(); */
-                background-color: adjust-hue($primary, 5);
+                @include secondary-gradient();
                 box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
                 span.tab-button-text,
                 ion-icon.tab-button-icon {
@@ -159,7 +168,7 @@ mars-navbar {
 @media(max-width: 768px) {
     ion-tabs {
         .tabbar {
-            background: white !important;
+            /*  background: $secondary !important; */
             transition-property: all;
             transition-duration: .35s;
             .tab-button {
@@ -168,11 +177,14 @@ mars-navbar {
                 }
                 .tab-button-icon {
                     color: rgba(0, 0, 0, 0.4);
+                    &:before {
+                        font-size: 30px;
+                    }
                 }
                 &[aria-selected=true] {
                     .tab-button-icon,
                     .tab-button-text {
-                        color: lighten($primary, 0%);
+                        color: lighten($primary, 10%);
                     }
                 }
             }
