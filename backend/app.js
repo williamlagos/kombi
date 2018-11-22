@@ -18,7 +18,7 @@ const app = express();
 const env = require("./.env");
 let host = ip.address();
 let port = process.env.PORT || "3000";
-app.use(secure);
+// app.use(secure);
 app.use(compression());
 app.use(cors());
 app.use(errorhandler());
