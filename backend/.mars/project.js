@@ -1,4 +1,5 @@
 module.exports = {
+    "name": "fretefacil",
     "client_root": "#!/a",
     "cordova_package": "io.efforia.fretefacil.app",
     "default_language": "pt",
