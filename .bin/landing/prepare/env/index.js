@@ -26,7 +26,7 @@ const marsRootPath = path.join(rootPath, ".mars");
 const marsCopyPath = path.join(landingRoot, ".mars");
 
 const build = async () => {
-    console.log((`♂ Mars Universal App: Preparing landing page for ${envType} environment...`.yellow));
+    console.log((`kombi: Preparing landing page for ${envType} environment...`.yellow));
     await fs.copy(environmentRootPath, environmentCopyPath);
     await fs.copy(masterKeyRootPath, masterKeyCopyPath);
     await fs.copy(marsRootPath, marsCopyPath);

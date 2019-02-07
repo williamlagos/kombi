@@ -12,23 +12,17 @@
     "project"
   ],
   "config": {},
-  "main": ".bin/index",
   "scripts": {
+    "start": "cd app && npm start",
     "postinstall": "node .bin/dependencies",
     "babel": "babel",
     "uglify-js": "uglify-js",
     "gzip-cli": "gzip-cli",
     "universal_scripts": "|-------------- general application scripts",
     "prepare:app": "node .bin/app/prepare",
-    "admin_scripts": "|-------------- admin app scripts",
-    "admin": "npm run prepare:app --app=admin & cd dashboard && npm run serve",
-    "admin:export": "npm run prepare:app --app=admin & node .bin/app/export/web --app=admin",
-    "customer_scripts": "|-------------- customer application scripts",
-    "customer": "npm run prepare:app --app=customer & cd customer && npm run serve",
-    "customer:export": "npm run prepare:app --app=customer & node .bin/app/export/web --app=customer",
-    "driver_scripts": "|-------------- driver application scripts",
-    "driver": "npm run prepare:app --app=driver & cd driver && npm run serve",
-    "driver:export": "npm run prepare:app --app=driver & node .bin/app/export/web --app=driver"
+    "app_scripts": "|-------------- customer application scripts",
+    "app": "npm run prepare:app --app=app & cd app && npm run serve",
+    "app:export": "npm run prepare:app --app=customer & node .bin/app/export/web --app=customer"
   },
   "dependencies": {
     "@ionic/app-scripts": "^3.2.0",

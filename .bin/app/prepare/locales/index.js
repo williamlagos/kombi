@@ -11,9 +11,9 @@ const path = require("path");
 const handlebars = require("handlebars");
 
 // --------------------- Mars environment variables
-const app = (process.env.npm_config_app || params.app || "customer");
+const app = (process.env.npm_config_app || params.app || "app");
 const rootPath = path.resolve(__dirname, "../../../../");
-const appRoot = path.join(rootPath, "frontend", app);
+const appRoot = path.join(rootPath, app);
 const projectPath = path.join(rootPath, ".mars", "project");
 const localesRootPath = path.join(rootPath, ".mars", "locales");
 const localesCopyPath = path.join(appRoot, ".mars", "locales");
@@ -65,11 +65,11 @@ function writeLocalesInterface() {
 };
 
 let init = async () => {
-    console.log((`♂ Mars Universal App: Generating locales...`.yellow));
+    console.log((`kombi: Generating locales...`.yellow));
     await fs.copy(localesRootPath, localesCopyPath);
     await writeLocales();
     await writeLocalesInterface();
-    console.log((`♂ Mars Universal App: Locales generated successfully!`.yellow));
+    console.log((`kombi: Locales generated successfully!`.yellow));
 };
 
 module.exports = { init: init };

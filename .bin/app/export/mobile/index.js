@@ -12,13 +12,13 @@ const fs = require("fs-extra");
 const path = require("path");
 const params = require("yargs").argv;
 const exec = shell.exec;
-const app = (process.env.npm_config_app || params.app || "customer");
+const app = (process.env.npm_config_app || params.app || "app");
 const rootPath = path.resolve(__dirname, "../../../../");
-const appRoot = path.join(rootPath, "frontend", app);
+const appRoot = path.join(rootPath, app);
 const isProd = (process.env.npm_config_prod || params.prod);
 const cordovaParams = isProd ? "--release" : "";
 
-console.log((`♂ Mars Universal App: Generating static files for ${app} application...`.yellow));
+console.log((`kombi: Generating static files for ${app} application...`.yellow));
 const build = async () => {
     let isPWABuildFinished = false;
     const child = exec(`node .bin/app/build/prod --app=${app}  --target=cordova`, { async: true });
@@ -26,9 +26,9 @@ const build = async () => {
         isPWABuildFinished = (data.indexOf("finished successfully") > -1);
         if (isPWABuildFinished) {
             child.kill();
-            console.log((`♂ Mars Universal App: Generating installers...`.yellow));
+            console.log((`kombi: Generating installers...`.yellow));
             await exec(`ionic cordova build ${cordovaParams}`, { cwd: appRoot });
-            console.log((`♂ Mars Universal App: Installers generated successfully!`.yellow));
+            console.log((`kombi: Installers generated successfully!`.yellow));
             process.exit();
         }
     });

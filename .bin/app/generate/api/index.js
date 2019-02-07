@@ -14,10 +14,10 @@ const path = require("path");
 const colors = require("colors");
 console.log((`♂ Mars API generator: Running server in order to update swagger.json...`.yellow.bold)); // Finishes the build
 
-const app = (process.env.npm_config_app || params.app || "customer");
+const app = (process.env.npm_config_app || params.app || "app");
 
 const rootPath = path.resolve(__dirname, "../../../../");
-const appRoot = path.join(rootPath, "frontend", app);
+const appRoot = path.join(rootPath, app);
 const serverRoot = path.join(rootPath, "backend");
 
 const server = require(path.join(serverRoot, "app.js"));
