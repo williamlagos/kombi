@@ -72,6 +72,56 @@ export class AppMainPages {
                 getBadge: () => { return 0; },
                 canShow: () => { return true; },
                 disable: () => { return this.globals.disableNavigation }
+            },
+            {
+                getRoot: () => { return "JobsListPage"; },
+                getRootParams: () => { return {} },
+                getTitle: () => { return "Fazer Propostas"; },
+                getUrlPath: () => { return "jobs" },
+                getIcon: () => { return "add-circle"; },
+                getBadge: () => { return 0; },
+                canShow: () => { return MarsAuthService.hasRole('MERCHANT') },
+                disable: () => { return this.globals.disableNavigation }
+            },
+            {
+                getRoot: () => { return "MerchantCalendarPage"; },
+                getRootParams: () => { return {} },
+                getTitle: () => { return "Meus Fretes"; },
+                getUrlPath: () => { return "my-jobs" },
+                getIcon: () => { return "car"; },
+                getBadge: () => { return 0; },
+                canShow: () => { return MarsAuthService.hasRole('MERCHANT') },
+                disable: () => { return this.globals.disableNavigation }
+            },
+            {
+                getRoot: () => { return "MerchantSettingsPage"; },
+                getRootParams: () => { return {} },
+                getTitle: () => { return "Configurações"; },
+                getUrlPath: () => { return "settings" },
+                getIcon: () => { return "settings"; },
+                getBadge: () => { return 0; },
+                canShow: () => { return MarsAuthService.hasRole('MERCHANT') },
+                disable: () => { return this.globals.disableNavigation }
+            },
+            {
+                getRoot: () => { return "UsersListPage"; },
+                getRootParams: () => { return {} },
+                getTitle: () => { return "Usuários"; },
+                getUrlPath: () => { return "users" },
+                getIcon: () => { return "people"; },
+                getBadge: () => { return 0; },
+                canShow: () => { return MarsAuthService.hasRole("ADMIN") },
+                disable: () => { return this.globals.disableNavigation }
+            },
+            {
+                getRoot: () => { return "AdminSettingsPage"; },
+                getRootParams: () => { return {} },
+                getTitle: () => { return "Configurações"; },
+                getUrlPath: () => { return "settings" },
+                getIcon: () => { return "settings"; },
+                getBadge: () => { return 0; },
+                canShow: () => { return MarsAuthService.hasRole("ADMIN") },
+                disable: () => { return this.globals.disableNavigation }
             }
         ];
 
