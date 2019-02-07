@@ -14,15 +14,9 @@
   "config": {},
   "scripts": {
     "start": "cd app && npm start",
-    "postinstall": "node .bin/dependencies",
     "babel": "babel",
     "uglify-js": "uglify-js",
-    "gzip-cli": "gzip-cli",
-    "universal_scripts": "|-------------- general application scripts",
-    "prepare:app": "node .bin/app/prepare",
-    "app_scripts": "|-------------- customer application scripts",
-    "app": "npm run prepare:app --app=app & cd app && npm run serve",
-    "app:export": "npm run prepare:app --app=customer & node .bin/app/export/web --app=customer"
+    "gzip-cli": "gzip-cli"
   },
   "dependencies": {
     "@ionic/app-scripts": "^3.2.0",

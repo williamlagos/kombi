@@ -8,8 +8,8 @@
 const webpack = require("webpack");
 
 // --------------------- Mars environment variables
-const constants = require("../../.mars/constants");
-const colors = require("../../.mars/colors");
+const constants = require("../../.config/constants");
+const colors = require("../../.config/colors");
 const env = require("../../.env");
 
 const applicationPackage = (process.env.npm_config_app || process.env.mars_app || "customer").toLowerCase();
