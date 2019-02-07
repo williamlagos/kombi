@@ -9,8 +9,8 @@
 const fs = require("fs");
 const path = require("path");
 // --------------------- Mars environment variables
-const colors = require("../../.config/colors");
-const config = require("../../.config/project");
+const colors = require("../colors");
+const config = require("../project");
 
 function writeManifest() {
     let manifest = {

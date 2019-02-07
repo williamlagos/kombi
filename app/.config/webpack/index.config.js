@@ -8,10 +8,10 @@
 const fs = require("fs");
 const path = require("path");
 // --------------------- Mars environment variables
-const constants = require("../../.config/constants");
-const colors = require("../../.config/colors");
-const config = require("../../.config/project");
-const locales = require("../../.config/locales/pt");
+const constants = require("../constants");
+const colors = require("../colors");
+const config = require("../project");
+const locales = require("../locales/pt");
 
 function configureIndexColors() {
     let indexPath = path.join(__dirname, "../../src", "index.html");

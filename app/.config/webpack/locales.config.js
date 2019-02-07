@@ -11,9 +11,9 @@ const watch = require("watch");
 const handlebars = require("handlebars");
 
 // --------------------- Mars environment variables
-const constants = require("../../.config/constants");
-const colors = require("../../.config/colors");
-const project = require("../../.config/project");
+const constants = require("../constants");
+const colors = require("../colors");
+const project = require("../project");
 
 const interfacePath = path.resolve(__dirname, "../../src/typings/global/translations/index.d.ts");
 const interfaceTemplatePath = path.resolve(__dirname + "/templates/locales/locales.interface.hbs");
@@ -24,7 +24,7 @@ const classPath = path.resolve(__dirname, "../../src/app/app.locales.ts");
 const classTemplatePath = path.resolve(__dirname + "/templates/locales/locales.class.hbs");
 const classMarkup = fs.readFileSync(classTemplatePath, { encoding: 'UTF-8' });
 const localesClass = handlebars.compile(classMarkup);
-const localesDir = path.join(__dirname, "../../.config/locales");
+const localesDir = path.join(__dirname, "../locales");
 
 function getPackage() {
     return package;

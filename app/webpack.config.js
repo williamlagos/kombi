@@ -10,11 +10,11 @@ try {
     let ionicConfig = require("./node_modules/@ionic/app-scripts/config/webpack.config.js");
 
     // Mars configs
-    const plugins = require("./config/webpack/plugins.config");
-    const marsEnvironment = require("./config/webpack/env.config");
-    require("./config/webpack/locales.config").init();
-    require("./config/webpack/manifest.config").init();
-    require("./config/webpack/index.config").init();
+    const plugins = require("./.config/webpack/plugins.config");
+    const marsEnvironment = require("./.config/webpack/env.config");
+    require("./.config/webpack/locales.config").init();
+    require("./.config/webpack/manifest.config").init();
+    require("./.config/webpack/index.config").init();
 
     // --------------------- Command line parameters
     params.env_type = (process.env.npm_config_env || "dev").toLowerCase();
