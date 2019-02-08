@@ -10,7 +10,7 @@ const webpack = require("webpack");
 // --------------------- Mars environment variables
 const constants = require("../constants");
 const colors = require("../colors");
-const env = require("../../.env");
+const env = require("../env");
 
 const applicationPackage = (process.env.npm_config_app || process.env.mars_app || "customer").toLowerCase();
 const client_env = Object.assign(env.client, { app: applicationPackage });
