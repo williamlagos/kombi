@@ -1,0 +1,36 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "Kombi",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {
+    "preferences": {
+      "android-minSdkVersion": "19",
+      "AndroidPersistentFileLocation": "Compatibility",
+      "BackupWebStorage": "none",
+      "DisallowOverscroll": "true",
+      "loadUrlTimeoutValue": "700000",
+      "Orientation": "portrait",
+      "RecentsBackgroundColor": "#31a6ba",
+      "ShowSplashScreenSpinner": "false",
+      "SplashMaintainAspectRatio": "true",
+      "SplashScreen": "screen",
+      "SplashScreenDelay": "3000",
+      "AutoHideSplashScreen": "false",
+      "FadeSplashScreen": "true",
+      "FadeSplashScreenDuration": "300",
+      "SplashShowOnlyFirstTime": "false",
+      "StatusBarOverlaysWebView": "true",
+      "UIWebViewBounce": "false",
+      "webviewbounce": "false",
+      "StatusBarStyle": "default",
+      "CordovaWebViewEngine": "CDVWKWebViewEngine"
+    }
+  }
+}
