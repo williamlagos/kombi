@@ -1,3 +1,3 @@
-# Frete Fácil Ionic Angular application
+# Shipping Ionic application
 
-Written in Ionic v3 and Angular Framework. To run the app, start backend named efforia/boxer.
+Written in Ionic, Stencil and React.
