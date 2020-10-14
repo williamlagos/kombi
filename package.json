@@ -87,7 +87,7 @@
     "test": "node src/test.js",
     "components": "cd parts && npm start",
     "predeploy": "cd parts && npm run build",
-    "deploy": "gh-pages -d parts/www"
+    "deploy": "gh-pages -d www"
   },
   "eslintConfig": {
     "extends": [
