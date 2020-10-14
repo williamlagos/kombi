@@ -1,0 +1,19 @@
+{
+  "name": "shipping",
+  "version": "1.0.0",
+  "description": "Shipping application written with Ionic and React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/williamlagos/kombi.git"
+  },
+  "author": "William Oliveira de Lagos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamlagos/kombi/issues"
+  },
+  "homepage": "https://github.com/williamlagos/kombi#readme"
+}
