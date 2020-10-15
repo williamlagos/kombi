@@ -5,7 +5,7 @@
  */
 
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from "@angular/core";
-import { App, IonicPage, NavController, Platform, PopoverController } from "@ionic/angular";
+import { App, IonicPage, NavController, Platform, PopoverController } from "ionic-angular";
 
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";

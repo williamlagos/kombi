@@ -6,8 +6,8 @@
 
 import { Component, NgZone, ChangeDetectorRef } from "@angular/core";
 
-import { App, NavController, Platform } from "@ionic/angular";
-import { IonicPage } from "@ionic/angular";
+import { App, NavController, Platform } from "ionic-angular";
+import { IonicPage } from "ionic-angular";
 
 import { AppConstants } from "@app/app.constants";
 
@@ -117,7 +117,7 @@ export class HomePage {
     }
 
     async refreshUser() {
-        return new Promise<void>(async (resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             try {
                 let user = (await Backend.getUserProfile({ xAccessToken: this.token })).data;
                 MarsAuthService.setLoggedInUser(user);

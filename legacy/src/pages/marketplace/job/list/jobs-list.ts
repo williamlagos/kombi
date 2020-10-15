@@ -5,7 +5,7 @@
  */
 
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from "@angular/core";
-import { App, IonicPage, NavController, Platform, PopoverController } from "@ionic/angular";
+import { App, IonicPage, NavController, Platform, PopoverController } from "ionic-angular";
 
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";
@@ -72,7 +72,7 @@ export class JobsListPage {
     ionViewDidEnter() { }
 
     async getLocation() {
-        return new Promise<void>((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             try {
                 MarsGeolocationService.onLoad(async () => {
                     let location = await this.geolocationService.getUserLocation({}) as any;

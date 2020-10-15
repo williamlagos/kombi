@@ -1,12 +1,13 @@
 {
-  "name": "Shipping",
+  "name": "Kombi",
   "integrations": {
     "cordova": {},
     "capacitor": {}
   },
-  "type": "angular",
+  "type": "ionic-angular",
   "daemon": {
     "updates": false
   },
+  "pro_id": "4064ed6d",
   "id": "4064ed6d"
 }

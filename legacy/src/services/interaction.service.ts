@@ -6,10 +6,10 @@
  */
 
 import { Injectable } from "@angular/core";
-import { AlertController } from "@ionic/angular";
-import { LoadingController } from "@ionic/angular";
-import { ToastController } from "@ionic/angular";
-import { Loading } from "@ionic/angular";
+import { AlertController } from "ionic-angular";
+import { LoadingController } from "ionic-angular";
+import { ToastController } from "ionic-angular";
+import { Loading } from "ionic-angular";
 
 @Injectable()
 export class MarsInteractionService {

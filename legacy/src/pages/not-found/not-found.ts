@@ -5,8 +5,8 @@
  */
 
 import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { Platform } from "@ionic/angular";
-import { IonicPage } from "@ionic/angular";
+import { Platform } from "ionic-angular";
+import { IonicPage } from "ionic-angular";
 
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";

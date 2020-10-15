@@ -4,7 +4,7 @@
  * @author M.A.R.S. Labs
  */
 
-import { Platform } from "@ionic/angular";
+import { Platform } from "ionic-angular";
 import { Injectable, isDevMode } from "@angular/core";
 
 import { AppGlobals } from "@app/app.globals";

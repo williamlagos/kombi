@@ -6,7 +6,7 @@
 
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone } from "@angular/core";
 
-import { App, IonicPage, NavController, Platform } from "@ionic/angular";
+import { App, IonicPage, NavController, Platform } from "ionic-angular";
 
 import * as moment from "moment-mini";
 

@@ -5,9 +5,9 @@
  */
 
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams, ViewController } from "@ionic/angular";
+import { IonicPage, NavController, NavParams, ViewController } from "ionic-angular";
 import * as moment from "moment-mini";
-import { of } from "rxjs";
+import { of } from "rxjs/observable/of";
 
 @IonicPage()
 @Component({

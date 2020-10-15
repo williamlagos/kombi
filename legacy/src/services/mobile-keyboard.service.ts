@@ -5,7 +5,7 @@
  * @description Mobile keyboard service.
  */
 
-import { Platform } from "@ionic/angular";
+import { Platform } from "ionic-angular";
 import { Injectable, EventEmitter } from "@angular/core";
 import { MarsViewService } from "@services/view.service";
 import { AppGlobals } from "@app/app.globals";

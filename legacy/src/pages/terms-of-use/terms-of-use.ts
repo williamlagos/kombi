@@ -5,7 +5,7 @@
  */
 
 import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { App, IonicPage, NavController, Platform } from "@ionic/angular";
+import { App, IonicPage, NavController, Platform } from "ionic-angular";
 import { AppLocales } from "@app/app.locales";
 import { MarsNavigationService } from "@services/navigation.service";
 

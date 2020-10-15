@@ -7,7 +7,7 @@
 
 import { EventEmitter, Injectable } from "@angular/core";
 
-import { Platform } from "@ionic/angular";
+import { Platform } from "ionic-angular";
 
 import { AppConstants } from "@app/app.constants";
 import { AppGlobals } from "@app/app.globals";

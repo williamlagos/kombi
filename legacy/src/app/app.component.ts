@@ -6,8 +6,8 @@
  */
 
 import { Component } from "@angular/core";
-import { Platform } from "@ionic/angular";
-import { App } from "@ionic/angular";
+import { Platform } from "ionic-angular";
+import { App } from "ionic-angular";
 
 import { AppConstants } from "@app/app.constants";
 import { MarsAuthService } from "@services/auth.service";

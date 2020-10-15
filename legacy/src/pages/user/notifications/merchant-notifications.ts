@@ -6,12 +6,12 @@
 
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 
-import { IonicPage } from "@ionic/angular";
-import { Platform } from "@ionic/angular";
-import { App } from "@ionic/angular";
-import { ViewController } from "@ionic/angular";
-import { NavParams } from "@ionic/angular";
-import { NavController } from "@ionic/angular";
+import { IonicPage } from "ionic-angular";
+import { Platform } from "ionic-angular";
+import { App } from "ionic-angular";
+import { ViewController } from "ionic-angular";
+import { NavParams } from "ionic-angular";
+import { NavController } from "ionic-angular";
 
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";

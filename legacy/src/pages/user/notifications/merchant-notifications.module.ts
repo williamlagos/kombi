@@ -9,7 +9,7 @@ import { MerchantNotificationsDrawer } from "./merchant-notifications";
 import { ComponentsModule } from "@components/components.module";
 import { DirectivesModule } from "@directives/directives.module";
 import { PipesModule } from "@pipes/pipes.module";
-import { IonicPageModule } from "@ionic/angular";
+import { IonicPageModule } from "ionic-angular";
 
 @NgModule({
   declarations: [MerchantNotificationsDrawer],

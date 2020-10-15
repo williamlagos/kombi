@@ -6,14 +6,14 @@
  */
 
 // ----------------- External Modules
-import { Platform, Config } from "@ionic/angular";
+import { Platform, Config } from "ionic-angular";
 import { NgModule } from "@angular/core";
-import { IonicModule } from "@ionic/angular";
+import { IonicModule } from "ionic-angular";
 import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
-import { IonicApp } from "@ionic/angular";
+import { IonicApp } from "ionic-angular";
 import { ErrorHandler } from "@angular/core";
-import { IonicErrorHandler } from "@ionic/angular";
+import { IonicErrorHandler } from "ionic-angular";
 import { LOCALE_ID } from "@angular/core";
 import { registerLocaleData } from "@angular/common";
 import { Vibration } from "@ionic-native/vibration";

@@ -6,7 +6,7 @@
 
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, NgZone } from "@angular/core";
 
-import { App, IonicPage, NavController, PopoverController, Platform } from "@ionic/angular";
+import { App, IonicPage, NavController, PopoverController, Platform } from "ionic-angular";
 
 import { PaginationInstance } from "ngx-pagination";
 

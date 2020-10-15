@@ -6,7 +6,7 @@
 
 import { NgModule } from "@angular/core";
 import { JobSchedulePage } from "./job-schedule";
-import { IonicPageModule } from "@ionic/angular";
+import { IonicPageModule } from "ionic-angular";
 import { ComponentsModule } from "@components/components.module";
 import { DirectivesModule } from "@directives/directives.module";
 import { PipesModule } from "@pipes/pipes.module";

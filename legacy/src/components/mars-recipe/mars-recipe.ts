@@ -10,8 +10,8 @@ import { Input, Output } from "@angular/core";
 import { EventEmitter } from "@angular/core";
 import { NgZone } from "@angular/core";
 import { ChangeDetectorRef } from "@angular/core";
-import { PopoverController } from "@ionic/angular";
-import { NavController } from "@ionic/angular";
+import { PopoverController } from "ionic-angular";
+import { NavController } from "ionic-angular";
 
 import { AppConstants } from "@app/app.constants";
 import { AppGlobals } from "@app/app.globals";
