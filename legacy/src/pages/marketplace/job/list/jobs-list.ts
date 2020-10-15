@@ -72,7 +72,7 @@ export class JobsListPage {
     ionViewDidEnter() { }
 
     async getLocation() {
-        return new Promise((resolve, reject) => {
+        return new Promise<void>((resolve, reject) => {
             try {
                 MarsGeolocationService.onLoad(async () => {
                     let location = await this.geolocationService.getUserLocation({}) as any;

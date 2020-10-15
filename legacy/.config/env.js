@@ -6,8 +6,8 @@ const Base64 = require('js-base64').Base64;
 
 // BEWARE: Be extra careful when exposing environment vars to the client side. Expose only the extrictly mandatory.
 const client = {
-    IS_DEVELOPMENT: true,
-    SERVER_ADDRESS: `http://localhost:3000`,
+    IS_DEVELOPMENT: false,
+    SERVER_ADDRESS: `https://wasserboxer.herokuapp.com`,
     SOCKET_SERVER_ADDRESS: `http://localhost:3000`,
     GOOGLE_MAPS_API_KEY: "AIzaSyCKMPLG8tSF78QpsScBRasCJ_B91pgvlpI",
     ONESIGNAL_APP_ID: "13c33a1e-a866-4b51-b3cf-3e3fc2ca1a45",

@@ -117,7 +117,7 @@ export class HomePage {
     }
 
     async refreshUser() {
-        return new Promise(async (resolve, reject) => {
+        return new Promise<void>(async (resolve, reject) => {
             try {
                 let user = (await Backend.getUserProfile({ xAccessToken: this.token })).data;
                 MarsAuthService.setLoggedInUser(user);
