@@ -5,7 +5,7 @@
  * @description View management service.
  */
 
-import { Platform } from "ionic-angular";
+import { Platform } from "@ionic/angular";
 import { Injectable } from "@angular/core";
 
 @Injectable()

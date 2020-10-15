@@ -16,8 +16,8 @@ import { MarsNavigationService } from "@services/navigation.service";
 import { Backend } from "@backend";
 import { MarsAuthService } from "@services/auth.service";
 import { AppConstants } from "@app/app.constants";
-import { ViewController } from "ionic-angular";
-import { NavParams } from "ionic-angular";
+import { ViewController } from "@ionic/angular";
+import { NavParams } from "@ionic/angular";
 
 @Component({ templateUrl: "mars-product-options.html" })
 

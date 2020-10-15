@@ -7,7 +7,7 @@
 
 import { Injectable } from "@angular/core";
 
-import { Platform } from "ionic-angular";
+import { Platform } from "@ionic/angular";
 
 import { AppGlobals } from "@app/app.globals";
 

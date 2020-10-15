@@ -6,7 +6,7 @@
 
 import { ChangeDetectorRef, Component, ChangeDetectionStrategy, NgZone } from "@angular/core";
 
-import { App, IonicPage, Loading, NavController, Platform } from "ionic-angular";
+import { App, IonicPage, Loading, NavController, Platform } from "@ionic/angular";
 
 import { AppConstants } from "@app/app.constants";
 import { AppGlobals } from "@app/app.globals";

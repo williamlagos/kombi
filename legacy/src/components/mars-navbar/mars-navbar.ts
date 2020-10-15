@@ -5,7 +5,7 @@
  * @description Responsive navbar component.
  */
 
-import { Tabs, NavController, App } from "ionic-angular";
+import { Tabs, NavController, App } from "@ionic/angular";
 
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { Injectable } from "@angular/core";

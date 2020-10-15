@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component, ChangeDetectorRef, EventEmitter, Ng
 
 import { DomSanitizer, SafeStyle } from "@angular/platform-browser";
 
-import { App, IonicPage, NavController, NavParams, Platform, Tabs, Content } from "ionic-angular";
+import { App, IonicPage, NavController, NavParams, Platform, Tabs, Content } from "@ionic/angular";
 
 import { AppConstants } from "@app/app.constants";
 import { AppGlobals } from "@app/app.globals";

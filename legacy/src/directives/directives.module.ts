@@ -7,7 +7,7 @@
 
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { IonicModule } from "ionic-angular";
+import { IonicModule } from "@ionic/angular";
 
 import { MarsElasticInputDirective } from "./mars-elastic-input";
 import { MarsMaskDirective } from "./mars-mask";

@@ -6,11 +6,11 @@
 
 import { ChangeDetectionStrategy, Component, ChangeDetectorRef, NgZone } from "@angular/core";
 
-import { IonicPage } from "ionic-angular";
-import { Platform } from "ionic-angular";
-import { App } from "ionic-angular";
-import { NavController } from "ionic-angular";
-import { NavParams } from "ionic-angular";
+import { IonicPage } from "@ionic/angular";
+import { Platform } from "@ionic/angular";
+import { App } from "@ionic/angular";
+import { NavController } from "@ionic/angular";
+import { NavParams } from "@ionic/angular";
 
 import { AppConstants } from "@app/app.constants";
 import { AppGlobals } from "@app/app.globals";

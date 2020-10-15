@@ -8,7 +8,7 @@
 import { MarsCreditCardComponent } from './mars-credit-card/mars-credit-card';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { IonicModule } from "ionic-angular";
+import { IonicModule } from "@ionic/angular";
 
 import { PipesModule } from "@pipes/pipes.module";
 import { DirectivesModule } from "@directives/directives.module";

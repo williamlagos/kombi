@@ -6,7 +6,7 @@
  */
 
 import { Injectable } from "@angular/core";
-import { App, NavController, Tabs } from "ionic-angular";
+import { App, NavController, Tabs } from "@ionic/angular";
 
 import { AppConstants } from "@app/app.constants";
 import { MarsAuthService } from "./auth.service";

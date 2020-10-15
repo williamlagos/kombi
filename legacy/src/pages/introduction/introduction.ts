@@ -6,9 +6,9 @@
 
 import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ViewChild } from "@angular/core";
-import { App, Platform, NavController } from "ionic-angular";
-import { IonicPage } from "ionic-angular";
-import { Slides } from "ionic-angular";
+import { App, Platform, NavController } from "@ionic/angular";
+import { IonicPage } from "@ionic/angular";
+import { Slides } from "@ionic/angular";
 
 import { AppGlobals } from "@app/app.globals";
 import { AppLocales } from "@app/app.locales";

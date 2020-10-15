@@ -6,7 +6,7 @@
 
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, NgZone } from "@angular/core";
 
-import { App, IonicPage, NavController, NavParams, Platform } from "ionic-angular";
+import { App, IonicPage, NavController, NavParams, Platform } from "@ionic/angular";
 
 import { Backend } from "@backend/index";
 import * as querystring from "query-string";
