@@ -1,7 +1,16 @@
 $font-path: "../assets/fonts";
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/v2/theming/
-@import "ionic.globals";
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
@@ -41,10 +50,12 @@ $text-input-highlight-color: #3ebfe2;
 // --------------------------------------------------
 // global platform Sass variables can go here
 $background-color: darken(white, 0%);
+$font-family-base: 'Roboto', sans-serif;
 $secondary-font-family: 'Roboto', sans-serif;
-$app-logo-src: "../assets/images/logo.png";
+$app-logo-src: "./assets/images/logo.png";
 $text-input-placeholder-color: $secondary;
 $navbar-width: 280px;
+$navbar-md-height: 40px;
 // App iOS Variables
 $ios-bar-height: 56px;
 $navbar-ios-height: $ios-bar-height;
@@ -63,13 +74,13 @@ $searchbar-ios-min-height: $ios-bar-height;
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
-@import "ionic.theme.default";
+// @import "ionic.theme.default";
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/v2/ionicons/
-@import "ionic.ionicons";
+// @import "ionic.ionicons";
 // Fonts
 // --------------------------------------------------
-@import "roboto";
+// @import "roboto";
 // @import "noto-sans";

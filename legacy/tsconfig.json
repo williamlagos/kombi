@@ -2,6 +2,7 @@
     "compilerOptions": {
         "baseUrl": "src",
     "downlevelIteration": true,
+    "importHelpers": true,
         "paths": {
             "@app/*": [
                 "app/*"
