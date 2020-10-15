@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "baseUrl": "src",
+    "downlevelIteration": true,
         "paths": {
             "@app/*": [
                 "app/*"
@@ -34,8 +35,8 @@
             ]
         },
         "moduleResolution": "node",
-        "target": "es5",
-        "module": "es2015",
+        "target": "es2015",
+        "module": "esnext",
         "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,

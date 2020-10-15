@@ -4,10 +4,9 @@
     "cordova": {},
     "capacitor": {}
   },
-  "type": "ionic-angular",
+  "type": "angular",
   "daemon": {
     "updates": false
   },
-  "pro_id": "4064ed6d",
   "id": "4064ed6d"
 }
