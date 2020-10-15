@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+// import { AppRoot } from 'react-component-lib';
 
 function App() {
   return (
