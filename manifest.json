@@ -1,7 +1,7 @@
 {
   "name": "Shipping",
   "short_name": "Shipping",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "icons": [{
     "src": "assets/icon/icon.png",
