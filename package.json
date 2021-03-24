@@ -4,6 +4,9 @@
   "description": "Shipping application written with Ionic and React",
   "main": "index.js",
   "scripts": {
+    "start": "cd parts && npm start",
+    "predeploy": "cd parts && npm run build",
+    "deploy": "gh-pages -d parts/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/williamlagos/kombi/issues"
   },
-  "homepage": "https://github.com/williamlagos/kombi#readme"
+  "homepage": "https://github.com/williamlagos/kombi#readme",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
 }
