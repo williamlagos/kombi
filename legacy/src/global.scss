@@ -1,0 +1,96 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import "./theme/mixins";
+@import "./theme/animations";
+@import "./theme/components";
+@import "./theme/fonts";
+
+/* html {
+    * {
+        transition-property: all;
+        transition-duration: .35s;
+    }
+} */
+
+[project-logo] {
+    background-image: url($app-logo-src);
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin: 50px auto auto;
+    margin-top: 0px;
+    border-radius: 50%;
+}
+
+ion-navbar[color=primary] .toolbar-background.toolbar-background-md,
+ion-navbar[color=primary] .toolbar-background.toolbar-background-ios,
+mars-navbar [header] {
+    @include primary-gradient();
+}
+
+[no-border] {
+    border: none;
+}
+
+[no-padding] {
+    padding: 0px !important;
+}
+
+.toolbar-ios ion-title {
+    padding: 0px;
+}
+
+ion-fab {
+    &[bottom] {
+        bottom: 80px;
+    }
+    &[right] {
+        right: 20px;
+    }
+}
+/* 
+.ios,
+.md {
+    .header:after {
+        background-image: none;
+    }
+    ion-navbar,
+    ion-searchbar,
+    .toolbar-background,
+    .tabbar {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: white !important;
+        background: none !important;
+        border: none !important;
+        *,
+        .toolbar-title {
+            color: $primary !important;
+        }
+    }
+} */
