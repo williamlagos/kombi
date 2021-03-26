@@ -3,35 +3,35 @@
   "fsNamespace": "clipper",
   "loader": "../clipper.js",
   "global": "clipper.global.js",
-  "core": "clipper.0adge7rd.js",
-  "corePolyfilled": "clipper.zysm9w4t.js",
+  "core": "clipper.vhmohz5z.js",
+  "corePolyfilled": "clipper.zrab98og.js",
   "components": {
     "address-input": {
       "bundleIds": {
-        "ios": "owechkg5",
-        "md": "hesszhpa"
+        "ios": "a1cxycmn",
+        "md": "sifiry51"
       }
     },
     "app-drawer": {
       "bundleIds": {
-        "ios": "g7tp8kek",
-        "md": "lbzgdgds"
+        "ios": "qkc1b82d",
+        "md": "tek6fe2i"
       }
     },
     "app-entrance": {
       "bundleIds": {
-        "$": "aufsmq9z"
+        "$": "czb0vpmo"
       }
     },
     "app-map": {
       "bundleIds": {
-        "$": "zsvyjyc4"
+        "$": "ha6mrr6y"
       }
     },
     "app-root": {
       "bundleIds": {
-        "ios": "g7tp8kek",
-        "md": "lbzgdgds"
+        "ios": "qkc1b82d",
+        "md": "tek6fe2i"
       }
     },
     "generic-carousel": {
@@ -62,7 +62,7 @@
     },
     "ion-action-sheet-controller": {
       "bundleIds": {
-        "$": "wkhobshz"
+        "$": "cuuwuxds"
       }
     },
     "ion-alert": {
@@ -80,14 +80,14 @@
     },
     "ion-app": {
       "bundleIds": {
-        "ios": "g7tp8kek",
-        "md": "lbzgdgds"
+        "ios": "qkc1b82d",
+        "md": "tek6fe2i"
       }
     },
     "ion-avatar": {
       "bundleIds": {
-        "ios": "g7tp8kek",
-        "md": "lbzgdgds"
+        "ios": "qkc1b82d",
+        "md": "tek6fe2i"
       },
       "encapsulation": "shadow"
     },
@@ -169,8 +169,8 @@
     },
     "ion-datetime": {
       "bundleIds": {
-        "ios": "owechkg5",
-        "md": "hesszhpa"
+        "ios": "a1cxycmn",
+        "md": "sifiry51"
       },
       "encapsulation": "shadow"
     },
@@ -209,27 +209,27 @@
     },
     "ion-item-group": {
       "bundleIds": {
-        "ios": "v0wfomfy",
-        "md": "hj8a6i4v"
+        "ios": "gnrt3ccx",
+        "md": "5x6knktc"
       }
     },
     "ion-item-option": {
       "bundleIds": {
-        "ios": "v0wfomfy",
-        "md": "hj8a6i4v"
+        "ios": "gnrt3ccx",
+        "md": "5x6knktc"
       },
       "encapsulation": "shadow"
     },
     "ion-item-options": {
       "bundleIds": {
-        "ios": "v0wfomfy",
-        "md": "hj8a6i4v"
+        "ios": "gnrt3ccx",
+        "md": "5x6knktc"
       }
     },
     "ion-item-sliding": {
       "bundleIds": {
-        "ios": "v0wfomfy",
-        "md": "hj8a6i4v"
+        "ios": "gnrt3ccx",
+        "md": "5x6knktc"
       }
     },
     "ion-label": {
@@ -261,8 +261,8 @@
     },
     "ion-loading-controller": {
       "bundleIds": {
-        "ios": "v0wfomfy",
-        "md": "hj8a6i4v"
+        "ios": "gnrt3ccx",
+        "md": "5x6knktc"
       }
     },
     "ion-menu": {
@@ -331,21 +331,21 @@
     },
     "ion-picker": {
       "bundleIds": {
-        "ios": "owechkg5",
-        "md": "hesszhpa"
+        "ios": "a1cxycmn",
+        "md": "sifiry51"
       },
       "encapsulation": "scoped"
     },
     "ion-picker-column": {
       "bundleIds": {
-        "ios": "owechkg5",
-        "md": "hesszhpa"
+        "ios": "a1cxycmn",
+        "md": "sifiry51"
       }
     },
     "ion-picker-controller": {
       "bundleIds": {
-        "ios": "owechkg5",
-        "md": "hesszhpa"
+        "ios": "a1cxycmn",
+        "md": "sifiry51"
       }
     },
     "ion-popover": {
@@ -381,22 +381,22 @@
     },
     "ion-route": {
       "bundleIds": {
-        "$": "mcimn7nz"
+        "$": "xgytobj1"
       }
     },
     "ion-route-redirect": {
       "bundleIds": {
-        "$": "mcimn7nz"
+        "$": "xgytobj1"
       }
     },
     "ion-router": {
       "bundleIds": {
-        "$": "mcimn7nz"
+        "$": "xgytobj1"
       }
     },
     "ion-router-outlet": {
       "bundleIds": {
-        "$": "mcimn7nz"
+        "$": "xgytobj1"
       },
       "encapsulation": "shadow"
     },
@@ -409,15 +409,15 @@
     },
     "ion-segment": {
       "bundleIds": {
-        "ios": "v0wfomfy",
-        "md": "hj8a6i4v"
+        "ios": "gnrt3ccx",
+        "md": "5x6knktc"
       },
       "encapsulation": "scoped"
     },
     "ion-segment-button": {
       "bundleIds": {
-        "ios": "v0wfomfy",
-        "md": "hj8a6i4v"
+        "ios": "gnrt3ccx",
+        "md": "5x6knktc"
       },
       "encapsulation": "shadow"
     },
@@ -441,8 +441,8 @@
     },
     "ion-split-pane": {
       "bundleIds": {
-        "ios": "g7tp8kek",
-        "md": "lbzgdgds"
+        "ios": "qkc1b82d",
+        "md": "tek6fe2i"
       }
     },
     "ion-tab": {
@@ -454,15 +454,15 @@
     },
     "ion-tab-bar": {
       "bundleIds": {
-        "ios": "g7tp8kek",
-        "md": "lbzgdgds"
+        "ios": "qkc1b82d",
+        "md": "tek6fe2i"
       },
       "encapsulation": "shadow"
     },
     "ion-tab-button": {
       "bundleIds": {
-        "ios": "g7tp8kek",
-        "md": "lbzgdgds"
+        "ios": "qkc1b82d",
+        "md": "tek6fe2i"
       },
       "encapsulation": "shadow"
     },
@@ -521,29 +521,29 @@
     },
     "page-account": {
       "bundleIds": {
-        "$": "mcimn7nz"
+        "$": "xgytobj1"
       }
     },
     "page-create": {
       "bundleIds": {
-        "ios": "owechkg5",
-        "md": "hesszhpa"
+        "ios": "a1cxycmn",
+        "md": "sifiry51"
       }
     },
     "page-order-detail": {
       "bundleIds": {
-        "$": "xnobyod1"
+        "$": "gixy90hz"
       }
     },
     "page-order-list": {
       "bundleIds": {
-        "$": "wkhobshz"
+        "$": "cuuwuxds"
       }
     },
     "page-schedule": {
       "bundleIds": {
-        "ios": "v0wfomfy",
-        "md": "hj8a6i4v"
+        "ios": "gnrt3ccx",
+        "md": "5x6knktc"
       }
     },
     "page-support": {
@@ -553,13 +553,13 @@
     },
     "page-tabs": {
       "bundleIds": {
-        "ios": "g7tp8kek",
-        "md": "lbzgdgds"
+        "ios": "qkc1b82d",
+        "md": "tek6fe2i"
       }
     },
     "register-wizard": {
       "bundleIds": {
-        "$": "aufsmq9z"
+        "$": "czb0vpmo"
       }
     }
   }
