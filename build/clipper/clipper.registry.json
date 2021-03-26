@@ -3,13 +3,13 @@
   "fsNamespace": "clipper",
   "loader": "../clipper.js",
   "global": "clipper.global.js",
-  "core": "clipper.i64bgwbf.js",
-  "corePolyfilled": "clipper.taxohs62.js",
+  "core": "clipper.m1czekbf.js",
+  "corePolyfilled": "clipper.pwgsvqiy.js",
   "components": {
     "address-input": {
       "bundleIds": {
-        "ios": "gkupeugt",
-        "md": "cnatl72g"
+        "ios": "sassk1aj",
+        "md": "kadbbanl"
       }
     },
     "app-drawer": {
@@ -20,12 +20,12 @@
     },
     "app-entrance": {
       "bundleIds": {
-        "$": "grfykqtc"
+        "$": "uhzaduem"
       }
     },
     "app-map": {
       "bundleIds": {
-        "$": "bp4qdxqd"
+        "$": "v1rihlz0"
       }
     },
     "app-root": {
@@ -169,8 +169,8 @@
     },
     "ion-datetime": {
       "bundleIds": {
-        "ios": "gkupeugt",
-        "md": "cnatl72g"
+        "ios": "sassk1aj",
+        "md": "kadbbanl"
       },
       "encapsulation": "shadow"
     },
@@ -209,27 +209,27 @@
     },
     "ion-item-group": {
       "bundleIds": {
-        "ios": "cmc6cerl",
-        "md": "iggud32z"
+        "ios": "e4usbzps",
+        "md": "omdran65"
       }
     },
     "ion-item-option": {
       "bundleIds": {
-        "ios": "cmc6cerl",
-        "md": "iggud32z"
+        "ios": "e4usbzps",
+        "md": "omdran65"
       },
       "encapsulation": "shadow"
     },
     "ion-item-options": {
       "bundleIds": {
-        "ios": "cmc6cerl",
-        "md": "iggud32z"
+        "ios": "e4usbzps",
+        "md": "omdran65"
       }
     },
     "ion-item-sliding": {
       "bundleIds": {
-        "ios": "cmc6cerl",
-        "md": "iggud32z"
+        "ios": "e4usbzps",
+        "md": "omdran65"
       }
     },
     "ion-label": {
@@ -261,14 +261,14 @@
     },
     "ion-loading-controller": {
       "bundleIds": {
-        "ios": "cmc6cerl",
-        "md": "iggud32z"
+        "ios": "e4usbzps",
+        "md": "omdran65"
       }
     },
     "ion-menu": {
       "bundleIds": {
-        "ios": "ptyhcm3l",
-        "md": "mxf7n1rg"
+        "ios": "flocslyl",
+        "md": "xicf0eeg"
       },
       "encapsulation": "shadow"
     },
@@ -286,8 +286,8 @@
     },
     "ion-menu-toggle": {
       "bundleIds": {
-        "ios": "ptyhcm3l",
-        "md": "mxf7n1rg"
+        "ios": "flocslyl",
+        "md": "xicf0eeg"
       },
       "encapsulation": "shadow"
     },
@@ -331,21 +331,21 @@
     },
     "ion-picker": {
       "bundleIds": {
-        "ios": "gkupeugt",
-        "md": "cnatl72g"
+        "ios": "sassk1aj",
+        "md": "kadbbanl"
       },
       "encapsulation": "scoped"
     },
     "ion-picker-column": {
       "bundleIds": {
-        "ios": "gkupeugt",
-        "md": "cnatl72g"
+        "ios": "sassk1aj",
+        "md": "kadbbanl"
       }
     },
     "ion-picker-controller": {
       "bundleIds": {
-        "ios": "gkupeugt",
-        "md": "cnatl72g"
+        "ios": "sassk1aj",
+        "md": "kadbbanl"
       }
     },
     "ion-popover": {
@@ -381,22 +381,22 @@
     },
     "ion-route": {
       "bundleIds": {
-        "$": "b5yhfgzg"
+        "$": "n687zr5c"
       }
     },
     "ion-route-redirect": {
       "bundleIds": {
-        "$": "b5yhfgzg"
+        "$": "n687zr5c"
       }
     },
     "ion-router": {
       "bundleIds": {
-        "$": "b5yhfgzg"
+        "$": "n687zr5c"
       }
     },
     "ion-router-outlet": {
       "bundleIds": {
-        "$": "b5yhfgzg"
+        "$": "n687zr5c"
       },
       "encapsulation": "shadow"
     },
@@ -409,15 +409,15 @@
     },
     "ion-segment": {
       "bundleIds": {
-        "ios": "cmc6cerl",
-        "md": "iggud32z"
+        "ios": "e4usbzps",
+        "md": "omdran65"
       },
       "encapsulation": "scoped"
     },
     "ion-segment-button": {
       "bundleIds": {
-        "ios": "cmc6cerl",
-        "md": "iggud32z"
+        "ios": "e4usbzps",
+        "md": "omdran65"
       },
       "encapsulation": "shadow"
     },
@@ -521,13 +521,13 @@
     },
     "page-account": {
       "bundleIds": {
-        "$": "b5yhfgzg"
+        "$": "n687zr5c"
       }
     },
     "page-create": {
       "bundleIds": {
-        "ios": "gkupeugt",
-        "md": "cnatl72g"
+        "ios": "sassk1aj",
+        "md": "kadbbanl"
       }
     },
     "page-order-detail": {
@@ -542,8 +542,8 @@
     },
     "page-schedule": {
       "bundleIds": {
-        "ios": "cmc6cerl",
-        "md": "iggud32z"
+        "ios": "e4usbzps",
+        "md": "omdran65"
       }
     },
     "page-support": {
@@ -559,7 +559,7 @@
     },
     "register-wizard": {
       "bundleIds": {
-        "$": "grfykqtc"
+        "$": "uhzaduem"
       }
     }
   }
