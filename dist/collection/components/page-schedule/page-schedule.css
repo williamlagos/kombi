@@ -1,0 +1,54 @@
+.ion-item-divider.sticky {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.item-sliding-track ion-label {
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+}
+
+.item-sliding-track-trabalho ion-label {
+  border-left-color: var(--ion-color-primary);
+}
+
+.item-sliding-track-jantar ion-label {
+  border-left-color: var(--ion-color-angular);
+}
+
+.item-sliding-track-quarto ion-label {
+  border-left-color: var(--ion-color-communication);
+}
+
+.item-sliding-track-cozinha ion-label {
+  border-left-color: var(--ion-color-tooling);
+}
+
+.item-sliding-track-lazer ion-label {
+  border-left-color: var(--ion-color-services);
+}
+
+.item-sliding-track-living ion-label {
+  border-left-color: var(--ion-color-design);
+}
+
+.item-sliding-track-oficina ion-label {
+  border-left-color: var(--ion-color-workshop);
+}
+
+.item-sliding-track-comida ion-label {
+  border-left-color: var(--ion-color-food);
+}
+
+.item-sliding-track-biblioteca ion-label {
+  border-left-color: var(--ion-color-documentation);
+}
+
+.item-sliding-track-comercial ion-label {
+  border-left-color: var(--ion-color-navigation);
+}
+
+.aligned {
+  min-height: 56px;
+}

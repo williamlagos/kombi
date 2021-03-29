@@ -1,0 +1,36 @@
+import '../../stencil.core';
+import { Action, Store } from '@stencil/redux';
+export declare class Route {
+    private mapData;
+    private gmapKey;
+    open: Action;
+    rateOrder: Action;
+    cancelOrder: Action;
+    finishOrder: Action;
+    showMyOrders: Action;
+    showCustomerOrders: Action;
+    token: string;
+    role: string;
+    orders: any[];
+    startedOrders: any[];
+    finishedOrders: any[];
+    hasOrder: boolean;
+    hasFinishedOrder: boolean;
+    rating: any;
+    directions: any[];
+    store: Store;
+    private el;
+    componentWillLoad(): Promise<void>;
+    componentDidLoad(): Promise<void>;
+    populateMap(): Promise<void>;
+    componentWillUpdate(): Promise<void>;
+    populateOrders(update?: boolean): Promise<void>;
+    isEmpty(obj: any): boolean;
+    parseJwt(token: string): any;
+    navigate(): void;
+    cancelCurrentOrder(orderId: string): Promise<void>;
+    finishCurrentOrder(orderId: string): Promise<void>;
+    rateCurrentOrder(orderId: string): Promise<void>;
+    toggleStar(ev: any, id: string): void;
+    render(): JSX.Element[];
+}

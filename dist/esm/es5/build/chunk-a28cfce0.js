@@ -1,0 +1,1 @@
+var config={env:{google_map_key:"",facebook_client_id:"",facebook_client_secret:""}};export{config as a};

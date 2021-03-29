@@ -1,0 +1,33 @@
+/*app-map ion-header {
+  height: 7.5vh;
+}*/
+
+.map-canvas {
+  width: 100%;
+  flex: 100%;
+
+  background-color: transparent;
+  /* height: 92.5vh; */
+  opacity: 0;
+  transition: opacity 150ms ease-in
+}
+
+.show-map {
+  opacity: 1;
+}
+
+.stars ion-button {
+  background: gray;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  height: 2.75em !important;
+  width: 2.75em !important;
+}
+
+.stars ion-button:hover {
+  background: blue;
+}
+
+.stars ion-button.marked {
+  background: yellow !important;
+}

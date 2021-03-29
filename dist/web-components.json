@@ -1,0 +1,191 @@
+{
+  "tags": [
+    {
+      "label": "address-input",
+      "description": "",
+      "attributes": [
+        {
+          "label": "input",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "label",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "name",
+          "description": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "label": "app-root",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "generic-carousel",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "app-drawer",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "app-entrance",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "app-map",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "page-about",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "page-account",
+      "description": "",
+      "attributes": [
+        {
+          "label": "exit",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "images",
+          "description": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "label": "page-create",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "page-order-detail",
+      "description": "",
+      "attributes": [
+        {
+          "label": "order",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "order-id",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "role",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "user-id",
+          "description": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "label": "page-order-list",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "page-schedule",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "page-support",
+      "description": "",
+      "attributes": []
+    },
+    {
+      "label": "page-tabs",
+      "description": "",
+      "attributes": [
+        {
+          "label": "has-tabs",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "role",
+          "description": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "label": "register-wizard",
+      "description": "",
+      "attributes": [
+        {
+          "label": "action",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "exit",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "images",
+          "description": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "label": "image-uploader",
+      "description": "",
+      "attributes": [
+        {
+          "label": "send",
+          "description": "",
+          "required": false
+        }
+      ]
+    },
+    {
+      "label": "generic-wizard",
+      "description": "",
+      "attributes": [
+        {
+          "label": "action",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "id",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "images",
+          "description": "",
+          "required": false
+        },
+        {
+          "label": "steps",
+          "description": "",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

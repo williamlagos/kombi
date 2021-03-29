@@ -1,0 +1,1145 @@
+{
+  "components": [
+    {
+      "tag": "address-input",
+      "dependencies": [
+        "ion-col",
+        "ion-grid",
+        "ion-input",
+        "ion-item",
+        "ion-label",
+        "ion-row"
+      ],
+      "componentClass": "AddressInput",
+      "componentPath": "components/address/address.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/address/address.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "input",
+          "type": "Any",
+          "attr": "input"
+        },
+        {
+          "name": "label",
+          "type": "String",
+          "attr": "label"
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "attr": "name"
+        }
+      ],
+      "states": [
+        {
+          "name": "data"
+        }
+      ]
+    },
+    {
+      "tag": "app-drawer",
+      "dependencies": [
+        "ion-avatar",
+        "ion-button",
+        "ion-buttons",
+        "ion-content",
+        "ion-header",
+        "ion-icon",
+        "ion-item",
+        "ion-label",
+        "ion-list",
+        "ion-list-header",
+        "ion-menu",
+        "ion-menu-toggle",
+        "ion-nav",
+        "ion-nav-pop",
+        "ion-nav-push",
+        "ion-nav-set-root",
+        "ion-split-pane",
+        "ion-title",
+        "ion-toolbar",
+        "page-tabs"
+      ],
+      "componentClass": "Menu",
+      "componentPath": "components/drawer/drawer.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/drawer/drawer.css"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "directions"
+        },
+        {
+          "name": "profile"
+        },
+        {
+          "name": "token"
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ],
+      "connect": [
+        {
+          "name": "nav",
+          "tag": "ion-nav"
+        },
+        {
+          "name": "tabs",
+          "tag": "page-tabs"
+        }
+      ]
+    },
+    {
+      "tag": "app-entrance",
+      "dependencies": [
+        "generic-carousel",
+        "ion-button",
+        "ion-buttons",
+        "ion-col",
+        "ion-content",
+        "ion-grid",
+        "ion-header",
+        "ion-icon",
+        "ion-input",
+        "ion-item",
+        "ion-label",
+        "ion-list",
+        "ion-menu-toggle",
+        "ion-row",
+        "ion-text",
+        "ion-title",
+        "ion-toolbar",
+        "register-wizard"
+      ],
+      "componentClass": "Entrance",
+      "componentPath": "components/entrance/entrance.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/entrance/entrance.css"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "introduced"
+        },
+        {
+          "name": "name"
+        },
+        {
+          "name": "password"
+        },
+        {
+          "name": "registered"
+        },
+        {
+          "name": "submitted"
+        },
+        {
+          "name": "username"
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ]
+    },
+    {
+      "tag": "app-map",
+      "dependencies": [
+        "ion-button",
+        "ion-buttons",
+        "ion-card",
+        "ion-card-content",
+        "ion-card-header",
+        "ion-card-subtitle",
+        "ion-card-title",
+        "ion-header",
+        "ion-menu-button",
+        "ion-title",
+        "ion-toolbar"
+      ],
+      "componentClass": "Route",
+      "componentPath": "components/map/map.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/map/map.css"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "directions"
+        },
+        {
+          "name": "finishedOrders"
+        },
+        {
+          "name": "hasFinishedOrder"
+        },
+        {
+          "name": "hasOrder"
+        },
+        {
+          "name": "orders"
+        },
+        {
+          "name": "rating"
+        },
+        {
+          "name": "role"
+        },
+        {
+          "name": "startedOrders"
+        },
+        {
+          "name": "token"
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "app-root",
+      "dependencies": [
+        "app-drawer",
+        "app-entrance",
+        "generic-carousel",
+        "ion-app",
+        "ion-button",
+        "ion-icon",
+        "ion-slide"
+      ],
+      "componentClass": "AppRoot",
+      "componentPath": "components/app-root/app-root.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/app-root/app-root.css"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "explained"
+        },
+        {
+          "name": "token"
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ]
+    },
+    {
+      "tag": "generic-carousel",
+      "dependencies": [
+        "ion-buttons",
+        "ion-content",
+        "ion-header",
+        "ion-menu",
+        "ion-menu-button",
+        "ion-menu-controller",
+        "ion-menu-toggle",
+        "ion-nav",
+        "ion-nav-pop",
+        "ion-nav-push",
+        "ion-nav-set-root",
+        "ion-slide",
+        "ion-slides",
+        "ion-toolbar"
+      ],
+      "componentClass": "Carousel",
+      "componentPath": "components/carousel/carousel.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/carousel/carousel.css"
+          ]
+        }
+      },
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ],
+      "connect": [
+        {
+          "name": "menuCtrl",
+          "tag": "ion-menu-controller"
+        },
+        {
+          "name": "navCtrl",
+          "tag": "ion-nav"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "generic-wizard",
+      "dependencies": [
+        "ion-button",
+        "ion-list"
+      ],
+      "componentClass": "Wizard",
+      "componentPath": "components/wizard/wizard.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/wizard/wizard.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "action",
+          "type": "Any",
+          "attr": "action"
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "attr": "id"
+        },
+        {
+          "name": "images",
+          "type": "Any",
+          "attr": "images"
+        },
+        {
+          "name": "steps",
+          "type": "Number",
+          "attr": "steps"
+        }
+      ],
+      "states": [
+        {
+          "name": "needSignup"
+        },
+        {
+          "name": "step"
+        },
+        {
+          "name": "submitted"
+        }
+      ]
+    },
+    {
+      "tag": "image-uploader",
+      "dependencies": [],
+      "componentClass": "Uploader",
+      "componentPath": "components/uploader/uploader.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/uploader/uploader.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "send",
+          "type": "Any",
+          "attr": "send"
+        }
+      ],
+      "states": [
+        {
+          "name": "index"
+        },
+        {
+          "name": "list"
+        },
+        {
+          "name": "previews"
+        }
+      ],
+      "methods": [
+        {
+          "name": "reset"
+        }
+      ],
+      "hostElement": {
+        "name": "elementHost"
+      },
+      "events": [
+        {
+          "event": "onUploadCompleted"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "page-about",
+      "dependencies": [
+        "ion-buttons",
+        "ion-content",
+        "ion-header",
+        "ion-menu-button",
+        "ion-popover",
+        "ion-popover-controller",
+        "ion-title",
+        "ion-toolbar"
+      ],
+      "componentClass": "PageAbout",
+      "componentPath": "components/page-about/page-about.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/page-about/page-about.css"
+          ]
+        }
+      },
+      "connect": [
+        {
+          "name": "popoverCtrl",
+          "tag": "ion-popover-controller"
+        }
+      ]
+    },
+    {
+      "tag": "page-account",
+      "dependencies": [
+        "image-uploader",
+        "ion-alert",
+        "ion-alert-controller",
+        "ion-back-button",
+        "ion-button",
+        "ion-buttons",
+        "ion-content",
+        "ion-header",
+        "ion-input",
+        "ion-item",
+        "ion-label",
+        "ion-list",
+        "ion-menu-button",
+        "ion-route",
+        "ion-route-redirect",
+        "ion-router",
+        "ion-router-outlet",
+        "ion-text",
+        "ion-title",
+        "ion-toast",
+        "ion-toast-controller",
+        "ion-toolbar"
+      ],
+      "componentClass": "PageAccount",
+      "componentPath": "components/page-account/page-account.js",
+      "styles": {},
+      "props": [
+        {
+          "name": "exit",
+          "type": "Any",
+          "attr": "exit"
+        },
+        {
+          "name": "images",
+          "type": "Any",
+          "attr": "images"
+        }
+      ],
+      "states": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "password"
+        },
+        {
+          "name": "profile"
+        },
+        {
+          "name": "submitted"
+        },
+        {
+          "name": "token"
+        },
+        {
+          "name": "username"
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ],
+      "connect": [
+        {
+          "name": "nav",
+          "tag": "ion-router"
+        },
+        {
+          "name": "alertCtrl",
+          "tag": "ion-alert-controller"
+        },
+        {
+          "name": "toastCtrl",
+          "tag": "ion-toast-controller"
+        }
+      ]
+    },
+    {
+      "tag": "page-create",
+      "dependencies": [
+        "address-input",
+        "generic-wizard",
+        "image-uploader",
+        "ion-button",
+        "ion-buttons",
+        "ion-content",
+        "ion-datetime",
+        "ion-header",
+        "ion-input",
+        "ion-item",
+        "ion-label",
+        "ion-menu-button",
+        "ion-tabs",
+        "ion-textarea",
+        "ion-title",
+        "ion-toolbar"
+      ],
+      "componentClass": "PageCreate",
+      "componentPath": "components/page-create/page-create.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/page-create/page-create.css"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "descriptions"
+        },
+        {
+          "name": "descriptionsLength"
+        },
+        {
+          "name": "directions"
+        },
+        {
+          "name": "token"
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ],
+      "connect": [
+        {
+          "name": "tab",
+          "tag": "ion-tabs"
+        }
+      ]
+    },
+    {
+      "tag": "page-order-detail",
+      "dependencies": [
+        "ion-button",
+        "ion-buttons",
+        "ion-col",
+        "ion-content",
+        "ion-grid",
+        "ion-header",
+        "ion-input",
+        "ion-item",
+        "ion-label",
+        "ion-list",
+        "ion-list-header",
+        "ion-radio",
+        "ion-radio-group",
+        "ion-row",
+        "ion-tab",
+        "ion-tabs",
+        "ion-textarea",
+        "ion-title",
+        "ion-toolbar"
+      ],
+      "componentClass": "PageOrderDetail",
+      "componentPath": "components/page-order-detail/page-order-detail.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/page-order-detail/page-order-detail.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "order",
+          "type": "Any",
+          "attr": "order"
+        },
+        {
+          "name": "orderId",
+          "type": "String",
+          "attr": "order-id"
+        },
+        {
+          "name": "role",
+          "type": "String",
+          "attr": "role"
+        },
+        {
+          "name": "userId",
+          "type": "Any",
+          "attr": "user-id"
+        }
+      ],
+      "states": [
+        {
+          "name": "bids"
+        },
+        {
+          "name": "data"
+        },
+        {
+          "name": "token"
+        }
+      ],
+      "context": [
+        {
+          "name": "config",
+          "id": "config"
+        },
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ],
+      "connect": [
+        {
+          "name": "tab",
+          "tag": "ion-tabs"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "page-order-list",
+      "dependencies": [
+        "ion-action-sheet",
+        "ion-action-sheet-controller",
+        "ion-button",
+        "ion-buttons",
+        "ion-card",
+        "ion-card-content",
+        "ion-card-header",
+        "ion-card-subtitle",
+        "ion-card-title",
+        "ion-col",
+        "ion-content",
+        "ion-grid",
+        "ion-header",
+        "ion-item",
+        "ion-list",
+        "ion-menu-button",
+        "ion-modal",
+        "ion-modal-controller",
+        "ion-row",
+        "ion-title",
+        "ion-toolbar"
+      ],
+      "componentClass": "PageOrderList",
+      "componentPath": "components/page-order-list/page-order-list.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/page-order-list/page-order-list.css"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "orderNumberEnd"
+        },
+        {
+          "name": "orderNumberStart"
+        },
+        {
+          "name": "orders"
+        },
+        {
+          "name": "role"
+        },
+        {
+          "name": "token"
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ],
+      "connect": [
+        {
+          "name": "actionSheetCtrl",
+          "tag": "ion-action-sheet-controller"
+        },
+        {
+          "name": "modalCtrl",
+          "tag": "ion-modal-controller"
+        }
+      ]
+    },
+    {
+      "tag": "page-schedule",
+      "dependencies": [
+        "ion-alert",
+        "ion-alert-controller",
+        "ion-buttons",
+        "ion-content",
+        "ion-header",
+        "ion-item",
+        "ion-item-group",
+        "ion-item-option",
+        "ion-item-options",
+        "ion-item-sliding",
+        "ion-label",
+        "ion-list",
+        "ion-list-header",
+        "ion-loading",
+        "ion-loading-controller",
+        "ion-menu-button",
+        "ion-modal",
+        "ion-modal-controller",
+        "ion-segment",
+        "ion-segment-button",
+        "ion-tab",
+        "ion-tabs",
+        "ion-toolbar"
+      ],
+      "componentClass": "PageSchedule",
+      "componentPath": "components/page-schedule/page-schedule.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/page-schedule/page-schedule.css"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "awaitingOrders"
+        },
+        {
+          "name": "groups"
+        },
+        {
+          "name": "orders"
+        },
+        {
+          "name": "queryText"
+        },
+        {
+          "name": "role"
+        },
+        {
+          "name": "scheduleOrders"
+        },
+        {
+          "name": "segment"
+        },
+        {
+          "name": "shownSessions"
+        },
+        {
+          "name": "slided"
+        },
+        {
+          "name": "token"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "body:ionLoadingWillDismiss",
+          "method": "loadingWillDismiss",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "body:ionModalDidDismiss",
+          "method": "modalDidDismiss",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "ionChange",
+          "method": "segmentChanged",
+          "passive": false,
+          "capture": false
+        },
+        {
+          "event": "ionInput",
+          "method": "searchbarChanged",
+          "passive": false,
+          "capture": false
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        },
+        {
+          "name": "config",
+          "id": "config"
+        }
+      ],
+      "connect": [
+        {
+          "name": "alertCtrl",
+          "tag": "ion-alert-controller"
+        },
+        {
+          "name": "loadingCtrl",
+          "tag": "ion-loading-controller"
+        },
+        {
+          "name": "modalCtrl",
+          "tag": "ion-modal-controller"
+        },
+        {
+          "name": "tab",
+          "tag": "ion-tabs"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      }
+    },
+    {
+      "tag": "page-support",
+      "dependencies": [
+        "ion-alert",
+        "ion-alert-controller",
+        "ion-back-button",
+        "ion-button",
+        "ion-buttons",
+        "ion-content",
+        "ion-header",
+        "ion-item",
+        "ion-label",
+        "ion-list",
+        "ion-menu-button",
+        "ion-text",
+        "ion-textarea",
+        "ion-title",
+        "ion-toast",
+        "ion-toast-controller",
+        "ion-toolbar"
+      ],
+      "componentClass": "PageSupport",
+      "componentPath": "components/page-support/page-support.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/page-support/page-support.css"
+          ]
+        }
+      },
+      "states": [
+        {
+          "name": "submitted"
+        },
+        {
+          "name": "supportQuestion"
+        }
+      ],
+      "connect": [
+        {
+          "name": "alertCtrl",
+          "tag": "ion-alert-controller"
+        },
+        {
+          "name": "toastCtrl",
+          "tag": "ion-toast-controller"
+        }
+      ]
+    },
+    {
+      "tag": "page-tabs",
+      "dependencies": [
+        "ion-icon",
+        "ion-label",
+        "ion-menu",
+        "ion-menu-button",
+        "ion-menu-controller",
+        "ion-menu-toggle",
+        "ion-tab",
+        "ion-tab-bar",
+        "ion-tab-button",
+        "ion-tabs"
+      ],
+      "componentClass": "PageTabs",
+      "componentPath": "components/page-tabs/page-tabs.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/page-tabs/page-tabs.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "hasTabs",
+          "type": "Boolean",
+          "attr": "has-tabs"
+        },
+        {
+          "name": "role",
+          "type": "Any",
+          "attr": "role"
+        }
+      ],
+      "states": [
+        {
+          "name": "directions"
+        }
+      ],
+      "methods": [
+        {
+          "name": "select"
+        }
+      ],
+      "context": [
+        {
+          "name": "store",
+          "id": "store"
+        }
+      ],
+      "connect": [
+        {
+          "name": "menuCtrl",
+          "tag": "ion-menu-controller"
+        },
+        {
+          "name": "tabCtrl",
+          "tag": "ion-tabs"
+        }
+      ]
+    },
+    {
+      "tag": "register-wizard",
+      "dependencies": [
+        "generic-wizard",
+        "image-uploader",
+        "ion-back-button",
+        "ion-buttons",
+        "ion-content",
+        "ion-header",
+        "ion-input",
+        "ion-item",
+        "ion-label",
+        "ion-list-header",
+        "ion-radio",
+        "ion-radio-group",
+        "ion-text",
+        "ion-textarea",
+        "ion-title",
+        "ion-toolbar"
+      ],
+      "componentClass": "Register",
+      "componentPath": "components/register/register.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/register/register.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "action",
+          "type": "Any",
+          "attr": "action"
+        },
+        {
+          "name": "exit",
+          "type": "Any",
+          "attr": "exit"
+        },
+        {
+          "name": "images",
+          "type": "Any",
+          "attr": "images"
+        }
+      ],
+      "states": [
+        {
+          "name": "data"
+        },
+        {
+          "name": "password"
+        },
+        {
+          "name": "submitted"
+        },
+        {
+          "name": "username"
+        }
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "name": "@ionic/core",
+      "tags": [
+        "ion-action-sheet",
+        "ion-action-sheet-controller",
+        "ion-alert",
+        "ion-alert-controller",
+        "ion-anchor",
+        "ion-app",
+        "ion-avatar",
+        "ion-back-button",
+        "ion-backdrop",
+        "ion-badge",
+        "ion-button",
+        "ion-buttons",
+        "ion-card",
+        "ion-card-content",
+        "ion-card-header",
+        "ion-card-subtitle",
+        "ion-card-title",
+        "ion-checkbox",
+        "ion-chip",
+        "ion-col",
+        "ion-content",
+        "ion-datetime",
+        "ion-fab",
+        "ion-fab-button",
+        "ion-fab-list",
+        "ion-footer",
+        "ion-grid",
+        "ion-header",
+        "ion-img",
+        "ion-infinite-scroll",
+        "ion-infinite-scroll-content",
+        "ion-input",
+        "ion-item",
+        "ion-item-divider",
+        "ion-item-group",
+        "ion-item-option",
+        "ion-item-options",
+        "ion-item-sliding",
+        "ion-label",
+        "ion-list",
+        "ion-list-header",
+        "ion-loading",
+        "ion-loading-controller",
+        "ion-menu",
+        "ion-menu-button",
+        "ion-menu-controller",
+        "ion-menu-toggle",
+        "ion-modal",
+        "ion-modal-controller",
+        "ion-nav",
+        "ion-nav-pop",
+        "ion-nav-push",
+        "ion-nav-set-root",
+        "ion-note",
+        "ion-picker",
+        "ion-picker-column",
+        "ion-picker-controller",
+        "ion-popover",
+        "ion-popover-controller",
+        "ion-progress-bar",
+        "ion-radio",
+        "ion-radio-group",
+        "ion-range",
+        "ion-refresher",
+        "ion-refresher-content",
+        "ion-reorder",
+        "ion-reorder-group",
+        "ion-ripple-effect",
+        "ion-route",
+        "ion-route-redirect",
+        "ion-router",
+        "ion-router-outlet",
+        "ion-row",
+        "ion-searchbar",
+        "ion-segment",
+        "ion-segment-button",
+        "ion-select",
+        "ion-select-option",
+        "ion-select-popover",
+        "ion-skeleton-text",
+        "ion-slide",
+        "ion-slides",
+        "ion-spinner",
+        "ion-split-pane",
+        "ion-tab",
+        "ion-tab-bar",
+        "ion-tab-button",
+        "ion-tabs",
+        "ion-text",
+        "ion-textarea",
+        "ion-thumbnail",
+        "ion-title",
+        "ion-toast",
+        "ion-toast-controller",
+        "ion-toggle",
+        "ion-toolbar",
+        "ion-virtual-scroll"
+      ]
+    },
+    {
+      "name": "@stencil/redux",
+      "tags": []
+    },
+    {
+      "name": "ionicons",
+      "tags": [
+        "ion-icon"
+      ]
+    }
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.18.1",
+    "typescriptVersion": "3.3.3"
+  },
+  "bundles": [],
+  "global": "global.js"
+}
